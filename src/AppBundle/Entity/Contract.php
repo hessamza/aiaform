@@ -47,7 +47,7 @@ class Contract
 
     /**
      * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
-     * @Assert\Choice({"last","ago"}, message="The value2 should be one of listed values.")
+     * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
      */
      private $recharge;
 
