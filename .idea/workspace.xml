@@ -2,499 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d04a9653-a941-40a2-ba23-acbb3e777316" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/bootstrap-daterangepicker/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/counterup/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/counterup/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/counterup/jquery.counterup.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/counterup/jquery.counterup.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/counterup/jquery.waypoints.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.colorhelpers.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.colorhelpers.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.all.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.axislabels.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.canvas.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.canvas.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.categories.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.categories.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.crosshair.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.crosshair.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.errorbars.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.errorbars.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.fillbetween.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.fillbetween.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.image.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.image.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.navigate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.navigate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.pie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.pie.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.resize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.resize.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.selection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.selection.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.stack.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.stack.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.symbol.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.symbol.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.threshold.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.threshold.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.time.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/flot/jquery.flot.time.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/changelog.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/agenda-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/background-events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/basic-views.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/default.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/external-dragging.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/gcal.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/json.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/json/events.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/languages.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/php/get-events.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/php/get-timezones.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/php/utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/selectable.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/theme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/demos/timezones.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/fullcalendar.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/fullcalendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/fullcalendar.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/fullcalendar.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/fullcalendar.print.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/gcal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang-all.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ar-ma.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ar-sa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ar-tn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/de-at.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/sr-cyrl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lang/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/animated-overlay.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_50_3baae3_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-icons_2694e8_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-icons_3d80b3_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-icons_72a7cf_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/images/ui-icons_ffffff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/cupertino/jquery-ui.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/jquery-ui.custom.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/lib/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/fullcalendar/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/Readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/angular.easypiechart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/angular.easypiechart.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jquery.sparkline.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/jquery.vmap.packed.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/jqvmap.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/europe.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/germany.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/multi.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/russia.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/usa.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/jqvmap/samples/world.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/_template.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/area-as-line.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/area.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/bar-colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/bar-no-axes.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/days.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/decimal-custom-hover.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/diagonal-xlabels-bar.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/diagonal-xlabels.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/donut-colors.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/donut-formatter.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/donut.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/dst.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/events.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/goals.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/lib/example.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/lib/example.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/months-no-smooth.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/negative.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/no-grid.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/non-continuous.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/non-date.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/quarters.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/resize.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/stacked_bars.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/timestamps.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/updating.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/weeks.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/examples/years.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/less/morris.core.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.area.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.bar.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.donut.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.grid.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.hover.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/lib/morris.line.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/morris.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/morris.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/morris.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/raphael-min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/area/area_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/bar/bar_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/bar/colours.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/commas_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/donut/donut_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/grid/auto_grid_lines_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/grid/set_data_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/grid/y_label_format_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/hover_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/label_series_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/line/line_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/pad_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/lib/parse_time_spec.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/specs.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/support/placeholder.coffee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/examples.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/exemplary/area0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/exemplary/bar0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/exemplary/line0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/exemplary/stacked_bar0.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/run.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/morris/spec/viz/visual_specs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_500px.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_8tracks.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_VK.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_amazon.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_android.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_app.net.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_apple.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_bebo.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_behance.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_blogger.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_buffer.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_chime.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_coderwall.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_dailymotion.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_delicious.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_deviantart.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_digg.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_dribbble.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_drupal.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_ello.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_envato.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_facebook.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_feedburner.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_flattr.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_flickr.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_forrst.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_foursquare.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_friendfeed.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_github.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_goodreads.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_google+.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_grooveshark.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_houzz.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_identica.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_instagram.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_lanryd.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_lastfm.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_linkedin.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_mail.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_meetup.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_mixcloud.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_myspace.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_netcodes.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_newswine.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_odnoklassniki.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_outlook.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_patreon.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_paypal.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_persona.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_pinterest.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_play.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_playstation.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_reddit.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_rss.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_skype.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_slideshare.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_smugmug.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_soundcloud.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_spotify.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_stackoverflow.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_steam.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_stumbleupon.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_swarm.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_technorati.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_tripadvisor.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_tripit.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_triplej.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_tumbler.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_twitch.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_twitter.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_viadeo.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_vimeo.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_vine.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_wikpedia.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_windows.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_wordpress.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_xbox.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_xing.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_yahoo.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_yammer.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_yelp.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_youtube.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_zerply.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/eps/socicon_zynga.eps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/.empty" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/socicon.eot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/socicon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/socicon.ttf" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/socicon.woff" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/font/socicon.woff2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/500px.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/8tracks.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/amazon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/android.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/apple.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/appnet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/bebo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/behance.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/blogger.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/buffer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/chimein.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/coderwall.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/dailymotion.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/delicious.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/deviantart.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/digg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/disqus.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/dribbble.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/drupal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/ello.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/envato.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/feedburner.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/flattr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/flickr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/forrst.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/foursquare.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/friendfeed.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/github.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/goodreads.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/google.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/grooveshark.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/houzz.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/identica.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/instagram.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/lanyrd.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/lastfm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/linkedin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/mail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/meetup.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/mixloud.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/myspace.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/newsvine.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/odnoklassniki.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/outlook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/patreon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/paypal.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/persona.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/pinterest.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/play.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/playstation.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/reddit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/rss.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/skype.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/slideshare.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/smugmug.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/soundcloud.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/spotify.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/stackoverflow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/steam.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/stumbleupon.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/swarm.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/technorati.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/tripadvisor.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/tripit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/triplej.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/tumblr.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/twitch.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/twitter.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/viadeo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/vimeo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/vine.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/vkontakte.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/wikipedia.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/windows.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/wordpress.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/xbox.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/xing.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/yahoo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/yammer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/yelp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/youtube.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/zerply.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/png/zynga.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/readme.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/socicon.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_500px.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_8tracks.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_VK.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_amazon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_android.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_app.net.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_apple.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_bebo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_behance.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_blogger.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_buffer.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_chime.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_coderwall.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_dailymotion.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_delicious.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_deviantart.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_digg.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_dribbble.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_drupal.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_ello.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_envato.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_facebook.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_feedburner.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_flattr.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_flickr.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_forrst.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_foursquare.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_friendfeed.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_github.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_goodreads.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_google+.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_grooveshark.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_houzz.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_identica.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_instagram.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_lanryd.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_lastfm.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_linkedin.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_mail.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_meetup.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_mixcloud.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_myspace.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_netcodes.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_newswine.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_odnoklassniki.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_outlook.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_patreon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_paypal.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_persona.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_pinterest.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_play.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_playstation.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_reddit.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_rss.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_skype.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_slideshare.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_smugmug.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_soundcloud.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_spotify.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_stackoverflow.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_steam.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_stumbleupon.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_swarm.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_technorati.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_tripadvisor.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_tripit.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_triplej.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_tumbler.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_twitch.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_twitter.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_viadeo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_vimeo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_vine.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_wikpedia.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_windows.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_wordpress.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_xbox.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_xing.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_yahoo.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_yammer.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_yelp.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_youtube.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_zerply.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/socicon/svg/socicon_zynga.svg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/typeahead/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/typeahead/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/typeahead/handlebars.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/typeahead/typeahead.bundle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/assets/global/plugins/typeahead/typeahead.css" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -523,8 +31,28 @@
       <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1248">
+            <state relative-caret-position="26">
               <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContractType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ContractType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -533,8 +61,8 @@
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="193" column="27" lean-forward="true" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="27" />
+            <state relative-caret-position="190">
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="115" />
               <folding />
             </state>
           </provider>
@@ -570,16 +98,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StatisticsType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/StatisticsType.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="statistics.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/page/statistics.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -590,25 +108,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contract.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/page/contract.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StatisticsController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/StatisticsController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1040">
               <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="26" />
-              <folding>
-                <element signature="e#6#87#0#PHP" expanded="false" />
-                <element signature="e#123#153#0#PHP" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -674,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ServiceItems.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ShareItems.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ContractType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Contract.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php" />
         <option value="$PROJECT_DIR$/web/assets/global/css/components-rtl.min.css" />
         <option value="$PROJECT_DIR$/web/assets/layouts/layout3/css/custom-rtl.css" />
@@ -687,6 +191,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/page/statistics.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Contract.php" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" />
       </list>
     </option>
@@ -744,9 +249,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-4" />
-    <option name="width" value="1600" />
-    <option name="height" value="904" />
+    <option name="x" value="-1" />
+    <option name="y" value="-11" />
+    <option name="width" value="1602" />
+    <option name="height" value="912" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -764,6 +270,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -806,6 +313,50 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sampleForm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sampleForm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sampleForm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sampleForm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Controller" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -891,7 +442,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1012,34 +562,44 @@
       <workItem from="1500065645366" duration="1560000" />
       <workItem from="1500067253040" duration="6215000" />
       <workItem from="1500103592382" duration="110000" />
-      <workItem from="1500118275133" duration="1050000" />
+      <workItem from="1500118275133" duration="3659000" />
+      <workItem from="1500143374831" duration="374000" />
+      <workItem from="1500160341407" duration="516000" />
     </task>
+    <task id="LOCAL-00001" summary="change recharge base value">
+      <created>1500160651376</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1500160651376</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35696000" />
+    <option name="totallyTimeSpent" value="39195000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="-1" y="-11" width="1602" height="912" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37298638" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24093567" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1047,6 +607,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change recharge base value" />
+    <option name="LAST_COMMIT_MESSAGE" value="change recharge base value" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1095,10 +659,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="false" />
-            <element signature="e#123#153#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1270,20 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ContractType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-321">
-          <caret line="58" column="43" lean-forward="false" selection-start-line="58" selection-start-column="43" selection-end-line="58" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="109" column="12" lean-forward="false" selection-start-line="109" selection-start-column="12" selection-end-line="109" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/layouts/layout3/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1342,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1248">
-          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1386,10 +925,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1040">
           <caret line="61" column="26" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="26" />
-          <folding>
-            <element signature="e#6#87#0#PHP" expanded="false" />
-            <element signature="e#123#153#0#PHP" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1401,10 +937,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ContractType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="193" column="27" lean-forward="true" selection-start-line="193" selection-start-column="27" selection-end-line="193" selection-end-column="27" />
+        <state relative-caret-position="190">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="27" selection-end-column="115" />
           <folding />
         </state>
       </provider>
