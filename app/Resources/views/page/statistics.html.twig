@@ -1,0 +1,116 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <!-- BEGIN PAGE HEAD-->
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+    <!-- END PAGE HEAD-->
+    <!-- BEGIN PAGE CONTENT BODY -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE BREADCRUMBS -->
+            <!-- END PAGE BREADCRUMBS -->
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="page-content-inner">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">ثبت آمار</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form col-md-8 ">
+                                {{form_start(form,{'attr':{'class':'form-horizontal','novalidate': 'novalidate'}}) }}
+                                {% if successFullMeassage  is defined%}
+                                    <div class="message-box sucess">
+                                        <div class="message">{{ successFullMeassage }}</div><i class="icon"></i>
+                                    </div>
+                                {% endif %}
+                                {% if formIsNotValid %}
+                                    <div class="message-box alert">
+                                        <div class="message">
+                                            مشکل زیر رخ داده است:
+                                            {{ form_errors(form.register) }}
+                                            {{ form_errors(form.phone) }}
+                                            {{ form_errors(form.dropContinue) }}
+                                            {{ form_errors(form.preFactor) }}
+                                            {{ form_errors(form.file) }}
+                                            {{ form_errors(form.periodContact) }}
+
+                                        </div><i class="icon"></i>
+                                    </div>
+                                {% endif %}
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تخصیص رجیستری:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.register,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تخصیص تلفنی:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.phone,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تمدید سوخته:</label>
+                                            <div class="col-md-4">
+                                                    {{  form_widget(form.dropContinue,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">پیش فاکتور:</label>
+                                            <div class="col-md-4">
+                                                    {{  form_widget(form.preFactor,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">ارسال فایل نمایشگاهی:</label>
+                                            <div class="col-md-4">
+                                                    {{  form_widget(form.file,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تماس دوره ای:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.periodContact,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit" class="btn green">Submit</button>
+                                                <button type="button" class="btn default">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 {{ form_end(form) }}
+                            </div>
+                        </div>
+                        <!-- END SAMPLE FORM PORTLET-->
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+        </div>
+    </div>
+    <!-- END PAGE CONTENT BODY -->
+    <!-- END CONTENT BODY -->
+</div>
+<!-- END CONTENT -->
+{% endblock %}

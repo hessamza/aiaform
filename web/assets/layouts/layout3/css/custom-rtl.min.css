@@ -1,0 +1,42 @@
+/* here you can put your own css to customize and override the theme */
+@font-face {
+    font-family:'iran_sansregular';
+    src:url('../font/iran_sans.eot');
+    src:url('../font/iran_sans.eot?#iefix') format('embedded-opentype'),url('../font/iran_sans.woff') format('woff'),url('../font/iran_sans.ttf') format('truetype'),url('../font/iran_sans.svg#iran_sansregular') format('svg');
+    font-weight:normal;
+    font-style:normal
+}
+@font-face {
+    font-family:'yekan';
+    src:url('../font/web_Yekan.woff');
+url('../font/web_Yekan.woff') format("woff"),url('../font/web_Yekan.ttf') format("truetype"),url('../font/web_Yekan.svg#BYekan') format("svg");
+    font-weight:normal;
+    font-style:normal
+}
+body{
+    font-family: "yekan",Helvetica,Arial,sans-serif !important;
+}
+
+
+
+.page-header-menu .container{
+    background:#FE0000 none repeat scroll 0% 0%;
+}
+.page-footer{
+    background:none !important;
+     border-top: 2px solid #1869B8 !important;
+}
+.page-head{
+    background:none !important;
+     border-bottom: 4px solid #1869B8 !important;
+}
+.page-wrapper .page-wrapper-middle{
+    background:none !important;
+}
+.page-header .page-header-menu .hor-menu .navbar-nav > li > a{
+    color:white;
+}
+.mt-checkbox-inline label{
+    margin-right: 4px;
+    margin-left: 15px;
+}
