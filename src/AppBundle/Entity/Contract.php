@@ -46,6 +46,13 @@ class Contract
     private $userName;
 
     /**
+     * @ORM\Column(type="string", columnDefinition="enum('recharge','register','phone','telegram','direct')")
+     * @Assert\Choice({"recharge","register","phone","telegram","direct"}, message="The contact type should be one of listed values.")
+     */
+    private $contractType;
+
+
+    /**
      * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
      * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
      */
@@ -508,6 +515,22 @@ class Contract
         }
         $this->shareItems->removeElement($shareItem);
         $shareItem->removeContract($this);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContractType()
+    {
+        return $this->contractType;
+    }
+
+    /**
+     * @param mixed $contractType
+     */
+    public function setContractType($contractType)
+    {
+        $this->contractType = $contractType;
     }
 
 

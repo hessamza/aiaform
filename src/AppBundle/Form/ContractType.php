@@ -21,6 +21,16 @@ class ContractType extends AbstractType
         $builder
             ->add('companyName')
             ->add('userName')
+            ->add('contractType', ChoiceType::class, array(
+                'choices'  => array(
+                    '' => null,
+                    'تمدید' => 'recharge',
+                    'رجیستری' => 'register',
+                    'تلفنی' => 'phone',
+                    'تلگرام' => 'telegram',
+                    'مستقیم نمایشگاهی' => 'direct',
+                ),
+            ))
             ->add('recharge', ChoiceType::class, array(
                 'choices'  => array(
                     '' => null,
