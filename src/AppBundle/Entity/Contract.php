@@ -39,6 +39,15 @@ class Contract
     private $companyName;
 
     /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="contract_date", type="datetimetz",nullable=true)
+     */
+    private $contractDate;
+
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="userName", type="string", length=255)
@@ -531,6 +540,22 @@ class Contract
     public function setContractType($contractType)
     {
         $this->contractType = $contractType;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getContractDate()
+    {
+        return $this->contractDate;
+    }
+
+    /**
+     * @param \DateTime $contractDate
+     */
+    public function setContractDate($contractDate)
+    {
+        $this->contractDate = $contractDate;
     }
 
 

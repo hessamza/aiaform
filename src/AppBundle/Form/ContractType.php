@@ -8,6 +8,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -31,6 +32,13 @@ class ContractType extends AbstractType
                     'مستقیم نمایشگاهی' => 'direct',
                 ),
             ))
+            ->add(
+                'contractDate', DateType::class, [
+                'widget'   => 'single_text',
+                'format'   => 'dd-MM-yyyy',
+                'required' => false,
+                    'invalid_message'=>'تاریخ وارد شده درست نیست'
+            ])
             ->add('recharge', ChoiceType::class, array(
                 'choices'  => array(
                     '' => null,
