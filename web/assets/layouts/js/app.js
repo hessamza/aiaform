@@ -1,7 +1,5 @@
 jQuery(document).ready(function() {
-console.log($('#appbundle_contract_contractDate').val())
-var data=$('#appbundle_contract_contractDate').val();
-    var arr = data.split('-');
+
     /**
      * Default
      * */
@@ -10,7 +8,14 @@ var data=$('#appbundle_contract_contractDate').val();
         altFormat: "YYYY MM DD ",
         format: 'DD-MM-YYYY',
     });
-    $( "#appbundle_contract_contractDate" ).pDatepicker("setDate",[parseInt(arr[2]),parseInt(arr[1]),parseInt(arr[0]),11,11] );
+
+    if($('#appbundle_contract_contractDate').val()){
+        var data=$('#appbundle_contract_contractDate').val();
+        var arr = data.split('-');
+        $( "#appbundle_contract_contractDate" ).pDatepicker("setDate",[parseInt(arr[2]),parseInt(arr[1]),parseInt(arr[0]),11,11] );
+    }
+
+
     var selectContract = $("select[name='appbundle_contract[contractType]'] option:selected").val();
     console.log(selectContract)
     $('div[class*="contractI"]').hide();
