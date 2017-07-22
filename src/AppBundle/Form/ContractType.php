@@ -32,10 +32,19 @@ class ContractType extends AbstractType
                     'مستقیم نمایشگاهی' => 'direct',
                 ),
             ))
+            ->add('contractTime', ChoiceType::class, array(
+                'choices'  => array(
+                    '' => null,
+                    '۶ماه' => '6month',
+                    '۱۲ماه' => '12month',
+                    '۲۴ماه' => '24month'
+                ),
+            ))
             ->add(
                 'contractDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
+                'attr'=>array('style'=>'display:none;'),
                 'required' => false,
                     'invalid_message'=>'تاریخ وارد شده درست نیست'
             ])

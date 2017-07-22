@@ -1,19 +1,39 @@
 jQuery(document).ready(function() {
-
-    /**
-     * Default
-     * */
-    $('#appbundle_contract_contractDate').persianDatepicker({
-        altField: '#defaultAlt',
-        altFormat: "YYYY MM DD ",
-        format: 'DD-MM-YYYY',
-    });
-
+    var jdf = new jDateFunctions();
+    var pd = new persianDate();
+    var m='';
+    //var JDate = require('jalali');
     if($('#appbundle_contract_contractDate').val()){
-        var data=$('#appbundle_contract_contractDate').val();
-        var arr = data.split('-');
-        $( "#appbundle_contract_contractDate" ).pDatepicker("setDate",[parseInt(arr[2]),parseInt(arr[1]),parseInt(arr[0]),11,11] );
+        var dateStart= $('#appbundle_contract_contractDate').val();
+        var arrDate=dateStart.split('-');
+        var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
+       console.log(jdate3.y)
+        m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+        /**
+         * Default
+         * */
+        $('#contractDateextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            selectedBefore: !0,
+            selectedDate:m.toString(),
+            onSelect: function () {
+                $("#appbundle_contract_contractDate").val($("#contractDateextra").attr("data-gdate"))
+            }
+        });
+
     }
+    else{
+        $('#contractDateextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            onSelect: function () {
+                $("#appbundle_contract_contractDate").val($("#contractDateextra").attr("data-gdate"))
+            }
+        });
+    }
+
+
 
 
     var selectContract = $("select[name='appbundle_contract[contractType]'] option:selected").val();

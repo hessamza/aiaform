@@ -36,7 +36,7 @@ class ContractController extends  BaseController
      */
     public function createContract(Request $request)
     {
-       // dump($request->request->all());die;
+     //dump($request->request->all());die;
         $objectEntity=new Contract();
         $form = $this->createForm(ContractType::class, $objectEntity, [ "method" => 'POST']);
         $form->handleRequest($request);
@@ -65,6 +65,7 @@ class ContractController extends  BaseController
      */
     public function ManageContract($id,Request $request)
     {
+
         $em = $this->getDoctrine()->getManager();
         $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $method=$request->getMethod();
@@ -89,7 +90,7 @@ class ContractController extends  BaseController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
-
+               // dump($firm);die;
 //                $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser());
 //                $form->getData()->setOwner($user);
                 $em->persist($firm);

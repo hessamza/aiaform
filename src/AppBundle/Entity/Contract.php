@@ -60,7 +60,11 @@ class Contract
      */
     private $contractType;
 
-
+    /**
+     * @ORM\Column(type="string", columnDefinition="enum('6month','12month','24month')")
+     * @Assert\Choice({"6month","12month","24month"}, message="The Time type should be one of listed values.")
+     */
+    private $contractTime;
     /**
      * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
      * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
@@ -556,6 +560,22 @@ class Contract
     public function setContractDate($contractDate)
     {
         $this->contractDate = $contractDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContractTime()
+    {
+        return $this->contractTime;
+    }
+
+    /**
+     * @param mixed $contractTime
+     */
+    public function setContractTime($contractTime)
+    {
+        $this->contractTime = $contractTime;
     }
 
 
