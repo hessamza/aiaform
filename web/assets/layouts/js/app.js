@@ -33,8 +33,32 @@ jQuery(document).ready(function() {
         });
     }
 
+$('#appbundle_contract_contractPrice').change(function () {
+    if($('#appbundle_contract_basePrice').val()!=''){
+        var discount=$('#appbundle_contract_basePrice').val()-$('#appbundle_contract_contractPrice').val();
+        if(discount>0){
+            $('#appbundle_contract_discount').val(discount)
+        }
+        else{
+            alert('مقدار مبلغ قرارداد باید بیشتر از پایه باشد');
+            $('#appbundle_contract_contractPrice').val('');
+        }
+    }
 
+});
+    $('#appbundle_contract_basePrice').change(function () {
+        if($('#appbundle_contract_contractPrice').val()!=''){
+            var discount=$('#appbundle_contract_basePrice').val()-$('#appbundle_contract_contractPrice').val();
+            if(discount>0){
+                $('#appbundle_contract_discount').val(discount)
+            }
+            else{
+                alert('مقدار مبلغ قرارداد باید بیشتر از پایه باشد');
+                $('#appbundle_contract_contractPrice').val('');
+            }
+        }
 
+    });
 
     var selectContract = $("select[name='appbundle_contract[contractType]'] option:selected").val();
     console.log(selectContract)
