@@ -36,7 +36,7 @@ class ContractController extends  BaseController
      */
     public function createContract(Request $request)
     {
-     //dump($request->request->all());die;
+
         $objectEntity=new Contract();
         $form = $this->createForm(ContractType::class, $objectEntity, [ "method" => 'POST']);
         $form->handleRequest($request);
