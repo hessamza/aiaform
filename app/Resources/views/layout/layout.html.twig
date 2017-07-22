@@ -72,6 +72,7 @@ app.request.attributes.get('_route_params')) %}
                                 <li class="dropdown dropdown-user dropdown-dark">
                                     {% if is_granted("ROLE_FrontendUser") or is_granted('ROLE_ADMIN') %}
                                     <span class="username username-hide-mobile">{{ app.user.username }}</span>
+                                        <span class="username username-hide-mobile"><a href="/logout">خروج</a></span>
                                 {% else %}
                                         <span class="username username-hide-mobile"><a href="/login">ورود</a></span>
                                   {% endif %}
