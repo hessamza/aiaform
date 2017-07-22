@@ -72,7 +72,7 @@ class LoginController extends BaseController
 
 
     /**
-     * @Route("/admin/register",name="register")
+     * @Route("/register",name="register")
      * @Method({"GET","POST"})
      * @param Request $request
      * @return Response
