@@ -70,7 +70,14 @@ app.request.attributes.get('_route_params')) %}
                                 <!-- END NOTIFICATION DROPDOWN -->
                                 <!-- BEGIN USER LOGIN DROPDOWN -->
                                 <li class="dropdown dropdown-user dropdown-dark">
-                                        <span class="username username-hide-mobile">نام</span>
+                                    {% if is_granted("ROLE_FrontendUser") or is_granted('ROLE_ADMIN') %}
+                                    <span class="username username-hide-mobile">{{ app.user.username }}</span>
+                                {% else %}
+                                        <span class="username username-hide-mobile"><a href="/login">ورود</a></span>
+                                  {% endif %}
+                                    {% if is_granted('ROLE_ADMIN') %}
+                                        <span class="username username-hide-mobile"><a href="/admin/register">ثبت کاربر</a></span>
+                                    {% endif %}
                                 </li>
                                 <!-- END USER LOGIN DROPDOWN -->
                             </ul>

@@ -1,24 +1,45 @@
 # To get started with security, check out the documentation:
-# https://symfony.com/doc/current/security.html
+# http://symfony.com/doc/current/security.html
 security:
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    encoders:
+        AppBundle\Entity\User: bcrypt
+        AppBundle\Entity\FrontEndUser: bcrypt
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
-        in_memory:
-            memory: ~
+      database_users:
+          entity: { class: AppBundle:User }
+      in_memory:
+          memory: ~
+
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+       # disables authentication for assets and the profiler, adapt it according to your needs
+       dev:
+           pattern: ^/(_(profiler|wdt)|css|images|js)/
+           security: false
+       main:
+           logout:
+             path:   /logout
+             target: /
+             delete_cookies:
+                     token: { path: null, domain: null }
+                     cartCookie: { path: null, domain: null }
+           remember_me:
+             secret:   '%secret%'
+             lifetime: 604800 # 1 week in seconds
+             path:     register
+           anonymous: ~
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+           # activate different ways to authenticate
 
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+           # http_basic: ~
+           # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
 
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+           # form_login: ~
+           # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+           guard:
+                 authenticators:
+                     - 'jwt_token_authenticator'
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }

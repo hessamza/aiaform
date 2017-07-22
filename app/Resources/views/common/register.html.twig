@@ -1,0 +1,52 @@
+{% extends ':layout:loginLayout.html.twig' %}
+
+{% block body %}
+    <body class=" login">
+    <!-- BEGIN LOGO -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="../assets/pages/img/logo-big.png" alt="" /> </a>
+    </div>
+    <!-- END LOGO -->
+    <!-- BEGIN LOGIN -->
+    <div class="content">
+        <!-- BEGIN REGISTRATION FORM -->
+        {{ form_start(form,{'attr': {'novalidate': 'novalidate','class':'register-form'}}) }}
+        {% if formIsNotValid %}
+        <div class="message-box alert" style="direction: rtl">
+            <div class="message">
+                مشکل زیر رخ داده است:
+                {{ form_errors(form.email) }}
+                {{ form_errors(form.username) }}
+                {{ form_errors(form.password) }}
+            </div>
+        </div>
+            {% endif %}
+            <h3 class="font-green">ثبت نام</h3>
+            <p class="hint"> اطلاعات ثبت نام را وارد کنید: </p>
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Full Name</label>
+                {{ form_widget(form.username,{'attr':{'class':'form-control placeholder-no-fix','placeholder':'نام کاربری-الزامی','size':"40"}}) }}
+            </div>
+                <div class="form-group">
+                    <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                    <label class="control-label visible-ie8 visible-ie9">Email</label>
+                    {{ form_widget(form.email,{'attr':{'class':'form-control placeholder-no-fix','placeholder':'ایمیل شما-الزامی','size':"40"}}) }}
+                </div>
+                <div class="form-group">
+                    <label class="control-label visible-ie8 visible-ie9">Password</label>
+                    {{ form_widget(form.password,{'attr':{'class':'form-control placeholder-no-fix','placeholder':'پسورد-الزامی','size':"40"}}) }}
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn green uppercase">ثبت نام</button>
+                </div>
+
+                    <!-- END REGISTRATION FORM -->
+        {{ form_end(form) }}
+                <!--[if lt IE 9]>
+                <!-- BEGIN THEME LAYOUT SCRIPTS -->
+                <!-- END THEME LAYOUT SCRIPTS -->
+            </div>
+
+    </body>
+{% endblock %}

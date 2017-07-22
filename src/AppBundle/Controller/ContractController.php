@@ -36,7 +36,6 @@ class ContractController extends  BaseController
      */
     public function createContract(Request $request)
     {
-
         $objectEntity=new Contract();
         $form = $this->createForm(ContractType::class, $objectEntity, [ "method" => 'POST']);
         $form->handleRequest($request);
@@ -65,7 +64,6 @@ class ContractController extends  BaseController
      */
     public function ManageContract($id,Request $request)
     {
-
         $em = $this->getDoctrine()->getManager();
         $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $method=$request->getMethod();
