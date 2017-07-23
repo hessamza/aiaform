@@ -31,6 +31,14 @@ class Contract
      */
     private $id;
 
+
+    /**
+     * @var User
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User",inversedBy="contract")
+     * @Serializer\Exclude()
+     */
+    private $owner;
+
     /**
      * @var string
      *
@@ -576,6 +584,22 @@ class Contract
     public function setContractTime($contractTime)
     {
         $this->contractTime = $contractTime;
+    }
+
+    /**
+     * @return User
+     */
+    public function getOwner()
+    {
+        return $this->owner;
+    }
+
+    /**
+     * @param User $owner
+     */
+    public function setOwner($owner)
+    {
+        $this->owner = $owner;
     }
 
 

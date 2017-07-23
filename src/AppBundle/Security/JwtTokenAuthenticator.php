@@ -181,9 +181,9 @@ class JwtTokenAuthenticator extends AbstractGuardAuthenticator {
      * @return Response|null
      */
     public function onAuthenticationFailure( Request $request, AuthenticationException $exception ) {
-        return new JsonResponse( [
-            'message' => $exception->getMessageKey()
-        ], 401 );
+        return new JsonResponse([
+            'errorMessage' => $exception->getMessage(),
+        ], Response::HTTP_UNAUTHORIZED);
     }
 
     /**

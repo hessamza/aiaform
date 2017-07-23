@@ -10,15 +10,9 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Contract;
-use AppBundle\Entity\Job;
-use AppBundle\Entity\Service;
 use AppBundle\Entity\ServiceItems;
-use AppBundle\Entity\Sharing;
-use AppBundle\Entity\TravelDocument;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AppBundle\Form\ContractType;
-use AppBundle\Form\JobType;
-use AppBundle\Form\JourneyType;
-use AppBundle\Form\TravelDocumentType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,6 +23,7 @@ class ContractController extends  BaseController
 {
 
     /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Method({"GET","POST"})
      * @Route("/contract")
      * @param Request $request
@@ -42,6 +37,8 @@ class ContractController extends  BaseController
         if ($request->getMethod() == 'POST') {
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
+                $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser());
+                $form->getData()->setOwner($user);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($firm);
                 $em->flush();
@@ -56,6 +53,7 @@ class ContractController extends  BaseController
     }
 
     /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Method({"GET","PATCH"})
      * @Route("/contract/{id}")
      * @param $id
@@ -88,9 +86,7 @@ class ContractController extends  BaseController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
-               // dump($firm);die;
-//                $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser());
-//                $form->getData()->setOwner($user);
+
                 $em->persist($firm);
                 $em->flush();
                 return $this->redirect('/');
@@ -103,6 +99,7 @@ class ContractController extends  BaseController
 
     }
     /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Route("/delete/contract/{id}")
      * @Method("GET")
      * @param $id

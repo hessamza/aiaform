@@ -9,18 +9,9 @@
 namespace AppBundle\Controller;
 
 
-use AppBundle\Entity\Contract;
-use AppBundle\Entity\Job;
-use AppBundle\Entity\Service;
-use AppBundle\Entity\ServiceItems;
-use AppBundle\Entity\Sharing;
 use AppBundle\Entity\Statistics;
-use AppBundle\Entity\TravelDocument;
-use AppBundle\Form\ContractType;
-use AppBundle\Form\JobType;
-use AppBundle\Form\JourneyType;
 use AppBundle\Form\StatisticsType;
-use AppBundle\Form\TravelDocumentType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
@@ -31,6 +22,7 @@ class StatisticsController extends  BaseController
 {
 
     /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Method({"GET","POST"})
      * @Route("/statistics")
      * @param Request $request

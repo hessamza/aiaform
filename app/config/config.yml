@@ -75,4 +75,4 @@ lexik_jwt_authentication:
     private_key_path: "%kernel.root_dir%/../var/jwt/private.pem"
     public_key_path:  "%kernel.root_dir%/../var/jwt/public.pem"
     pass_phrase:      "%jwt_key_pass_phrase%"
-    token_ttl: 3600
+    token_ttl: 5000000000

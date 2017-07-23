@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -16,9 +17,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface
 {
-
-
-
+    public function __construct()
+    {
+        $this->contracts=new ArrayCollection();
+    }
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -27,6 +29,12 @@ class User implements UserInterface
      */
     private $id;
 
+    /**
+     * @var ArrayCollection $costTravel
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Contract", mappedBy="owner",cascade={"persist", "remove", "merge"})
+     * @Assert\Valid()
+     */
+    private $contracts;
 
 
     /**
@@ -317,6 +325,22 @@ class User implements UserInterface
     public function setRememberMe($rememberMe)
     {
         $this->rememberMe = $rememberMe;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getContracts()
+    {
+        return $this->contracts;
+    }
+
+    /**
+     * @param ArrayCollection $contracts
+     */
+    public function setContracts($contracts)
+    {
+        $this->contracts = $contracts;
     }
 
 
