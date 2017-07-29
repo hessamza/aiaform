@@ -53,7 +53,28 @@ class Contract
      */
     private $contractDate;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="contract_start_date", type="datetimetz",nullable=true)
+     */
+    private $contractStartDate;
 
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="contract_end_date", type="datetimetz",nullable=true)
+     */
+    private $contractEndDate;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contract_man", type="string", length=255)
+     */
+    private $ContractMan;
 
     /**
      * @var string
@@ -63,14 +84,14 @@ class Contract
     private $userName;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('recharge','register','phone','telegram','direct')")
-     * @Assert\Choice({"recharge","register","phone","telegram","direct"}, message="The contact type should be one of listed values.")
+     * @ORM\Column(type="string", columnDefinition="enum('recharge','register','phone','telegram','direct','exhibition','adv')")
+     * @Assert\Choice({"recharge","register","phone","telegram","direct","exhibition","adv"}, message="The contact type should be one of listed values.")
      */
     private $contractType;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('6month','12month','24month')")
-     * @Assert\Choice({"6month","12month","24month"}, message="The Time type should be one of listed values.")
+     * @ORM\Column(type="string", columnDefinition="enum('6month','12month')")
+     * @Assert\Choice({"6month","12month"}, message="The Time type should be one of listed values.")
      */
     private $contractTime;
     /**
@@ -102,8 +123,12 @@ class Contract
      * @ORM\Column(type="string", columnDefinition="enum('oil96')")
      * @Assert\Choice({"oil96"}, message="The value2 should be one of listed values.")
      */
-    private $direct;
-
+    private $exhibition;
+    /**
+     * @ORM\Column(type="string", columnDefinition="enum('site','email','telegram','sms')")
+     * @Assert\Choice({"site","email","telegram","sms"}, message="The value2 should be one of listed values.")
+     */
+    private $adv;
 
     /**
      * @var ArrayCollection $serviceItems
@@ -600,6 +625,86 @@ class Contract
     public function setOwner($owner)
     {
         $this->owner = $owner;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContractMan()
+    {
+        return $this->ContractMan;
+    }
+
+    /**
+     * @param string $ContractMan
+     */
+    public function setContractMan($ContractMan)
+    {
+        $this->ContractMan = $ContractMan;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getExhibition()
+    {
+        return $this->exhibition;
+    }
+
+    /**
+     * @param mixed $exhibition
+     */
+    public function setExhibition($exhibition)
+    {
+        $this->exhibition = $exhibition;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAdv()
+    {
+        return $this->adv;
+    }
+
+    /**
+     * @param mixed $adv
+     */
+    public function setAdv($adv)
+    {
+        $this->adv = $adv;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getContractStartDate()
+    {
+        return $this->contractStartDate;
+    }
+
+    /**
+     * @param \DateTime $contractStartDate
+     */
+    public function setContractStartDate($contractStartDate)
+    {
+        $this->contractStartDate = $contractStartDate;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getContractEndDate()
+    {
+        return $this->contractEndDate;
+    }
+
+    /**
+     * @param \DateTime $contractEndDate
+     */
+    public function setContractEndDate($contractEndDate)
+    {
+        $this->contractEndDate = $contractEndDate;
     }
 
 

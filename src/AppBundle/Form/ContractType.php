@@ -23,6 +23,7 @@ class ContractType extends AbstractType
         $builder
             ->add('companyName')
             ->add('userName')
+            ->add('contractMan')
             ->add('contractType', ChoiceType::class, array(
                 'choices'  => array(
                     '' => null,
@@ -30,19 +31,36 @@ class ContractType extends AbstractType
                     'رجیستری' => 'register',
                     'تلفنی' => 'phone',
                     'تلگرام' => 'telegram',
-                    'مستقیم نمایشگاهی' => 'direct',
+                    'مستقیم' => 'direct',
+                    'نمایشگاهی' => 'exhibition',
+                    'تبلیغات' => 'adv',
                 ),
             ))
             ->add('contractTime', ChoiceType::class, array(
                 'choices'  => array(
                     '' => null,
                     '۶ماه' => '6month',
-                    '۱۲ماه' => '12month',
-                    '۲۴ماه' => '24month'
+                    '۱۲ماه' => '12month'
                 ),
             ))
             ->add(
                 'contractDate', DateType::class, [
+                'widget'   => 'single_text',
+                'format'   => 'dd-MM-yyyy',
+                'attr'=>array('style'=>'display:none;'),
+                'required' => false,
+                    'invalid_message'=>'تاریخ وارد شده درست نیست'
+            ])
+            ->add(
+                'contractStartDate', DateType::class, [
+                'widget'   => 'single_text',
+                'format'   => 'dd-MM-yyyy',
+                'attr'=>array('style'=>'display:none;'),
+                'required' => false,
+                    'invalid_message'=>'تاریخ وارد شده درست نیست'
+            ])
+            ->add(
+                'contractEndDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
                 'attr'=>array('style'=>'display:none;'),
@@ -78,10 +96,19 @@ class ContractType extends AbstractType
                     'تبلیغات تلگرام'=>'advTelegram'
                 ),
             ))
-            ->add('direct', ChoiceType::class, array(
+            ->add('exhibition', ChoiceType::class, array(
                 'choices'  => array(
                     '' => null,
                     'نمایشگاه نفت و گاز تهران ۹۶' => 'oil96',
+                ),
+            ))
+            ->add('adv', ChoiceType::class, array(
+                'choices'  => array(
+                    '' => null,
+                    'سایت' => 'site',
+                    'ایمیل' => 'email',
+                    'تلگرام' => 'telegram',
+                    'sms' => 'sms',
                 ),
             ))
 //            ->add('sharingMethods', EntityType::class, [
