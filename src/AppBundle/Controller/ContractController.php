@@ -116,6 +116,53 @@ class ContractController extends  BaseController
 
     }
 
+    /**
+     * @Route("/contracts")
+     * @Method({"GET"})
+     * @return Response
+     */
+    public function searchContracts(){
+        return $this->render('page/showContract.html.twig');
+    }
+
+    /**
+     * @Route("/contracts/items",name="contract_list")
+     * @Method("GET")
+     * @param Request $request
+     * @return Response
+     */
+    public function getCompaniesBuy(Request $request)
+    {
+        $extraFields = ['contractTimeTo','contractTimeFrom'];
+        $searchEntity = $this->getClassMetaDataProperties('AppBundle:Contract', $request->query->all(), $extraFields);
+        $search = $searchEntity;
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] !='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] !='' ){
+            $search['contractDate']=[
+                'from'=>$search['contractTimeFrom'],
+                'to'=>$search['contractTimeTo']
+            ];
+        }
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] !='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] =='' ){
+            $search['contractDate']=[
+                'from'=>$search['contractTimeFrom']
+            ];
+        }
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] =='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] !='' ){
+        $search['contractDate']=[
+            'to'=>$search['contractTimeTo']
+        ];
+    }
+        unset($search['contractTimeTo']);
+        unset($search['contractTimeFrom']);
+       // $this->dumpWithHeaders($search);
+        $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search);
+        $response = $this->createApiResponse($result, 200, ['Default']);
+        if (!$response) {
+            throw $this->createNotFoundException(sprintf('Page Not Found'));
+        }
+        return $response;
+    }
+
 
 
 }

@@ -10,3 +10,7 @@ services:
     jwt_token_authenticator:
         class: AppBundle\Security\JwtTokenAuthenticator
         autowire: true
+
+    pagination_factory:
+        class: AppBundle\Pagination\PaginationFactory
+        arguments: ['@router']

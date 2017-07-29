@@ -198,12 +198,14 @@ var Datatable = function() {
 
             // handle filter submit button click
             table.on('click', '.filter-submit', function(e) {
+                console.log('fsdfdsfdsfdsfs');
                 e.preventDefault();
                 the.submitFilter();
             });
 
             // handle filter cancel button click
             table.on('click', '.filter-cancel', function(e) {
+                console.log('dsfdsfsdfdsfsdfdsfsdfds');
                 e.preventDefault();
                 the.resetFilter();
             });

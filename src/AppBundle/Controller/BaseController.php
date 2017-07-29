@@ -144,7 +144,7 @@ abstract class BaseController extends Controller
         $sortTypeArray   = ['asc', 'desc'];
         $entityFieldName = $this->getDoctrine()->getManager()->getClassMetadata($className)->getFieldNames();
         $allFieldNames   = array_merge(
-            ['sortBy', 'sortType', 'page', 'count'],
+            ['sortBy', 'sortType', 'page', 'count','regex','value'],
             $extraFields,
             $entityFieldName,
             $this->getDoctrine()->getManager()->getClassMetadata($className)->getAssociationNames()
