@@ -2,45 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d04a9653-a941-40a2-ba23-acbb3e777316" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/Sorting icons.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/back_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/back_enabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/back_enabled_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/forward_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/forward_enabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/forward_enabled_hover.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/sort_asc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/sort_asc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/sort_both.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/sort_desc.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/images/sort_desc_disabled.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Pagination/PaginationFactory.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Pagination/paginatedCollection.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/ContractRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/global/scripts/table-datatables-buttons.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/datatables.all.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/datatables.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/datatables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/layouts/js/table-datatables-ajax.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/sampleForm.iml" afterPath="$PROJECT_DIR$/.idea/sampleForm.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/layout/loginLayout.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/layout/loginLayout.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/page/showContract.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/page/showContract.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml.dist" afterPath="$PROJECT_DIR$/app/config/parameters.yml.dist" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BaseController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Contract.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Contract.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/global/scripts/datatable.js" afterPath="$PROJECT_DIR$/web/assets/global/scripts/datatable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/js/app.js" afterPath="$PROJECT_DIR$/web/assets/layouts/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.css" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.js" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -651,7 +616,7 @@
       <workItem from="1501310082347" duration="10000" />
       <workItem from="1501310105647" duration="7000" />
       <workItem from="1501310133109" duration="235000" />
-      <workItem from="1501310404277" duration="16112000" />
+      <workItem from="1501310404277" duration="16164000" />
     </task>
     <task id="LOCAL-00001" summary="change recharge base value">
       <created>1500160651376</created>
@@ -667,11 +632,18 @@
       <option name="project" value="LOCAL" />
       <updated>1500684454810</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add jquery date and extra">
+      <created>1501326909236</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501326909236</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124759000" />
+    <option name="totallyTimeSpent" value="124811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
