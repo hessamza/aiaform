@@ -6,6 +6,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap-rtl.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.css" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.js" afterPath="$PROJECT_DIR$/web/assets/layouts/global/datatables/plugins/bootstrap/datatables.bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/js/app.js" afterPath="$PROJECT_DIR$/web/assets/layouts/js/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,15 +87,12 @@
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/assets/layouts/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="191" column="3" lean-forward="false" selection-start-line="191" selection-start-column="3" selection-end-line="191" selection-end-column="3" />
+            <state relative-caret-position="468">
+              <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding>
-                <element signature="e#317#1196#0" expanded="false" />
-                <element signature="e#1383#2041#0" expanded="false" />
-                <element signature="e#2104#2173#0" expanded="false" />
-                <element signature="e#4514#5094#0" expanded="false" />
-                <element signature="e#5643#6290#0" expanded="false" />
-                <element signature="e#6349#6410#0" expanded="false" />
+                <element signature="e#1583#2241#0" expanded="false" />
+                <element signature="e#2304#2373#0" expanded="false" />
+                <element signature="e#4714#5294#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -616,7 +614,7 @@
       <workItem from="1501310082347" duration="10000" />
       <workItem from="1501310105647" duration="7000" />
       <workItem from="1501310133109" duration="235000" />
-      <workItem from="1501310404277" duration="16164000" />
+      <workItem from="1501310404277" duration="17420000" />
     </task>
     <task id="LOCAL-00001" summary="change recharge base value">
       <created>1500160651376</created>
@@ -639,16 +637,24 @@
       <option name="project" value="LOCAL" />
       <updated>1501326909236</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add jquery date and extra">
+      <created>1501326923653</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1501326923653</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124811000" />
+    <option name="totallyTimeSpent" value="126067000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26379976" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26379976" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -656,7 +662,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46862996" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.46862996" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26" sideWeight="0.5053929" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1094,15 +1100,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/layouts/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="191" column="3" lean-forward="false" selection-start-line="191" selection-start-column="3" selection-end-line="191" selection-end-column="3" />
+        <state relative-caret-position="468">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding>
-            <element signature="e#317#1196#0" expanded="false" />
-            <element signature="e#1383#2041#0" expanded="false" />
-            <element signature="e#2104#2173#0" expanded="false" />
-            <element signature="e#4514#5094#0" expanded="false" />
-            <element signature="e#5643#6290#0" expanded="false" />
-            <element signature="e#6349#6410#0" expanded="false" />
+            <element signature="e#1583#2241#0" expanded="false" />
+            <element signature="e#2304#2373#0" expanded="false" />
+            <element signature="e#4714#5294#0" expanded="false" />
           </folding>
         </state>
       </provider>

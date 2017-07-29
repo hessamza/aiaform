@@ -19,14 +19,16 @@ jQuery(document).ready(function() {
         }, {
             "title": "تاریخ",'data': null,
             render: function ( data, type, row ) {
-                var n='unknow';
+                var m='unknow';
                 if(data.contract_date !=null){
                     var dataCoul=data.contract_date;
                     var am=dataCoul.split('T')
                     var n=am[0];
+                    var arrDate=n.split('-');
+                    var jdate3 =JalaliDate.gregorianToJalali(arrDate[0],arrDate[1],arrDate[2])
+                    m=jdate3[0]+'-'+jdate3[1]+'-'+jdate3[2]
                 }
-
-                return n;
+                return m;
             }
         },
             {
