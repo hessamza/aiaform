@@ -349,7 +349,6 @@ function changeFunction(){
             }
         }
         else if(serviceItem1 && serviceItem2){
-            alert('111fdsfsdfsdfsdfsd')
             if(shareItem1 && shareItem2 && shareItem3) {
                 price='7900000';
             }
