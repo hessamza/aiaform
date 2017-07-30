@@ -323,13 +323,13 @@ function changeFunction(){
             price='1600000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
-            price=parseInt(price)+80;
+            price=parseInt(price)+800000;
         }
         if(serviceItem3){
-            price=parseInt(price)+150;
+            price=parseInt(price)+1500000;
         }
         if(serviceItem6){
-            price=parseInt(price)+50;
+            price=parseInt(price)+500000;
         }
     }
     if(selectTime==='2'){
@@ -372,13 +372,13 @@ function changeFunction(){
             price='2300000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
-            price=parseInt(price)+120;
+            price=parseInt(price)+1200000;
         }
         if(serviceItem3){
-            price=parseInt(price)+300;
+            price=parseInt(price)+3000000;
         }
         if(serviceItem6){
-            price=parseInt(price)+100;
+            price=parseInt(price)+1000000;
         }
     }
 

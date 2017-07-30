@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d04a9653-a941-40a2-ba23-acbb3e777316" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/assets/layouts/js/app.js" afterPath="$PROJECT_DIR$/web/assets/layouts/js/app.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,21 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/assets/layouts/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="266" column="54" lean-forward="true" selection-start-line="266" selection-start-column="54" selection-end-line="266" selection-end-column="54" />
+            <state relative-caret-position="67">
+              <caret line="329" column="9" lean-forward="true" selection-start-line="329" selection-start-column="9" selection-end-line="329" selection-end-column="9" />
               <folding>
                 <element signature="e#202#277#0" expanded="false" />
                 <element signature="e#1583#2241#0" expanded="false" />
@@ -63,10 +54,20 @@
                 <element signature="e#3585#4262#0" expanded="false" />
                 <element signature="e#4271#4585#0" expanded="false" />
                 <element signature="e#6847#7560#0" expanded="false" />
-                <element signature="e#10225#11869#0" expanded="false" />
-                <element signature="e#10868#11420#0" expanded="false" />
-                <element signature="e#11894#13541#0" expanded="false" />
-                <element signature="e#11938#12491#0" expanded="false" />
+                <element signature="e#10867#11419#0" expanded="false" />
+                <element signature="e#11949#12502#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ContractController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="160">
+              <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+              <folding>
+                <element signature="e#3683#4020#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -235,7 +236,6 @@
         <option value="$PROJECT_DIR$/web/assets/global/scripts/table-datatables-buttons.min.js" />
         <option value="$PROJECT_DIR$/app/Resources/views/layout/layout.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/ContractRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
@@ -245,6 +245,7 @@
         <option value="$PROJECT_DIR$/app/Resources/views/page/contract.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ContractType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Contract.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php" />
         <option value="$PROJECT_DIR$/web/assets/layouts/js/app.js" />
       </list>
     </option>
@@ -314,9 +315,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="-4" />
-    <option name="width" value="1600" />
-    <option name="height" value="904" />
+    <option name="x" value="1829" />
+    <option name="y" value="163" />
+    <option name="width" value="1598" />
+    <option name="height" value="840" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -615,7 +617,7 @@
       <workItem from="1501310133109" duration="235000" />
       <workItem from="1501310404277" duration="18467000" />
       <workItem from="1501344186595" duration="14523000" />
-      <workItem from="1501398594430" duration="2341000" />
+      <workItem from="1501398594430" duration="3666000" />
     </task>
     <task id="LOCAL-00001" summary="change recharge base value">
       <created>1500160651376</created>
@@ -649,10 +651,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143978000" />
+    <option name="totallyTimeSpent" value="145303000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
+    <frame x="1600" y="-4" width="1600" height="904" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.267009" sideWeight="0.4946071" order="0" side_tool="false" content_ui="combo" />
@@ -957,13 +959,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="219">
           <caret line="24" column="54" lean-forward="false" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1586">
-          <caret line="141" column="36" lean-forward="false" selection-start-line="141" selection-start-column="36" selection-end-line="141" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,10 +1042,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ContractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="86" column="59" lean-forward="false" selection-start-line="86" selection-start-column="59" selection-end-line="86" selection-end-column="59" />
+          <folding>
+            <element signature="e#3683#4020#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/layouts/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="266" column="54" lean-forward="true" selection-start-line="266" selection-start-column="54" selection-end-line="266" selection-end-column="54" />
+        <state relative-caret-position="67">
+          <caret line="329" column="9" lean-forward="true" selection-start-line="329" selection-start-column="9" selection-end-line="329" selection-end-column="9" />
           <folding>
             <element signature="e#202#277#0" expanded="false" />
             <element signature="e#1583#2241#0" expanded="false" />
@@ -1059,10 +1065,8 @@
             <element signature="e#3585#4262#0" expanded="false" />
             <element signature="e#4271#4585#0" expanded="false" />
             <element signature="e#6847#7560#0" expanded="false" />
-            <element signature="e#10225#11869#0" expanded="false" />
-            <element signature="e#10868#11420#0" expanded="false" />
-            <element signature="e#11894#13541#0" expanded="false" />
-            <element signature="e#11938#12491#0" expanded="false" />
+            <element signature="e#10867#11419#0" expanded="false" />
+            <element signature="e#11949#12502#0" expanded="false" />
           </folding>
         </state>
       </provider>
