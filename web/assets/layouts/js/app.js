@@ -268,10 +268,13 @@ $('#appbundle_contract_contractTime').change(function () {
 
     changeFunction();
 });
-
+$('#appbundle_contract_separate').change(function () {
+    changeFunction();
+});
 function changeFunction(){
     var price=0
     var selectTime = $("select[name='appbundle_contract[contractTime]'] option:selected").val();
+    var separate = $("select[name='appbundle_contract[separate]'] option:selected").val();
     var serviceItem1=!!($('#appbundle_contract_serviceItems_1').is(':checked'));
     var serviceItem2=!!($('#appbundle_contract_serviceItems_2').is(':checked'));
     var serviceItem3=!!($('#appbundle_contract_serviceItems_3').is(':checked'));
@@ -380,6 +383,14 @@ function changeFunction(){
     }
 
 
-
+    if(separate==='2'){
+        price=Math.round(parseInt(price)-(parseInt(price)*3)/10);
+    }
+    else if(separate==='3'){
+        price=Math.round(parseInt(price)-(parseInt(price)*2)/10);
+    }
+    else if(separate==='4'){
+        price=Math.round(parseInt(price)-(parseInt(price)*4)/10);
+    }
     $('#appbundle_contract_basePrice').val(price)
 }

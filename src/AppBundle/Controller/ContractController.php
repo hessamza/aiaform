@@ -42,7 +42,7 @@ class ContractController extends  BaseController
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($firm);
                 $em->flush();
-                return $this->redirect('/');
+                return $this->redirect('/contracts');
             }
         }
         return $this->render(':page:contract.html.twig', [
@@ -89,7 +89,7 @@ class ContractController extends  BaseController
 
                 $em->persist($firm);
                 $em->flush();
-                return $this->redirect('/');
+                return $this->redirect('/contracts');
             }
         }
         return $this->render(':page:contract.html.twig', [
