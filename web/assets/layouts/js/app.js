@@ -265,6 +265,7 @@ $('input[id*="appbundle_contract_shareItems"]').change(function () {
 });
 
 $('#appbundle_contract_contractTime').change(function () {
+
     changeFunction();
 });
 
@@ -319,16 +320,17 @@ function changeFunction(){
             price='1600000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
-            price=price+80;
+            price=parseInt(price)+80;
         }
         if(serviceItem3){
-            price+=150;
+            price=parseInt(price)+150;
         }
         if(serviceItem6){
-            price+=50;
+            price=parseInt(price)+50;
         }
     }
     if(selectTime==='2'){
+
         if(serviceItem1 && !serviceItem2){
             if(shareItem1 && shareItem2 && shareItem3) {
                 price='6900000';
@@ -347,11 +349,12 @@ function changeFunction(){
             }
         }
         else if(serviceItem1 && serviceItem2){
+            alert('111fdsfsdfsdfsdfsd')
             if(shareItem1 && shareItem2 && shareItem3) {
                 price='7900000';
             }
             else if(shareItem1 && !shareItem2 && shareItem3){
-                $('#appbundle_contract_basePrice').val('6900000')
+                price='6900000';
             }
             else if(!shareItem1 && shareItem2 && shareItem3){
                 price='6400000';
@@ -361,20 +364,19 @@ function changeFunction(){
             }
             else if(!shareItem1 && !shareItem2 && shareItem3){
                 price='2900000';
-                $('#appbundle_contract_basePrice').val('290000')
             }
         }
         else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6){
             price='2300000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
-            price=price+120;
+            price=parseInt(price)+120;
         }
         if(serviceItem3){
-            price+=300;
+            price=parseInt(price)+300;
         }
         if(serviceItem6){
-            price+=100;
+            price=parseInt(price)+100;
         }
     }
 
