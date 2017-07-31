@@ -281,6 +281,7 @@ function changeFunction(){
     var serviceItem4=!!($('#appbundle_contract_serviceItems_4').is(':checked'));
     var serviceItem5=!!($('#appbundle_contract_serviceItems_5').is(':checked'));
     var serviceItem6=!!($('#appbundle_contract_serviceItems_6').is(':checked'));
+    var serviceItem7=!!($('#appbundle_contract_serviceItems_7').is(':checked'));
     var shareItem1=!!($('#appbundle_contract_shareItems_1').is(':checked'));
     var shareItem2=!!($('#appbundle_contract_shareItems_2').is(':checked'));
     var shareItem3=!!($('#appbundle_contract_shareItems_3').is(':checked'));
@@ -319,14 +320,17 @@ function changeFunction(){
                 price='160000';
             }
         }
-        else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6){
+        else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6||serviceItem7){
             price='1600000';
         }
-        if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
+        if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6||serviceItem7)){
             price=parseInt(price)+800000;
         }
         if(serviceItem3){
             price=parseInt(price)+1500000;
+        }
+        if(serviceItem7){
+            price=parseInt(price)+2700000;
         }
         if(serviceItem6){
             price=parseInt(price)+500000;
@@ -368,14 +372,17 @@ function changeFunction(){
                 price='2900000';
             }
         }
-        else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6){
+        else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6 && !serviceItem7){
             price='2300000';
         }
-        if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6)){
+        if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6 || serviceItem7)){
             price=parseInt(price)+1200000;
         }
         if(serviceItem3){
             price=parseInt(price)+3000000;
+        }
+        if(serviceItem7){
+            price=parseInt(price)+5400000;
         }
         if(serviceItem6){
             price=parseInt(price)+1000000;

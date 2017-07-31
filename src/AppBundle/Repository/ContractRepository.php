@@ -11,9 +11,17 @@ use Doctrine\ORM\Query\AST\Functions\ConcatFunction;
 
 class ContractRepository extends EntityRepository {
 
-    public function findContracts($search)
+    public function findContracts($search,$userId)
     {
-        $query = $this->createQueryBuilder('contract');
+        $query = $this->createQueryBuilder('contract')
+        ->leftJoin('contract.owner','owner')
+        ->leftJoin('contract.serviceItems','serviceItems')
+        ->leftJoin('contract.shareItems','shareItems')
+        ;
+        if($userId!=1){
+            $query->andWhere("contract.owner =:ownerId")
+                ->setParameter("ownerId", $userId);
+        }
         foreach ($search as $key => $value) {
             if($key!='sortBy' && $key!='sortType' && $key !='page' && $key!='count'){
                 if (is_array($value)) {

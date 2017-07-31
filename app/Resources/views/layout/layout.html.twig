@@ -100,9 +100,14 @@ app.request.attributes.get('_route_params')) %}
                                     <a href="/"> صفحه اصلی
                                     </a>
                                 </li>
-                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  {% if 'contract' in currentPath %} active{% endif %}">
+                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  {% if '/contract'== currentPath %} active{% endif %}">
 
                                     <a href="/contract"> ثبت قرارداد
+                                    </a>
+                                </li>
+                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  {% if '/contracts'==currentPath %} active{% endif %}">
+
+                                    <a href="/contracts"> لیست قرار دادها
                                     </a>
                                 </li>
                                 <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown {% if 'statistics' in currentPath %} active{% endif %}">

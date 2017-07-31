@@ -117,7 +117,7 @@ class ContractController extends  BaseController
     }
 
     /**
-     * @Route("/contracts")
+     * @Route("/contracts",path="contract_list")
      * @Method({"GET"})
      * @return Response
      */
@@ -131,8 +131,10 @@ class ContractController extends  BaseController
      * @param Request $request
      * @return Response
      */
-    public function getCompaniesBuy(Request $request)
+    public function getContractsList(Request $request)
     {
+
+
         $extraFields = ['contractTimeTo','contractTimeFrom'];
         $searchEntity = $this->getClassMetaDataProperties('AppBundle:Contract', $request->query->all(), $extraFields);
         $search = $searchEntity;
@@ -154,8 +156,9 @@ class ContractController extends  BaseController
     }
         unset($search['contractTimeTo']);
         unset($search['contractTimeFrom']);
-       // $this->dumpWithHeaders($search);
-        $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search);
+        $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
+//        $this->dumpWithHeaders($user);
+        $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search,$user->getId());
         $response = $this->createApiResponse($result, 200, ['Default']);
         if (!$response) {
             throw $this->createNotFoundException(sprintf('Page Not Found'));
