@@ -41,9 +41,15 @@ jQuery(document).ready(function() {
     });
 
     $( "#appbundle_contract_extraContractPrice" ).blur(function() {
-        var extraVal=parseInt( $( "#appbundle_contract_extraContractPrice" ).val());
-        var priceContract=parseInt($("#appbundle_contract_contractPrice").val());
-        $("#appbundle_contract_contractPrice").val(extraVal+priceContract);
+        if($.isNumeric($("#appbundle_contract_extraContractPrice").val()) && $("#appbundle_contract_extraContractPrice").val()) {
+            var extraVal = parseInt($("#appbundle_contract_extraContractPrice").val());
+            if ($("#appbundle_contract_contractPrice").val()) {
+                var priceContract = parseInt($("#appbundle_contract_contractPrice").val());
+            } else {
+                var priceContract = 0;
+            }
+            $("#appbundle_contract_contractPrice").val(extraVal + priceContract);
+        }
     });
 
 
