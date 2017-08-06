@@ -48,7 +48,6 @@
                                             {{ form_errors(form.register) }}
                                             {{ form_errors(form.phone) }}
                                             {{ form_errors(form.telegram) }}
-                                            {{ form_errors(form.direct) }}
                                             {{ form_errors(form.serviceItems) }}
                                             {{ form_errors(form.contractDate) }}
                                             {{ form_errors(form.contractStartDate) }}
@@ -59,6 +58,19 @@
                                             {{ form_errors(form.contractPrice) }}
                                             {{ form_errors(form.discount) }}
                                             {{ form_errors(form.basePrice) }}
+                                            {{ form_errors(form.customerPhone)}}
+                                            {{ form_errors(form.customerAddress)}}
+                                            {{ form_errors(form.extraContractPrice)}}
+                                            {{ form_errors(form.extraDescription)}}
+                                            {{ form_errors(form.items)}}
+                                            {{ form_errors(form.posts)}}
+                                            {{ form_errors(form.itemDescription)}}
+
+
+
+
+
+
                                         </div><i class="icon"></i>
                                     </div>
                                 {% endif %}
@@ -189,6 +201,60 @@
                                             <label class="col-md-3 control-label">مبلغ پایه:</label>
                                             <div class="col-md-9">
                                                 {{  form_widget(form.basePrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تلفن/موبایل:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.customerPhone,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">آدرس:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.customerAddress,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">سایر خدمات:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.haveExtraContractPrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="extraPriceShow" style="display: none">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">مبلغ سایر خدمات:</label>
+                                                <div class="col-md-9">
+                                                    {{  form_widget(form.extraContractPrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">توضیحات سایر خدمات:</label>
+                                                <div class="col-md-9">
+                                                    {{  form_widget(form.extraDescription,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مرسولات:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.items,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="extraItemShow" style="display: none">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">نوع مرسولات:</label>
+                                                <div class="col-md-9">
+                                                    <div class="mt-checkbox-inline">
+                                                        {{ form_widget(form.posts,{'attr':{'class':''}}) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <label class="col-md-3 control-label">توضیحات مرسولات:</label>
+                                                <div class="col-md-9">
+                                                    {{ form_widget(form.itemDescription,{'attr':{'class':'form-control '}}) }}
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

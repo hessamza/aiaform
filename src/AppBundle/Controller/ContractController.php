@@ -37,7 +37,7 @@ class ContractController extends  BaseController
         if ($request->getMethod() == 'POST') {
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
-                $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser());
+                $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser()->getId());
                 $form->getData()->setOwner($user);
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($firm);
@@ -157,7 +157,7 @@ class ContractController extends  BaseController
         unset($search['contractTimeTo']);
         unset($search['contractTimeFrom']);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
-//        $this->dumpWithHeaders($user);
+
         $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search,$user->getId());
         $response = $this->createApiResponse($result, 200, ['Default']);
         if (!$response) {

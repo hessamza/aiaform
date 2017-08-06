@@ -17,6 +17,7 @@ class ContractRepository extends EntityRepository {
         ->leftJoin('contract.owner','owner')
         ->leftJoin('contract.serviceItems','serviceItems')
         ->leftJoin('contract.shareItems','shareItems')
+        ->leftJoin('contract.posts','posts')
         ;
         if($userId!=1){
             $query->andWhere("contract.owner =:ownerId")

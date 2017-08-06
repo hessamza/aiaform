@@ -127,8 +127,7 @@ class ContractType extends AbstractType
                 'expanded' => true
             ))
           //  ->add("serviceItems",ServiceItemsType::class)
-           ->add('separate', ChoiceType::class, array(
-                'choices'  => array(
+           ->add('separate', ChoiceType::class, array(                'choices'  => array(
                     '' => null,
                     'سراسری' => 'global',
                     'استانی' => 'local',
@@ -139,7 +138,21 @@ class ContractType extends AbstractType
             ->add('contractPrice')
             ->add('discount',TextType::class,[
             ])
-            ->add('basePrice');
+            ->add('basePrice')
+            ->add('customerPhone')
+            ->add('customerAddress')
+            ->add('haveExtraContractPrice')
+            ->add('extraContractPrice')
+            ->add('extraDescription')
+            ->add('items')
+            ->add('posts', EntityType::class, array(
+                'class' => 'AppBundle\Entity\Posts',
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true
+            ))
+            ->add('itemDescription');
+
     }
     
     /**

@@ -8,6 +8,42 @@ jQuery(document).ready(function() {
         formatDate: 'YYYY-MM-DD',
     });
 
+    if($('input[id*="appbundle_contract_haveExtraContractPrice"]').prop('checked')) {
+        $('.extraPriceShow').show();
+    } else {
+        $('.extraPriceShow').hide();
+    }
+    $('input[id*="appbundle_contract_haveExtraContractPrice"]').change(function () {
+        if(this.checked){
+            $('.extraPriceShow').show();
+
+        }else{
+            $('input[id*="appbundle_contract_extraContractPrice"]').val('');
+            $('textarea[id*="appbundle_contract_extraDescription"]').val('');
+            $('.extraPriceShow').hide();
+        }
+    });
+
+    if($('input[id*="appbundle_contract_items"]').prop('checked')) {
+        $('.extraItemShow').show();
+    } else {
+        $('.extraItemShow').hide();
+    }
+    $('input[id*="appbundle_contract_items"]').change(function () {
+        if(this.checked){
+            $('.extraItemShow').show();
+
+        }else{
+            $('input[id*="appbundle_contract_posts_"]').prop('checked', false);
+            $('textarea[id*="appbundle_contract_itemDescription"]').val('');
+            $('.extraItemShow').hide();
+        }
+    });
+
+
+
+
+
     Table = $('#example').dataTable({
         "data": [],
         "columns": [{
@@ -211,7 +247,6 @@ $('.contractType').change(function () {
             $('.contractIExhibition').show();
             break;
         case '7':
-            console.log('fsdfsdfsdfsdfsdfdssddsfs');
             $('.contractIAdv').show();
             break;
     }
@@ -337,7 +372,6 @@ function changeFunction(){
         }
     }
     if(selectTime==='2'){
-
         if(serviceItem1 && !serviceItem2){
             if(shareItem1 && shareItem2 && shareItem3) {
                 price='6900000';
@@ -400,4 +434,8 @@ function changeFunction(){
         price=Math.round(parseInt(price)-(parseInt(price)*4)/10);
     }
     $('#appbundle_contract_basePrice').val(price)
+
+
+
+
 }

@@ -20,6 +20,7 @@ class Contract
     {
         $this->serviceItems = new ArrayCollection();
         $this->shareItems = new ArrayCollection();
+        $this->posts = new ArrayCollection();
     }
 
     /**
@@ -162,7 +163,20 @@ class Contract
      */
     private $shareItems;
 
-
+    /**
+     * @var ArrayCollection $posts
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Posts", inversedBy="contracts")
+     * @ORM\JoinTable(
+     *     name="contract_post",
+     *     joinColumns={
+     *      @ORM\JoinColumn(name="contract_id", referencedColumnName="id",onDelete="CASCADE")
+     *  },
+     *  inverseJoinColumns={
+     *      @ORM\JoinColumn(name="post_id", referencedColumnName="id",onDelete="CASCADE")
+     *  }
+     * )
+     */
+    private $posts;
 
     /**
      * @ORM\Column(type="string", columnDefinition="enum('global','local','professional','local-professional')")
@@ -191,6 +205,54 @@ class Contract
      * @ORM\Column(name="basePrice",type="string", length=255)
      */
     private $basePrice;
+
+
+    /**
+     * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="شماره تلفن اجباری است")
+     */
+    private $customerPhone;
+
+    /**
+     * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="آدرس اجباری است")
+     */
+    private $customerAddress;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $haveExtraContractPrice;
+
+    /**
+     * @var string.
+     *
+     * @ORM\Column(name="extra_contract_price",type="string", length=255,nullable=true)
+     */
+    private $extraContractPrice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="extra_description",type="text", nullable=true)
+     */
+    private $extraDescription;
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $items;
+
+
+
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     */
+    private $itemDescription;
+
+
+
 
 
     /**
@@ -387,21 +449,7 @@ class Contract
         $this->telegram = $telegram;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDirect()
-    {
-        return $this->direct;
-    }
 
-    /**
-     * @param mixed $direct
-     */
-    public function setDirect($direct)
-    {
-        $this->direct = $direct;
-    }
 
     /**
      * @return mixed
@@ -707,7 +755,159 @@ class Contract
         $this->contractEndDate = $contractEndDate;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCustomerPhone()
+    {
+        return $this->customerPhone;
+    }
 
+    /**
+     * @param mixed $customerPhone
+     */
+    public function setCustomerPhone($customerPhone)
+    {
+        $this->customerPhone = $customerPhone;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getCustomerAddress()
+    {
+        return $this->customerAddress;
+    }
+
+    /**
+     * @param mixed $customerAddress
+     */
+    public function setCustomerAddress($customerAddress)
+    {
+        $this->customerAddress = $customerAddress;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExtraContractPrice()
+    {
+        return $this->extraContractPrice;
+    }
+
+    /**
+     * @param string $extraContractPrice
+     */
+    public function setExtraContractPrice($extraContractPrice)
+    {
+        $this->extraContractPrice = $extraContractPrice;
+    }
+
+    /**
+     * @return string
+     */
+    public function getExtraDescription()
+    {
+        return $this->extraDescription;
+    }
+
+    /**
+     * @param string $extraDescription
+     */
+    public function setExtraDescription($extraDescription)
+    {
+        $this->extraDescription = $extraDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    /**
+     * @param mixed $items
+     */
+    public function setItems($items)
+    {
+        $this->items = $items;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getItemDescription()
+    {
+        return $this->itemDescription;
+    }
+
+    /**
+     * @param mixed $itemDescription
+     */
+    public function setItemDescription($itemDescription)
+    {
+        $this->itemDescription = $itemDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHaveExtraContractPrice()
+    {
+        return $this->haveExtraContractPrice;
+    }
+
+    /**
+     * @param mixed $haveExtraContractPrice
+     */
+    public function setHaveExtraContractPrice($haveExtraContractPrice)
+    {
+        $this->haveExtraContractPrice = $haveExtraContractPrice;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
+    /**
+     * @param mixed $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+
+
+    /**
+     * @param Posts $post
+     */
+    public function addPost(Posts $post)
+    {
+        if ($this->posts->contains($post)) {
+            return;
+        }
+        $this->posts->add($post);
+        $post->addContract($this);
+    }
+    /**
+     * @param Posts $post
+     */
+    public function removePost(Posts $post)
+    {
+        if (!$this->posts->contains($post)) {
+            return;
+        }
+        $this->posts->removeElement($post);
+        $post->removeContract($this);
+    }
 
 }
 
