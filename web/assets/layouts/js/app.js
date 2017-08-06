@@ -40,7 +40,11 @@ jQuery(document).ready(function() {
         }
     });
 
-
+    $( "#appbundle_contract_extraContractPrice" ).blur(function() {
+        var extraVal=parseInt( $( "#appbundle_contract_extraContractPrice" ).val());
+        var priceContract=parseInt($("#appbundle_contract_contractPrice").val());
+        $("#appbundle_contract_contractPrice").val(extraVal+priceContract);
+    });
 
 
 
@@ -204,7 +208,7 @@ $('#appbundle_contract_contractPrice').change(function () {
             $('#appbundle_contract_discount').val(discount)
         }
         else{
-            alert('مقدار مبلغ قرارداد باید بیشتر از پایه باشد');
+            alert('چون مبلغ قرارداد از مبلغ پایه بیشتر است لطفن قسمت سایر خدمات را پر کنید');
             $('#appbundle_contract_contractPrice').val('');
         }
     }
