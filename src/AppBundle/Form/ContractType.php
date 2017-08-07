@@ -151,7 +151,8 @@ class ContractType extends AbstractType
                 'multiple' => true,
                 'expanded' => true
             ))
-            ->add('itemDescription');
+            ->add('itemDescription')
+            ->add('description');
 
     }
     

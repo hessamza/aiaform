@@ -330,6 +330,7 @@ function changeFunction(){
     var shareItem1=!!($('#appbundle_contract_shareItems_1').is(':checked'));
     var shareItem2=!!($('#appbundle_contract_shareItems_2').is(':checked'));
     var shareItem3=!!($('#appbundle_contract_shareItems_3').is(':checked'));
+    var shareItem4=!!($('#appbundle_contract_shareItems_4').is(':checked'));
     if(selectTime==='1'){
         if(serviceItem1 &&  !serviceItem2){
             if(shareItem1 && shareItem2 && shareItem3) {
@@ -442,6 +443,9 @@ function changeFunction(){
     }
     else if(separate==='4'){
         price=Math.round(parseInt(price)-(parseInt(price)*4)/10);
+    }
+    if(shareItem4){
+        price=parseInt(price)+500000;
     }
     $('#appbundle_contract_basePrice').val(price)
 

@@ -15,10 +15,13 @@ class StatisticsType extends AbstractType
     {
         $builder
             ->add('register')
+            ->add('telegram')
             ->add('phone')
+            ->add('continueSet')
             ->add('dropContinue')
             ->add('preFactor')
             ->add('file')
+            ->add('dailyFollowup')
            ->add('periodContact');
     }
     

@@ -251,8 +251,10 @@ class Contract
      */
     private $itemDescription;
 
-
-
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     */
+    private $description;
 
 
     /**
@@ -908,6 +910,25 @@ class Contract
         $this->posts->removeElement($post);
         $post->removeContract($this);
     }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+
+
 
 }
 

@@ -45,9 +45,12 @@
                                             مشکل زیر رخ داده است:
                                             {{ form_errors(form.register) }}
                                             {{ form_errors(form.phone) }}
+                                            {{ form_errors(form.telegram) }}
+                                            {{ form_errors(form.continue) }}
                                             {{ form_errors(form.dropContinue) }}
                                             {{ form_errors(form.preFactor) }}
                                             {{ form_errors(form.file) }}
+                                            {{ form_errors(form.dailyFollowup) }}
                                             {{ form_errors(form.periodContact) }}
 
                                         </div><i class="icon"></i>
@@ -61,13 +64,25 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
+                                            <label class="col-md-3 control-label">تخصیص تلگرام:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.telegram,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
                                             <label class="col-md-3 control-label">تخصیص تلفنی:</label>
                                             <div class="col-md-9">
                                                 {{  form_widget(form.phone,{'attr':{'class':'form-control input-inline input-medium'}})}}
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">تمدید سوخته:</label>
+                                            <label class="col-md-3 control-label">تخصیص تمدید:</label>
+                                            <div class="col-md-4">
+                                                    {{  form_widget(form.continueSet,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تمدید گذشته:</label>
                                             <div class="col-md-4">
                                                     {{  form_widget(form.dropContinue,{'attr':{'class':'form-control'}})}}
                                             </div>
@@ -79,7 +94,7 @@
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">ارسال فایل نمایشگاهی:</label>
+                                            <label class="col-md-3 control-label">ارسال فایل آزاد:</label>
                                             <div class="col-md-4">
                                                     {{  form_widget(form.file,{'attr':{'class':'form-control'}})}}
                                             </div>
@@ -88,6 +103,12 @@
                                             <label class="col-md-3 control-label">تماس دوره ای:</label>
                                             <div class="col-md-4">
                                                 {{  form_widget(form.periodContact,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تعداد پیگری های روز:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.dailyFollowup,{'attr':{'class':'form-control'}})}}
                                             </div>
                                         </div>
                                     </div>

@@ -40,6 +40,18 @@ class Statistics
      * @Assert\NotBlank(message="phone is required")
      */
     private $phone;
+    /**
+     * @var string
+     * @ORM\Column(name="telegram", type="string", length=255)
+     * @Assert\NotBlank(message="telegram is required")
+     */
+    private $telegram;
+    /**
+     * @var string
+     * @ORM\Column(name="continueSet", type="string", length=255)
+     * @Assert\NotBlank(message="continueSet is required")
+     */
+    private $continueSet;
 
     /**
      * @var string
@@ -69,6 +81,13 @@ class Statistics
      * @Assert\NotBlank(message="periodContact is required")
      */
     private $periodContact;
+
+    /**
+     * @var string
+     * @ORM\Column(name="daily_followup", type="string", length=255)
+     * @Assert\NotBlank(message="dailyFollowup is required")
+     */
+    private $dailyFollowup;
 
 
 
@@ -243,6 +262,57 @@ class Statistics
     public function setPeriodContact($periodContact)
     {
         $this->periodContact = $periodContact;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTelegram()
+    {
+        return $this->telegram;
+    }
+
+    /**
+     * @param string $telegram
+     */
+    public function setTelegram($telegram)
+    {
+        $this->telegram = $telegram;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContinueSet()
+    {
+        return $this->continueSet;
+    }
+
+    /**
+     * @param string $continueSet
+     */
+    public function setContinueSet($continueSet)
+    {
+        $this->continueSet = $continueSet;
+    }
+
+
+
+
+    /**
+     * @return string
+     */
+    public function getDailyFollowup()
+    {
+        return $this->dailyFollowup;
+    }
+
+    /**
+     * @param string $dailyFollowup
+     */
+    public function setDailyFollowup($dailyFollowup)
+    {
+        $this->dailyFollowup = $dailyFollowup;
     }
 
 
