@@ -25,6 +25,7 @@ class Posts
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"items","Default"})
      */
     private $id;
 
@@ -32,6 +33,7 @@ class Posts
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
+     * @Serializer\Groups({"items","Default"})
      */
     private $name;
 

@@ -1,0 +1,75 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+
+    <!-- BEGIN CONTENT -->
+    <div class="page-content-wrapper ">
+        <!-- BEGIN CONTENT BODY -->
+        <!-- BEGIN PAGE HEAD-->
+        <div class="page-head">
+            <div class="container">
+                <!-- BEGIN PAGE TITLE -->
+                <div class="page-title">
+
+                </div>
+                <!-- END PAGE TITLE -->
+            </div>
+        </div>
+        <!-- END PAGE HEAD-->
+        <!-- BEGIN PAGE CONTENT BODY -->
+        <div class="page-content">
+            <div class="container">
+                <!-- BEGIN PAGE CONTENT INNER -->
+                <div class="page-content-inner">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="portlet light portlet-fit portlet-datatable ">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <i class="icon-settings font-dark"></i>
+                                        <span class="caption-subject font-dark sbold uppercase">فهرست مرسولات</span>
+                                    </div>
+                                </div>
+
+                            <form class="searchItemForm" role="form" >
+                                <div class="col-md-3 form-group">
+                                    <label for="search">وضعیت فاکتور</label>
+                                    <input type="text" name="companyName"  class="form-control" />
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="created_at_gt">از تاریخ</label>
+                                    <input id="contractTimeFrom" type="text" class="form-control" name="contractTimeFrom"/>
+                                </div>
+                                <div class="col-md-2 form-group">
+                                    <label for="created_at_lt">تا تاریخ</label>
+                                    <input id="contractTimeTo" type="text" class="form-control" name="contractTimeTo"/>
+                                </div>
+                                <div class="col-md-1 form-group align-center">
+                                    <label for="created_at_lt">&nbsp;</label>
+                                    <input type="submit" value="جستجو" class="btn btn-primary form-control" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <!-- Begin: life time stats -->
+                            <div class="portlet light portlet-fit portlet-datatable ">
+                                <div class="portlet-body">
+                                    <div class="table-container">
+                                        <table cellpadding="0" cellspacing="0" border="0" class="dataTable itemData" id="exampleItems"></table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End: life time stats -->
+                        </div>
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT INNER -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT BODY -->
+        <!-- END CONTENT BODY -->
+    </div>
+    <!-- END CONTENT -->
+{% endblock %}

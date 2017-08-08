@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Contract
@@ -29,6 +30,7 @@ class Contract
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     * @Serializer\Groups({"items","Default"})
      */
     private $id;
 
@@ -36,7 +38,7 @@ class Contract
     /**
      * @var User
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User",inversedBy="contract")
-     * @Serializer\Exclude()
+     * @Serializer\Groups({"items"})
      */
     private $owner;
 
@@ -44,6 +46,7 @@ class Contract
      * @var string
      *
      * @ORM\Column(name="companyName", type="string", length=255)
+     * @Serializer\Groups({"items","Default"})
      */
     private $companyName;
 
@@ -51,6 +54,7 @@ class Contract
      * @var \DateTime
      *
      * @ORM\Column(name="contract_date", type="datetimetz",nullable=true)
+     * @Serializer\Groups({"items","Default"})
      */
     private $contractDate;
 
@@ -58,6 +62,7 @@ class Contract
      * @var \DateTime
      *
      * @ORM\Column(name="contract_start_date", type="datetimetz",nullable=true)
+     * @Serializer\Groups({"items","Default"})
      */
     private $contractStartDate;
 
@@ -66,6 +71,7 @@ class Contract
      * @var \DateTime
      *
      * @ORM\Column(name="contract_end_date", type="datetimetz",nullable=true)
+     * @Serializer\Groups({"items","Default"})
      */
     private $contractEndDate;
 
@@ -74,6 +80,7 @@ class Contract
      * @var string
      *
      * @ORM\Column(name="contract_man", type="string", length=255)
+     * @Serializer\Groups({"items","Default"})
      */
     private $ContractMan;
 
@@ -81,18 +88,21 @@ class Contract
      * @var string
      *
      * @ORM\Column(name="userName", type="string", length=255)
+     * @Serializer\Groups({"items","Default"})
      */
     private $userName;
 
     /**
      * @ORM\Column(type="string", columnDefinition="enum('recharge','register','phone','telegram','direct','exhibition','adv')")
      * @Assert\Choice({"recharge","register","phone","telegram","direct","exhibition","adv"}, message="The contact type should be one of listed values.")
+     * @Serializer\Groups({"items","Default"})
      */
     private $contractType;
 
     /**
      * @ORM\Column(type="string", columnDefinition="enum('6month','12month')")
      * @Assert\Choice({"6month","12month"}, message="The Time type should be one of listed values.")
+     * @Serializer\Groups({"items","Default"})
      */
     private $contractTime;
     /**
@@ -166,6 +176,7 @@ class Contract
     /**
      * @var ArrayCollection $posts
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Posts", inversedBy="contracts")
+     * @Serializer\Groups({"items","Default"})
      * @ORM\JoinTable(
      *     name="contract_post",
      *     joinColumns={
@@ -471,7 +482,6 @@ class Contract
 
     /**
      * @ORM\Column(type="datetime")
-     * @Serializer\Exclude()
      */
     private $createdAt;
 

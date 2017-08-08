@@ -25,6 +25,7 @@ class User implements UserInterface
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({"items","Default"})
      * @Serializer\Expose()
      */
     private $id;
@@ -51,6 +52,7 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", unique=true, length=60)
      * @Assert\NotBlank(message="نام کاربری الزامی است"  )
+     * @Serializer\Groups({"items","Default"})
      * @Assert\Length(max=60,min=3,maxMessage="username length must be lesser than 60 characters",minMessage="username length must be more than 3 characters",groups={"register","login","register-frontend-user","register-retailer","retailer-profile"})
      * @Assert\Regex(pattern="/^[a-zA-Z](([\._\-][a-zA-Z0-9])|[a-zA-Z0-9])*[a-z0-9]$/",message="نام کاربری باید شامل حروف و اعداد لاتین باشد",groups={"register","register-retailer","retailer-profile"})
      */
