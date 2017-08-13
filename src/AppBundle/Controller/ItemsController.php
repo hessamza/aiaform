@@ -23,6 +23,7 @@ class ItemsController extends  BaseController
 {
 
     /**
+     * @Security("is_granted(['ROLE_SECRETARY'])")
      * @Route("/items",path="item_list")
      * @Method({"GET"})
      * @return Response
@@ -32,6 +33,7 @@ class ItemsController extends  BaseController
     }
 
     /**
+     * @Security("is_granted(['ROLE_SECRETARY'])")
      * @Route("/items/list",name="get_item_list")
      * @Method("GET")
      * @param Request $request

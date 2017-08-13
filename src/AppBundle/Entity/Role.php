@@ -14,6 +14,7 @@ class Role
 {
 
     const ROLE_ADMIN = 'ROLE_ADMIN';
+    const ROLE_SECRETARY = 'ROLE_SECRETARY';
     const ROLE_FrontendUser = 'ROLE_FrontendUser';
 
     public function __construct() {

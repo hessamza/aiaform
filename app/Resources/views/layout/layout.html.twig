@@ -71,7 +71,7 @@ app.request.attributes.get('_route_params')) %}
                                 <!-- END NOTIFICATION DROPDOWN -->
                                 <!-- BEGIN USER LOGIN DROPDOWN -->
                                 <li class="dropdown dropdown-user dropdown-dark">
-                                    {% if is_granted("ROLE_FrontendUser") or is_granted('ROLE_ADMIN') %}
+                                    {% if is_granted("ROLE_FrontendUser") or is_granted('ROLE_ADMIN')  or is_granted('ROLE_SECRETARY')%}
                                     <span class="username username-hide-mobile">{{ app.user.username }}</span>
                                         <span class="username username-hide-mobile"><a href="/logout">خروج</a></span>
                                 {% else %}
@@ -110,10 +110,12 @@ app.request.attributes.get('_route_params')) %}
                                     <a href="/contracts"> لیست قرار دادها
                                     </a>
                                 </li>
-                                <li aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  {% if '/items'==currentPath %} active{% endif %}">
+                                {% if is_granted("ROLE_SECRETARY") or is_granted('ROLE_ADMIN') %}
+                                <li  aria-haspopup="true" class="menu-dropdown mega-menu-dropdown  {% if '/items'==currentPath %} active{% endif %}">
                                     <a href="/items"> لیست مرسولات
                                     </a>
                                 </li>
+                                {% endif %}
                                 <li aria-haspopup="true" class="menu-dropdown classic-menu-dropdown {% if 'statistics' in currentPath %} active{% endif %}">
                                     <a href="/statistics">ثبت آمار
                                     </a>
