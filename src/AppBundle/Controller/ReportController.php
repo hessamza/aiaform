@@ -28,7 +28,10 @@ class ReportController extends  BaseController
      */
     public function returnPDFResponseFromHTML()
     {
-        $html=$this->renderView("report/preFactor.html.twig");
+        $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find(20);
+        $html=$this->renderView("report/preFactor.html.twig",[
+            'contract'=>$contract
+        ]);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
         $MPDF = new \mPDF();
         $custom_fontdata = array(

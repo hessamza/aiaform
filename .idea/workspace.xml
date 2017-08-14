@@ -4,6 +4,18 @@
     <list default="true" id="d04a9653-a941-40a2-ba23-acbb3e777316" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/img/aria.jpg" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/assets/img/aria2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/09d31f3ea1314b55e070e03ccf010fe5/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/4cc9927bd679284397afbc6135299f7e/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/6085f6feaad4f39261f20f18eb164eac/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/891f818c78aef9f6c6199902c5bad1d8/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/97732f351b942686a016752d515fd570/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/9b707bcf92b4eb99465f11082cb57319/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/b03caefdcfd1637af877cd3603c2a439/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/e0eaf76c67b7eb0b8eca06145d8872ac/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/e4fbc32319e44cf74d06d5319c0cb24e/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/f3f9a198c174487a077453ffc971fea3/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/fe3a28c2205c9c00b97aea214581a6de/preFactor.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/uploads/report/feeaa011b7803bc97aa4646862d186a9/preFactor.pdf" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/report/preFactor.html.twig" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/FileManager.php" />
@@ -52,23 +64,33 @@
       <file leaf-file-name="ReportController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="108">
+              <caret line="30" column="66" lean-forward="false" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
               <folding>
                 <element signature="e#123#156#0#PHP" expanded="true" />
-                <element signature="e#796#824#1#PHP" expanded="true" />
-                <element signature="e#877#893#1#PHP" expanded="true" />
-                <element signature="e#2875#3737#0#PHP" expanded="false" />
+                <element signature="e#883#911#0#PHP" expanded="true" />
+                <element signature="e#1010#1026#1#PHP" expanded="true" />
+                <element signature="e#3008#3870#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="preFactor.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Contract.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="965">
+              <caret line="789" column="38" lean-forward="false" selection-start-line="789" selection-start-column="23" selection-end-line="789" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preFactor.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/report/preFactor.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="24" column="74" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+            <state relative-caret-position="197">
+              <caret line="50" column="67" lean-forward="true" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -94,11 +116,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConvertExtension.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ConvertExtension.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Twig/ConvertExtension.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
+            <state relative-caret-position="435">
+              <caret line="63" column="57" lean-forward="false" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -134,16 +156,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contract.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/page/contract.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="273" column="57" lean-forward="false" selection-start-line="273" selection-start-column="57" selection-end-line="273" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="table.html" pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/Downloads/Telegram Desktop/table.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -165,7 +177,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NewsPaper</find>
       <find>contractService</find>
       <find>contract</find>
       <find>نوع سرویس</find>
@@ -195,6 +206,7 @@
       <find>ورود</find>
       <find>jdate</find>
       <find>dutchDateFilter</find>
+      <find>address</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -267,14 +279,14 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/FileManager.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
         <option value="$USER_HOME$/Downloads/Telegram Desktop/table.html" />
         <option value="$PROJECT_DIR$/app/Resources/views/page/contract.html.twig" />
         <option value="$PROJECT_DIR$/web/assets/layouts/js/app.js" />
         <option value="$PROJECT_DIR$/app/config/services.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/report/preFactor.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Twig/ConvertExtension.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/report/preFactor.html.twig" />
       </list>
     </option>
   </component>
@@ -641,7 +653,7 @@
       <workItem from="1502228187568" duration="6303000" />
       <workItem from="1502602982040" duration="2398000" />
       <workItem from="1502655664413" duration="281000" />
-      <workItem from="1502655956089" duration="11009000" />
+      <workItem from="1502655956089" duration="11964000" />
     </task>
     <task id="LOCAL-00001" summary="change recharge base value">
       <created>1500160651376</created>
@@ -675,7 +687,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="195467000" />
+    <option name="totallyTimeSpent" value="196422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1600" height="904" extended-state="6" />
@@ -689,7 +701,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290653" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37772086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37772086" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26" sideWeight="0.5053929" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -899,14 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12987">
-          <caret line="485" column="22" lean-forward="false" selection-start-line="485" selection-start-column="13" selection-end-line="485" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/page/showContract.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1296">
@@ -1075,19 +1079,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="29" />
-          <folding>
-            <element signature="e#123#156#0#PHP" expanded="true" />
-            <element signature="e#796#824#1#PHP" expanded="true" />
-            <element signature="e#877#893#1#PHP" expanded="true" />
-            <element signature="e#2875#3737#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/assets/layouts/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -1148,10 +1139,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Twig/ConvertExtension.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="63" column="57" lean-forward="false" selection-start-line="63" selection-start-column="57" selection-end-line="63" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="30" column="66" lean-forward="false" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+          <folding>
+            <element signature="e#123#156#0#PHP" expanded="true" />
+            <element signature="e#883#911#0#PHP" expanded="true" />
+            <element signature="e#1010#1026#1#PHP" expanded="true" />
+            <element signature="e#3008#3870#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Contract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="965">
+          <caret line="789" column="38" lean-forward="false" selection-start-line="789" selection-start-column="23" selection-end-line="789" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/report/preFactor.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="24" column="74" lean-forward="false" selection-start-line="24" selection-start-column="74" selection-end-line="24" selection-end-column="74" />
+        <state relative-caret-position="197">
+          <caret line="50" column="67" lean-forward="true" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#td#0;n#tr#0;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1163,14 +1183,6 @@
             <element signature="n#style#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#4;n#table#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Twig/ConvertExtension.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="62" column="5" lean-forward="false" selection-start-line="62" selection-start-column="5" selection-end-line="62" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
