@@ -37,7 +37,12 @@ class User implements UserInterface
      */
     private $contracts;
 
-
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\FileManager")
+     * @ORM\JoinColumn(referencedColumnName="id",onDelete="SET NULL",nullable=true)
+     * @Serializer\Expose()
+     */
+    private $report;
     /**
      * @var boolean $rememberMe
      */
@@ -343,6 +348,22 @@ class User implements UserInterface
     public function setContracts($contracts)
     {
         $this->contracts = $contracts;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReport()
+    {
+        return $this->report;
+    }
+
+    /**
+     * @param mixed $report
+     */
+    public function setReport($report)
+    {
+        $this->report = $report;
     }
 
 

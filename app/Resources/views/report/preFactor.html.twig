@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table</title>
+</head>
+<body>
+<table width="70%" border="0" dir="rtl" cellpadding="5" cellspacing="10" style="font-family: Tahoma, Serif, sans-serif; font-size: 13px;  border-collapse: collapse;margin:0 auto;">
+    <tr>
+        <td colspan="4" style="text-align: center;">
+            <img src="{{web_dir~'/assets/img/aria.jpg' }}" alt="Logo" style="margin: 30px auto;">
+        </td>
+        <td colspan="4" style="text-align: center;">
+            <img src="{{web_dir~'/assets/img/aria2.jpg' }}" alt="Logo" style="margin: 30px auto;">
+        </td>
+    </tr>
+    <tr style="text-align: center;">
+        <th colspan="8">به نام خدا</th>
+    </tr>
+    <tr>
+        <th colspan="8">پیش فاکتور فروش خدمات اطلاع رسانی</th>
+    </tr>
+    <tr style="text-align: center;">
+        <td colspan="4">کارشناس مربوطه : {{ app.user.getUserName() }}.</td>
+        <td colspan="4" style="text-align: left">تاریخ تنظیم :{{ "now"|jDate("now") }}</td>
+    </tr>
+    <tr style="text-align: center;">
+        <td  colspan="8" style="text-align: center;"><span >fds;lfksd;lfds</span><span>شماره :</span></td>
+    </tr>
+</table>
+<table width="100%" border="1" dir="rtl" cellpadding="5" cellspacing="5"
+       style="font-family: Tahoma, Serif, sans-serif; font-size: 13px;  border-collapse: collapse;margin-top:30px;">
+    <tr>
+        <th colspan="2">خریدار</th>
+    </tr>
+    <tr>
+        <td style="width: 50%">نام حقیقی :</td>
+        <td style="width: 50%">نام حقوقی :</td>
+    </tr>
+    <tr>
+        <td style="width: 50%">نام کاربری :</td>
+        <td style="width: 50%">تلفن / موبایل :</td>
+    </tr>
+    <tr>
+        <td colspan="2">آدرس :</td>
+    </tr>
+    <tr>
+        <th colspan="2">فروشنده</th>
+    </tr>
+    <tr>
+        <td style="width: 50%">نام حقیقی : آقای امین اسفندیاری</td>
+        <td style="width: 50%">نام حقوقی : سامانه اطلاع رسانی آریاتِندر</td>
+    </tr>
+    <tr>
+        <td style="width: 50%">ایمیل : sales@ariatender.com</td>
+        <td style="width: 50%">تلفن / موبایل : ( 42057 ) - 021 / 09123233961</td>
+    </tr>
+    <tr>
+        <td colspan="2">آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک 24 ، طبقه
+            4
+        </td>
+    </tr>
+</table>
+<table width="100%" border="1" dir="rtl" cellpadding="5" cellspacing="5" style="font-family: Tahoma, Serif, sans-serif; font-size: 13px; margin-top:30px;border-collapse: collapse;">
+    <tr>
+        <th colspan="2" style="text-align: center;"> مشخصات اشتراک</th>
+    </tr>
+    <tr>
+        <td style="width: 50%">نوع خدمات : سایت سایت و ایمیل</td>
+        <td style="width: 50%">نوع آگهی : مناقصات مزایدات استعلام بهاء</td>
+    </tr>
+    <tr>
+        <td colspan="2">سایر ابزارهای اطلاع رسانی : رُبات تلگرام اپلیکیشن موبایل دورنگار پیامک ( sms )</td>
+    </tr>
+    <tr>
+        <td style="width: 50%">محدوده اطلاع رسانی : سراسری</td>
+        <td style="width: 50%">مدت زمان اشتراک : 12 ماهه از 01/01/1396 الی 01/01/1396</td>
+    </tr>
+</table>
+<table width="100%" border="1" dir="rtl" cellpadding="5" cellspacing="5" style="border-collapse: collapse;margin-top:30px;font-family: Tahoma, Serif, sans-serif; font-size: 13px;">
+    <tr>
+        <th>بهای واحد</th>
+        <th>مدت زمان</th>
+        <th>تعداد</th>
+        <th>موضوع</th>
+        <th>شرح / ابزار</th>
+        <th>ردیف</th>
+    </tr>
+    <tr style="text-align: center">
+        <td>۷۹۰ هزار تومان</td>
+        <td>۱۲ ماه</td>
+        <td>۱</td>
+        <td>مناقصات ، مزایدات ، استعلام بهاء</td>
+        <td>اشتراک سراسری ، سایت و ایمیل + اپلیکیشن</td>
+        <td>۱</td>
+    </tr>
+    <tr style="text-align: center">
+        <td>۱۲۰ هزار تومان</td>
+        <td>۱۲ ماه</td>
+        <td>۱</td>
+        <td>مناقصات ، مزایدات ، استعلام بهاء</td>
+        <td>رُبات تلگرام</td>
+        <td>۲</td>
+    </tr>
+</table>
+<table width="30%" border="1" dir="rtl" cellpadding="5" cellspacing="5" style="border-collapse: collapse;float:left;margin-top:30px;font-family: Tahoma, Serif, sans-serif; font-size: 13px;">
+    <tr>
+        <td>جمع مبلغ</td>
+        <td>۹۱۰ هزار تومان</td>
+    </tr>
+    <tr>
+        <td>تخفیف</td>
+        <td>۱۱۰ هزار تومان</td>
+    </tr>
+    <tr>
+        <td>مبلغ قابل پرداخت</td>
+        <td>۸۰۰ هزار تومان</td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,4 +1,23 @@
 jQuery(document).ready(function() {
+
+
+    $("#preFactore").click(function(e){
+        e.preventDefault();
+        $.ajax({
+            url: "/api/preFactor",
+            type: "GET",
+            data: {},
+            success: function (response) {
+                console.log(response);
+                    window.open(response);
+                    return false;
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+    })
+
     $('#contractTimeFrom').persianDatepicker({
         altFormat: "YYYY MM DD ",
         formatDate: 'YYYY-MM-DD',

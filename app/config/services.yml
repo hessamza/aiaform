@@ -14,3 +14,10 @@ services:
     pagination_factory:
         class: AppBundle\Pagination\PaginationFactory
         arguments: ['@router']
+
+    app.twig_extension:
+           class: AppBundle\Twig\ConvertExtension
+           public: false
+           arguments: ['@kernel',"@translator"]
+           tags:
+               - { name: twig.extension }
