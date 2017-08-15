@@ -33,22 +33,22 @@ class ReportController extends  BaseController
             'contract'=>$contract
         ]);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
-        $MPDF = new \mPDF();
-        $custom_fontdata = array(
-            'centurygothic' => array(
-                'R' => "../../../../app/Resources/views/report/font/CenturyGothic.ttf",
-                'B' => "../../../../app/Resources/views/report/font/CenturyGothic-Bold.ttf",
-                'I' => "../../../../app/Resources/views/report/font/CenturyGothic-Italic.ttf",
-                'BI' => "../../../../app/Resources/views/report/font/CenturyGothic-BoldItalic.ttf"
-                // use 'R' to support CSS font-weight: normal
-                // use 'B', 'I', 'BI' and etc. to support CSS font-weight: bold, font-style: italic, and both...
-            )
-        );
+        $MPDF = new \mPDF('fa');
+//        $custom_fontdata = array(
+//            'centurygothic' => array(
+//                'R' => "../../../../app/Resources/views/report/font/CenturyGothic.ttf",
+//                'B' => "../../../../app/Resources/views/report/font/CenturyGothic-Bold.ttf",
+//                'I' => "../../../../app/Resources/views/report/font/CenturyGothic-Italic.ttf",
+//                'BI' => "../../../../app/Resources/views/report/font/CenturyGothic-BoldItalic.ttf"
+//                // use 'R' to support CSS font-weight: normal
+//                // use 'B', 'I', 'BI' and etc. to support CSS font-weight: bold, font-style: italic, and both...
+//            )
+//        );
         $folderName = md5($this->generateRandomString() . '_' . $this->getUser()->getId() . '_preFactor' );
 
         !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/candidate") : null;
         !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") : null;
-        $this->add_custom_font_to_mpdf($MPDF, $custom_fontdata);
+//        $this->add_custom_font_to_mpdf($MPDF, $custom_fontdata);
         //        $MPDF->shrink_tables_to_fit=0;
         $MPDF->WriteHTML($html);
         $this->get('kernel')->getRootDir();
