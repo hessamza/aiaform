@@ -32,6 +32,9 @@
                             </div>
                             <div class="portlet-body form col-md-10 ">
                                 {{form_start(form,{'attr':{'class':'form-horizontal'}}) }}
+                                {{  form_widget(form.serviceString,{'attr':{'class':'form-control input-inline input-medium serviceString'}})}}
+                                {{  form_widget(form.shareString,{'attr':{'class':'form-control input-inline input-medium shareString'}})}}
+                                {{  form_widget(form.servicePrice,{'attr':{'class':'form-control input-inline input-medium servicePrice'}})}}
                                 {% if successFullMeassage  is defined%}
                                     <div class="message-box sucess">
                                         <div class="message">{{ successFullMeassage }}</div><i class="icon"></i>
@@ -275,7 +278,7 @@
                                             <div class="col-md-offset-3 col-md-9">
                                                 <button type="submit" class="btn green">Submit</button>
                                                 <button type="button" class="btn default">Cancel</button>
-                                                <button type="button" class="btn default" id="preFactore" >prefactor</button>
+                                                    {#<button type="button" class="btn default" id="preFactore" >prefactor</button>#}
                                             </div>
                                         </div>
                                     </div>

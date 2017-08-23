@@ -1,23 +1,6 @@
 jQuery(document).ready(function() {
 
 
-    $("#preFactore").click(function(e){
-        e.preventDefault();
-        $.ajax({
-            url: "/api/preFactor",
-            type: "GET",
-            data: {},
-            success: function (response) {
-                console.log(response);
-                    window.open(response);
-                    return false;
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                console.log(textStatus, errorThrown);
-            }
-        });
-    })
-
     $('#contractTimeFrom').persianDatepicker({
         altFormat: "YYYY MM DD ",
         formatDate: 'YYYY-MM-DD',
@@ -102,7 +85,16 @@ jQuery(document).ready(function() {
                 render: function ( data, type, row ) {
                     return '<a href="contract/'+data.id+'" class="editor_edit">Edit</a>';
                 }
-            }
+            },
+            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<a href="#" onclick="callpreFactore('+data.id+')">پیش فاکتور</a>';
+                }
+            },
         ]
     });
     TableItems = $('#exampleItems').dataTable({
@@ -493,7 +485,10 @@ $('#appbundle_contract_separate').change(function () {
     changeFunction();
 });
 function changeFunction(){
+    var shareString='';
+    var serviceString='';
     var price=0
+    var servicePrice=0
     var selectTime = $("select[name='appbundle_contract[contractTime]'] option:selected").val();
     var separate = $("select[name='appbundle_contract[separate]'] option:selected").val();
     var serviceItem1=!!($('#appbundle_contract_serviceItems_1').is(':checked'));
@@ -509,40 +504,55 @@ function changeFunction(){
     var shareItem4=!!($('#appbundle_contract_shareItems_4').is(':checked'));
     if(selectTime==='1'){
         if(serviceItem1 &&  !serviceItem2){
+            serviceString='سایت, ';
             if(shareItem1 && shareItem2 && shareItem3) {
+                shareString='مناقصه , استعلام , مزایده, ';
                 price='5300000';
             }
             else if(shareItem1 && !shareItem2 && shareItem3){
+                shareString='مناقصه , استعلام ';
                 price='4500000';
             }
             else if(!shareItem1 && shareItem2 && shareItem3){
+                shareString=' استعلام , مزایده, ';
                 price='4200000';
             }
             else if(!shareItem1 && shareItem2 && !shareItem3){
+                shareString='مزایده,';
                 price='3800000';
             }
             else if(!shareItem1 && !shareItem2 && shareItem3){
+                shareString=' استعلام, ';
                 price='1200000';
             }
+            servicePrice=price;
         }
         else if(serviceItem1 && serviceItem2){
+            serviceString='سایت , ایمیل,';
             if(shareItem1 && shareItem2 && shareItem3) {
+                shareString='مناقصه , استعلام , مزایده,';
                 price='5900000';
             }
             else if(shareItem1 && !shareItem2 && shareItem3){
+                shareString='مناقصه , استعلام, ';
                 price='5300000';
             }
             else if(!shareItem1 && shareItem2 && shareItem3){
+                shareString=' استعلام , مزایده,';
                 price='4900000';
             }
             else if(!shareItem1 && shareItem2 && !shareItem3){
+                shareString='مزایده,';
                 price='4۵00000';
             }
             else if(!shareItem1 && !shareItem2 && shareItem3){
+                shareString=' استعلام, ';
                 price='160000';
             }
+            servicePrice=price;
         }
         else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6||serviceItem7){
+            serviceString='فقط سرویس تلگرام,';
             price='1600000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6||serviceItem7)){
@@ -557,43 +567,59 @@ function changeFunction(){
         if(serviceItem6){
             price=parseInt(price)+500000;
         }
+
     }
     if(selectTime==='2'){
         if(serviceItem1 && !serviceItem2){
+            serviceString='سایت, ';
             if(shareItem1 && shareItem2 && shareItem3) {
+                shareString='مناقصه , استعلام , مزایده, ';
                 price='6900000';
             }
             else if(shareItem1 && !shareItem2 && shareItem3){
+                shareString='مناقصه , استعلام, ';
                 price='5900000';
             }
             else if(!shareItem1 && shareItem2 && shareItem3){
+                shareString=' استعلام , مزایده, ';
                 price='5400000';
             }
             else if(!shareItem1 && shareItem2 && !shareItem3){
+                shareString='مزایده, ';
                 price='4900000';
             }
             else if(!shareItem1 && !shareItem2 && shareItem3){
+                shareString=' استعلام, ';
                 price='2100000';
             }
+            servicePrice=price;
         }
         else if(serviceItem1 && serviceItem2){
+            serviceString='سایت , ایمیل, ';
             if(shareItem1 && shareItem2 && shareItem3) {
+                shareString='مناقصه , استعلام , مزایده, ';
                 price='7900000';
             }
             else if(shareItem1 && !shareItem2 && shareItem3){
+                shareString='مناقصه , استعلام, ';
                 price='6900000';
             }
             else if(!shareItem1 && shareItem2 && shareItem3){
+                shareString=' استعلام , مزایده, ';
                 price='6400000';
             }
             else if(!shareItem1 && shareItem2 && !shareItem3){
+                shareString='مزایده, ';
                 price='5900000';
             }
             else if(!shareItem1 && !shareItem2 && shareItem3){
+                shareString=' استعلام, ';
                 price='2900000';
             }
+            servicePrice=price;
         }
         else if(!serviceItem1 && !serviceItem2 && !serviceItem3 && serviceItem4 && !serviceItem6 && !serviceItem7){
+            serviceString='فقط سرویس تلگرام';
             price='2300000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6 || serviceItem7)){
@@ -606,25 +632,37 @@ function changeFunction(){
             price=parseInt(price)+5400000;
         }
         if(serviceItem6){
+
             price=parseInt(price)+1000000;
         }
     }
 
 
     if(separate==='2'){
+        serviceString=serviceString+'استانی,';
         price=Math.round(parseInt(price)-(parseInt(price)*3)/10);
     }
     else if(separate==='3'){
+        serviceString=serviceString+'تخصصی,';
         price=Math.round(parseInt(price)-(parseInt(price)*2)/10);
     }
     else if(separate==='4'){
+        serviceString=serviceString+'استانی تخصصی,';
         price=Math.round(parseInt(price)-(parseInt(price)*4)/10);
     }
+    else if(separate==='1'){
+        serviceString=serviceString+'سراسری,';
+    }
     if(shareItem4){
+        shareString=shareString+'تک آگهی,';
         price=parseInt(price)+500000;
+        servicePrice=parseInt(servicePrice)+500000;
     }
     $('#appbundle_contract_basePrice').val(price)
 
+    $('.shareString').val(shareString);
+    $('.serviceString').val(serviceString);
+    $('.servicePrice').val(servicePrice);
 
 
 

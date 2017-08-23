@@ -27,7 +27,7 @@
         }
         .logo-title{
             display: block;
-            margin-left:50px;
+            margin-left:80px;
         }
         .pdf-title span{
             font-size: 30px;
@@ -37,8 +37,17 @@
             padding:20px 10px;
         }
         .c-img{
-            width:250px;
+            width:237px;
             height:auto;
+        }
+        .c-img2{
+            width:437px;
+            height:auto;
+        }
+        .tickCalss{
+            width:15px;
+            height:auto;
+            margin-top: 10px;
         }
         .header-table {
             border-bottom: 2px solid #000;
@@ -140,41 +149,40 @@
             <table class="header-table">
                 <tr>
 
-                    <td width="80%" class="text-right pdf-title" >
-                        <span>سامانه اطلاع رسانی مناقصه ها و مزایده های ایران + استعلام بها</span>
+                    <td width="60%" class="text-right pdf-title" >
+                        <img class="c-img2" src="{{web_dir~'/assets/img/aria.jpg' }}" alt="logo">
                     </td>
-                    <td width="20%" class="text-left">
-                        <img class="c-img" src="" alt="logo">
-                        <span class="logo-title">Iran & International Tenders</span>
+                    <td width="40%" class="text-left">
+                        <img class="c-img" src="{{web_dir~'/assets/img/logo1.jpg' }}" alt="logo">
                     </td>
 
                 </tr>
             </table>
             <table class="table1">
                 <tr>
-                    <td class="text-center table1-header" colspan="3">
-                        <span>به نام خدا</span>
-                        <span>پیش فاکتور فروش خدمات اطلاع رسانی</span>
+                    <td class="text-center table1-header" colspan="3" style="font-size: 25px">
+                        <span ><strong>به نام خدا</strong></span><br>
+                        <span><strong>پیش فاکتور فروش خدمات اطلاع رسانی</strong></span>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-center">کارشناس مربوطه : خانم ....</td>
-                    <td class="text-center">تاریخ تنظیم : 01/01/1396 </td>
-                    <td class="text-center">شماره : 565685965</td>
+                    <td class="text-center">کارشناس مربوطه : خانم {{ contract.owner.username }}</td>
+                    <td class="text-center">تاریخ تنظیم : {{ contract.createdAt|jDatePdf }} </td>
+                    <td class="text-center">شماره : ۵۶۵۶۴۵۶۴۵۶</td>
                 </tr>
             </table>
             <table class="table2 c-table"  cellspacing="0">
                 <tr>
                     <td class="td-border text-center bg-gray" width="15%" lang="fa">خریدار</td>
-                    <td>نام حقوقی : </td>
-                    <td>نام حقیقی : </td>
+                    <td>نام حقوقی : {{ contract.companyName }}</td>
+                    <td>نام حقیقی :{{ contract.contractMan }} </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <table style="margin-top:10px;">
                             <tr>
-                                <td>تلفن / موبایل : </td>
-                                <td>نام کاربری : </td>
+                                <td>تلفن / موبایل :{{ contract.customerPhone|changeToPersian }} </td>
+                                <td>نام کاربری :{{ contract.userName }} </td>
                             </tr>
                         </table>
                     </td>
@@ -183,7 +191,7 @@
                     <td colspan="3">
                         <table style="margin-top:30px;padding-bottom: 10px">
                             <tr>
-                                <td>آدرس : </td>
+                                <td>آدرس :{{ contract.customerAddress }} </td>
                             </tr>
                         </table>
                     </td>
@@ -192,14 +200,14 @@
             <table class="table3 c-table"  cellspacing="0">
                 <tr>
                     <td class="td-border text-center bg-gray" width="15%">فروشنده</td>
-                    <td>نام حقوقی : سامانه اطلاع رسانی آریاتِندر </td>
+                    <td>نام حقوقی : سامانه اطلاع رسانی آریاتندر </td>
                     <td>نام حقیقی : آقای امین اسفندیاری </td>
                 </tr>
                 <tr>
                     <td colspan="3">
                         <table style="margin-top:10px;">
                             <tr>
-                                <td>تلفن / موبایل : ( 42057 ) - 021 / 09123233961 </td>
+                                <td>۰۹۱۲۳۲۳۳۹۶۱</td>
                                 <td>ایمیل : sales@ariatender.com </td>
                             </tr>
                         </table>
@@ -209,7 +217,7 @@
                     <td colspan="3">
                         <table style="margin-top:30px;padding-bottom: 10px">
                             <tr>
-                                <td>آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک 24 ، طبقه 4</td>
+                                <td>آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
                             </tr>
                         </table>
                     </td>
@@ -229,27 +237,19 @@
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">نوع آگهی :  </span>
+                                    {% for share in contract.shareItems  %}
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
-                                            <span class="label">مناقصات</span>
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ share.name }}</span>
                                         </span>
-                                    <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
-                                            <span class="label">مزایدات</span>
-                                        </span>
-                                    <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
-                                            <span class="label">استعلام بهاء</span>
-                                        </span>
+                                    {% endfor %}
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">نوع خدمات :  </span>
-                                    <span class="label-checkbox">
-                                            <span class="checkbox-box"></span>
-                                            <span class="label">سایت</span>
+                                    {% for service in contract.serviceItems  %}
+                                        <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ service.name }}</span>
                                         </span>
-                                    <span class="label-checkbox">
-                                            <span class="checkbox-box  checkbox-checked"></span>
-                                            <span class="label">سایت و ایمیل</span>
-                                        </span>
+                                    {% endfor %}
                                 </td>
 
                             </tr>
@@ -291,13 +291,24 @@
                                 <td>
                                     <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک </span>
                                     <span>
-                                            12 ماهه از 01/01/1396 الی 01/01/1396
+                                            {{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
                                         </span>
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">محدوده اطلاع رسانی : </span>
+                                    {% if contract.separate %}
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                        {% if contract.separate=='global' %}
                                             <span class="label">سراسری</span>
-                                        </span>
+                                        {% elseif contract.separate=='local' %}
+                                            <span class="label">استانی</span>
+                                        {% elseif contract.separate=='professional' %}
+                                            <span class="label">تخصصی</span>
+                                        {% elseif contract.separate=='local-professional' %}
+                                            <span class="label">استانی تخصصی</span>
+                                        {% else %}
+                                        {% endif %}
+                                           </span>
+                                    {% endif %}
                                 </td>
                             </tr>
                         </table>
@@ -325,27 +336,63 @@
                             </tr>
                             <tr>
                                 <td class="text-center">1</td>
-                                <td class="text-center">اشتراک سراسری ، سایت و ایمیل + اپلیکیشن</td>
-                                <td class="text-center">مناقصات ، مزایدات ، استعلام بهاء</td>
+                                <td class="text-center">
+
+                                    {{ contract.serviceString }}
+                                </td>
+                                <td class="text-center">
+                                    {{ contract.shareString }}
+                                 </td>
                                 <td class="text-center">1</td>
-                                <td class="text-center">12 ماه  </td>
-                                <td class="text-center">000/790 تومان</td>
+                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center">ریال{{ contract.servicePrice }}</td>
                             </tr>
+                            {% for service in contract.serviceItems %}
+                                {% if service.name!='سایت' and  service.name!='ایمیل'%}
                             <tr>
                                 <td class="text-center">2</td>
-                                <td class="text-center">رُبات تلگرام</td>
-                                <td class="text-center">مناقصات ، مزایدات ، استعلام بهاء</td>
+                                 <td class="text-center">{{ service.name }}</td>
+                                <td class="text-center">{{ contract.shareString }}</td>
                                 <td class="text-center">1</td>
-                                <td class="text-center">12 ماه  </td>
-                                <td class="text-center">000/120 تومان</td>
+                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center">
+                                    {% if contract.contractTime=='6month' %}
+                                        {% if service.name=='تلگرام' %}
+                                            ۱۲۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار تهران' %}
+                                            ۱۵۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار شهرستان' %}
+                                            ۲۷۰/۰۰۰ تومان
+                                        {% elseif service.name=='پیامک' %}
+                                            ۵۰/۰۰۰ تومان
+                                        {% elseif service.name=='اپلیکیشن' %}
+                                            ۰ تومان
+                                        {% endif %}
+                                    {% elseif contract.contractTime=='12month' %}
+                                        {% if service.name=='تلگرام' %}
+                                            ۱۲۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار تهران' %}
+                                            ۳۰۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار شهرستان' %}
+                                            ۵۴۰/۰۰۰ تومان
+                                        {% elseif service.name=='پیامک' %}
+                                            ۱۰۰/۰۰۰ تومان
+                                        {% elseif service.name=='اپلیکیشن' %}
+                                            ۰ تومان
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+
                             </tr>
+                                {% endif %}
+                            {% endfor %}
                             <tr>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center" colspan="2">جمع مبلغ</td>
-                                <td class="text-center">/910 تومان</td>
+                                <td class="text-center">{{ contract.basePrice|changeToPersian }} تومان</td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
@@ -353,7 +400,7 @@
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center " colspan="2">تخفیف</td>
-                                <td class="text-center">/910 تومان</td>
+                                <td class="text-center">{{ contract.discount|changeToPersian }} تومان</td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
@@ -361,7 +408,7 @@
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center cost" colspan="2">مبلغ قابل پرداخت</td>
-                                <td class="text-center cost">000/800 تومان</td>
+                                <td class="text-center cost">{{ contract.contractPrice|changeToPersian }} تومان</td>
                             </tr>
                         </table>
                     </td>
@@ -373,14 +420,13 @@
                 </tr>
                 <tr>
                     <td style="font-weight: bold;font-size: 20px">
-                        جاری بانک ملت به شماره حساب44 /14657161
-                    </td>
+                        جاری بانک ملت به شماره حساب۱۴۶۵۷۱۶۱/۴۴                  </td>
                 </tr>
                 <tr>
                     <td style="text-align: left;padding-top: 50px;padding-left: 50px">مهر و امضاء فروشنده خدمات</td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold;font-size: 20px">و يا شماره كارت 6104337953900550 به نام امين اسفندياري</td>
+                    <td style="font-weight: bold;font-size: 20px">و يا شماره كارت ۶۱۰۴۳۳۷۹۵۳۹۰۰۵۵۰ به نام امين اسفندياري</td>
                 </tr>
             </table>
         </td>

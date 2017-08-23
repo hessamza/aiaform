@@ -16,8 +16,18 @@ url('../font/web_Yekan.woff') format("woff"),url('../font/web_Yekan.ttf') format
 body{
     font-family: "yekan",Helvetica,Arial,sans-serif !important;
 }
+.ui-dialog-title{
+    font-family:'yekan' ;
+    font-size: 13px;
+}
+#dialog{
+    display: none;
+    font-family:'yekan' ;
+    font-size: 13px;
+}
+#dialog p a {
 
-
+}
 
 .page-header-menu .container{
     background:#FE0000 none repeat scroll 0% 0%;

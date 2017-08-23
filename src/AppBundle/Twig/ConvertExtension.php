@@ -37,9 +37,19 @@ class ConvertExtension extends \Twig_Extension
             new \Twig_SimpleFilter('binary', array($this, 'binaryFilter')),
             new \Twig_SimpleFilter('dutchDate', array($this, 'dutchDateFilter')),
             new \Twig_SimpleFilter('jDate', array($this, 'jDate')),
+            new \Twig_SimpleFilter('jDatePdf', array($this, 'jDatePdf')),
             new \Twig_SimpleFilter('alphabeticOrder', array($this, 'alphabeticOrderFilter')),
             new \Twig_SimpleFilter('splitString', array($this, 'splitStringFilter')),
+            new \Twig_SimpleFilter('changeToPersian', array($this, 'changeToPersian')),
         );
+    }
+
+    public function changeToPersian($string){
+        $western_arabic = array('0','1','2','3','4','5','6','7','8','9');
+        $eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
+
+        $str = str_replace($western_arabic, $eastern_arabic, $string);
+        return $str;
     }
 
     public function binaryFilter($file)
@@ -63,6 +73,13 @@ class ConvertExtension extends \Twig_Extension
     {
         $date=new  \jDateTime(true, true, 'Asia/Tehran');
         return $date->date("l j F Y");
+    }
+    public function jDatePDF($date)
+    {
+
+        $date = \jDateTime::convertFormatToFormat('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
+
+        return $date;
     }
     public function alphabeticOrderFilter($array)
     {

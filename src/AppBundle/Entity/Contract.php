@@ -230,6 +230,25 @@ class Contract
      */
     private $customerAddress;
 
+
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     */
+    private $shareString;
+
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     */
+    private $serviceString;
+
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     */
+    private $servicePrice;
+
+
+
+
     /**
      * @ORM\Column(type="boolean")
      */
@@ -937,7 +956,53 @@ class Contract
         $this->description = $description;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getShareString()
+    {
+        return $this->shareString;
+    }
 
+    /**
+     * @param mixed $shareString
+     */
+    public function setShareString($shareString)
+    {
+        $this->shareString = $shareString;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServiceString()
+    {
+        return $this->serviceString;
+    }
+
+    /**
+     * @param mixed $serviceString
+     */
+    public function setServiceString($serviceString)
+    {
+        $this->serviceString = $serviceString;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getServicePrice()
+    {
+        return $this->servicePrice;
+    }
+
+    /**
+     * @param mixed $servicePrice
+     */
+    public function setServicePrice($servicePrice)
+    {
+        $this->servicePrice = $servicePrice;
+    }
 
 
 }

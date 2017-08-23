@@ -29,15 +29,15 @@ if (!defined('_MPDF_TTFONTPATH')) {
 class ReportController extends  BaseController
 {
     /**
-     * @Route("/api/preFactor")
+     * @Route("/api/preFactor/{id}")
      * @Method("GET")
      * @return string
      */
-    public function returnPDFResponseFromHTML()
+    public function returnPDFResponseFromHTML($id)
     {
 //echo realpath(__DIR__.'/../../../app/Resources/views/report/font/');die;
 
-        $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find(20);
+        $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $html=$this->renderView("report/preFactor.html.twig",[
             'contract'=>$contract
         ]);

@@ -152,6 +152,21 @@ class ContractType extends AbstractType
                 'expanded' => true
             ))
             ->add('itemDescription')
+            ->add('shareString',null,[
+                'attr'=>[
+                    'style'=>'display:none'
+                ]
+            ])
+            ->add('servicePrice',null,[
+                'attr'=>[
+                    'style'=>'display:none'
+                ]
+            ])
+            ->add('serviceString',null,[
+                'attr'=>[
+                    'style'=>'display:none'
+                ]
+            ])
             ->add('description');
 
     }
