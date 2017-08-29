@@ -161,7 +161,7 @@
             <table class="table1">
                 <tr>
                     <td class="text-center table1-header" colspan="3" style="font-size: 25px">
-                        <span ><strong>به نام خدا</strong></span><br>
+                        <span style="font-size: 20px">به نام خدا</span><br>
                         <span><strong>پیش فاکتور فروش خدمات اطلاع رسانی</strong></span>
                     </td>
                 </tr>
@@ -207,7 +207,7 @@
                     <td colspan="3">
                         <table style="margin-top:10px;">
                             <tr>
-                                <td>۰۹۱۲۳۲۳۳۹۶۱</td>
+                                <td>شماره موبایل فروشنده:۰۹۰۲۳۲۳۳۹۶۱</td>
                                 <td>ایمیل : sales@ariatender.com </td>
                             </tr>
                         </table>
@@ -217,7 +217,7 @@
                     <td colspan="3">
                         <table style="margin-top:30px;padding-bottom: 10px">
                             <tr>
-                                <td>آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
+                                <td style="font-size: 17px">آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
                             </tr>
                         </table>
                     </td>
@@ -289,7 +289,7 @@
                         <table style="margin-top: 10px;">
                             <tr>
                                 <td>
-                                    <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک </span>
+                                    <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک: </span>
                                     <span>
                                             {{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
                                         </span>
@@ -318,7 +318,7 @@
             <table class="full-with">
                 <tr>
                     <td>
-                            <span style="font-weight: bold;font-size: 29px">
+                            <span style="font-weight: bold;font-size: 25px">
                                 صورتحساب پرداخت :
                             </span>
                     </td>
@@ -400,14 +400,14 @@
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center " colspan="2">تخفیف</td>
-                                <td class="text-center">{{ contract.discount|changeToPersian }} تومان</td>
+                                <td class="text-center" style="font-size: 20px">{{ contract.discount|changeToPersian }} تومان</td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
-                                <td class="text-center cost" colspan="2">مبلغ قابل پرداخت</td>
+                                <td class="text-center cost" colspan="2" style="font-size: 20px">مبلغ قابل پرداخت</td>
                                 <td class="text-center cost">{{ contract.contractPrice|changeToPersian }} تومان</td>
                             </tr>
                         </table>
@@ -416,7 +416,7 @@
             </table>
             <table class="signature" style="margin-top:30px;">
                 <tr>
-                    <td style="font-weight: bold;font-size: 29px">مشخصات پرداخت وجه اشتراک : </td>
+                    <td style="font-weight: bold;font-size: 20px">مشخصات پرداخت وجه اشتراک : </td>
                 </tr>
                 <tr>
                     <td style="font-weight: bold;font-size: 20px">
