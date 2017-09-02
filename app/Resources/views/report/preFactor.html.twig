@@ -258,35 +258,29 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="margin-top: 10px;">
+                        <table style="margin-top: 10px;margin-bottom: 10px">
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                             <span class="label">رُبات تلگرام</span>
                                         </span>
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box checkbox-checked"></span>
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                             <span class="label">اپلیکیشن موبایل </span>
                                         </span>
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box "></span>
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                             <span class="label">دورنگار</span>
                                         </span>
                                     <span class="label-checkbox ">
-                                            <span class="checkbox-box "></span>
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                             <span class="label">پیامک  ( sms )</span>
                                         </span>
 
                                 </td>
                             </tr>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <table style="margin-top: 10px;">
                             <tr>
                                 <td>
                                     <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک: </span>
@@ -295,25 +289,28 @@
                                         </span>
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">محدوده اطلاع رسانی : </span>
                                     {% if contract.separate %}
-                                    <span class="label-checkbox ">
+                                        <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
-                                        {% if contract.separate=='global' %}
-                                            <span class="label">سراسری</span>
+                                            {% if contract.separate=='global' %}
+                                                <span class="label">سراسری</span>
                                         {% elseif contract.separate=='local' %}
-                                            <span class="label">استانی</span>
-                                        {% elseif contract.separate=='professional' %}
-                                            <span class="label">تخصصی</span>
-                                        {% elseif contract.separate=='local-professional' %}
-                                            <span class="label">استانی تخصصی</span>
-                                        {% else %}
-                                        {% endif %}
+                                                <span class="label">استانی</span>
+                                            {% elseif contract.separate=='professional' %}
+                                                <span class="label">تخصصی</span>
+                                            {% elseif contract.separate=='local-professional' %}
+                                                <span class="label">استانی تخصصی</span>
+                                            {% else %}
+                                            {% endif %}
                                            </span>
                                     {% endif %}
+                                    <br>
+                                    <br>
                                 </td>
                             </tr>
                         </table>
                     </td>
                 </tr>
+
             </table>
             <table class="full-with">
                 <tr>
@@ -337,7 +334,6 @@
                             <tr>
                                 <td class="text-center">1</td>
                                 <td class="text-center">
-
                                     {{ contract.serviceString }}
                                 </td>
                                 <td class="text-center">
@@ -345,7 +341,7 @@
                                  </td>
                                 <td class="text-center">1</td>
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
-                                <td class="text-center">ریال{{ contract.servicePrice }}</td>
+                                <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
                             </tr>
                             {% for service in contract.serviceItems %}
                                 {% if service.name!='سایت' and  service.name!='ایمیل'%}
@@ -391,8 +387,8 @@
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
-                                <td class="text-center" colspan="2">جمع مبلغ</td>
-                                <td class="text-center">{{ contract.basePrice|changeToPersian }} تومان</td>
+                                <td class="text-center" colspan="2" style="font-size: 15px"><strong>جمع مبلغ</strong></td>
+                                <td class="text-center"><strong>{{ contract.basePrice|numberFormat }} تومان</strong></td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
@@ -400,7 +396,7 @@
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center " colspan="2">تخفیف</td>
-                                <td class="text-center" style="font-size: 20px">{{ contract.discount|changeToPersian }} تومان</td>
+                                <td class="text-center" style="font-size: 20px">{{ contract.discount|numberFormat }} تومان</td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
@@ -408,7 +404,7 @@
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
                                 <td class="text-center cost" colspan="2" style="font-size: 20px">مبلغ قابل پرداخت</td>
-                                <td class="text-center cost">{{ contract.contractPrice|changeToPersian }} تومان</td>
+                                <td class="text-center cost">{{ contract.contractPrice|numberFormat }} تومان</td>
                             </tr>
                         </table>
                     </td>
@@ -420,10 +416,10 @@
                 </tr>
                 <tr>
                     <td style="font-weight: bold;font-size: 20px">
-                        جاری بانک ملت به شماره حساب۱۴۶۵۷۱۶۱/۴۴                  </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left;padding-top: 50px;padding-left: 50px">مهر و امضاء فروشنده خدمات</td>
+                        <span>                        جاری بانک ملت به شماره حساب۱۴۶۵۷۱۶۱/۴۴
+</span>
+                         </td>
+                    <td style="text-align: center;font-weight: bold;font-size: 20px"> مهر و امضاء فروشنده خدمات </td>
                 </tr>
                 <tr>
                     <td style="font-weight: bold;font-size: 20px">و يا شماره كارت ۶۱۰۴۳۳۷۹۵۳۹۰۰۵۵۰ به نام امين اسفندياري</td>

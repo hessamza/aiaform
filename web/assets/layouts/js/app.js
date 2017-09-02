@@ -556,16 +556,16 @@ function changeFunction(){
             price='1600000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6||serviceItem7)){
-            price=parseInt(price)+800000;
+            price=parseInt(price)+80000;
         }
         if(serviceItem3){
-            price=parseInt(price)+1500000;
+            price=parseInt(price)+150000;
         }
         if(serviceItem7){
-            price=parseInt(price)+2700000;
+            price=parseInt(price)+270000;
         }
         if(serviceItem6){
-            price=parseInt(price)+500000;
+            price=parseInt(price)+50000;
         }
 
     }
@@ -623,17 +623,17 @@ function changeFunction(){
             price='2300000';
         }
         if(serviceItem4 && (serviceItem1 || serviceItem2 || serviceItem3 || serviceItem5 || serviceItem6 || serviceItem7)){
-            price=parseInt(price)+1200000;
+            price=parseInt(price)+120000;
         }
         if(serviceItem3){
-            price=parseInt(price)+3000000;
+            price=parseInt(price)+300000;
         }
         if(serviceItem7){
-            price=parseInt(price)+5400000;
+            price=parseInt(price)+540000;
         }
         if(serviceItem6){
 
-            price=parseInt(price)+1000000;
+            price=parseInt(price)+100000;
         }
     }
 
@@ -656,7 +656,7 @@ function changeFunction(){
     if(shareItem4){
         shareString=shareString+'تک آگهی,';
         price=parseInt(price)+500000;
-        servicePrice=parseInt(servicePrice)+500000;
+        servicePrice=parseInt(servicePrice)+50000;
     }
     $('#appbundle_contract_basePrice').val(price)
 

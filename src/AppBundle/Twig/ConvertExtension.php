@@ -41,14 +41,21 @@ class ConvertExtension extends \Twig_Extension
             new \Twig_SimpleFilter('alphabeticOrder', array($this, 'alphabeticOrderFilter')),
             new \Twig_SimpleFilter('splitString', array($this, 'splitStringFilter')),
             new \Twig_SimpleFilter('changeToPersian', array($this, 'changeToPersian')),
+            new \Twig_SimpleFilter('numberFormat', array($this, 'numberFormat')),
         );
     }
 
     public function changeToPersian($string){
         $western_arabic = array('0','1','2','3','4','5','6','7','8','9');
         $eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
-
         $str = str_replace($western_arabic, $eastern_arabic, $string);
+        return $str;
+    }
+    public function numberFormat($string){
+        $number = number_format((float) $string,0,null,'/');
+        $western_arabic = array('0','1','2','3','4','5','6','7','8','9');
+        $eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
+        $str = str_replace($western_arabic, $eastern_arabic,(string) $number);
         return $str;
     }
 
