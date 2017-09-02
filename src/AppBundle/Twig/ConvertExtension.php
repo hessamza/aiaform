@@ -31,6 +31,14 @@ class ConvertExtension extends \Twig_Extension
         $this->translator=$translator;
     }
 
+    public function getFunctions()
+    {
+        return array(
+            new \Twig_SimpleFunction('arrayUnique', array($this, 'arrayUnique')),
+        );
+    }
+
+
     public function getFilters()
     {
         return array(
@@ -41,7 +49,7 @@ class ConvertExtension extends \Twig_Extension
             new \Twig_SimpleFilter('alphabeticOrder', array($this, 'alphabeticOrderFilter')),
             new \Twig_SimpleFilter('splitString', array($this, 'splitStringFilter')),
             new \Twig_SimpleFilter('changeToPersian', array($this, 'changeToPersian')),
-            new \Twig_SimpleFilter('numberFormat', array($this, 'numberFormat')),
+            new \Twig_SimpleFilter('numberFormat', array($this, 'numberFormat'))
         );
     }
 
@@ -57,6 +65,11 @@ class ConvertExtension extends \Twig_Extension
         $eastern_arabic = array('٠','١','٢','٣','٤','٥','٦','٧','٨','٩');
         $str = str_replace($western_arabic, $eastern_arabic,(string) $number);
         return $str;
+    }
+    public function arrayUnique($array1,$array2){
+        $fullDiff = array_merge(array_diff($array1, $array2), array_diff($array2, $array1));
+        return  $array1;
+       // dump($result);die;
     }
 
     public function binaryFilter($file)

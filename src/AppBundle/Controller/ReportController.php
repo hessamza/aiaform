@@ -38,8 +38,33 @@ class ReportController extends  BaseController
 //echo realpath(__DIR__.'/../../../app/Resources/views/report/font/');die;
 
         $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
+        $anotherShare=$shareItem;
+        $contractShareItems=$contract->getShareItems()->getValues();
+        foreach ($anotherShare as $key => $new_val)
+        {
+            if (isset( $contractShareItems[$key])) // belongs to old array?
+            {
+                if ( $contractShareItems[$key]->getName() == $new_val->getName()) // has changed?
+                    unset($anotherShare[$key]);
+            }
+        }
+        $serviceItem=$this->getDoctrine()->getRepository("AppBundle:ServiceItems")->findAll();
+        $anotherService=$serviceItem;
+        $contractSerivecItems=$contract->getServiceItems()->getValues();
+        foreach ($anotherService as $key2 => $new_val2)
+        {
+            if (isset( $contractSerivecItems[$key2])) // belongs to old array?
+            {
+                if ( $contractSerivecItems[$key2]->getName() == $new_val2->getName()) // has changed?
+                    unset($anotherService[$key2]);
+            }
+        }
+
         $html=$this->renderView("report/preFactor.html.twig",[
-            'contract'=>$contract
+            'contract'=>$contract,
+            'anothershare'=>$anotherShare,
+            'anotherService'=>$anotherService
         ]);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
         $html=iconv("utf-8","UTF-8//IGNORE",$html);

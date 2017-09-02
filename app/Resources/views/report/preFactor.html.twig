@@ -238,11 +238,18 @@
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">نوع آگهی :  </span>
                                     {% for share in contract.shareItems  %}
-                                    <span class="label-checkbox ">
+                                                <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
                                             <span class="label">{{ share.name }}</span>
                                         </span>
                                     {% endfor %}
+                                    {% for sha in anothershare  %}
+                                                <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ sha.name }}</span>
+                                        </span>
+                                    {% endfor %}
+
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">نوع خدمات :  </span>
                                     {% for service in contract.serviceItems  %}
                                         <span class="label-checkbox ">
@@ -262,22 +269,19 @@
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
-                                    <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">ربات تلگرام</span>
+                                    {% for service in contract.serviceItems  %}
+                                        <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ service.name }}</span>
                                         </span>
-                                    <span class="label-checkbox ">
+                                    {% endfor %}
+                                    {% for serv in anotherService  %}
+                                        <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">اپلیکیشن موبایل </span>
+                                            <span class="label">{{ serv.name }}</span>
                                         </span>
-                                    <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">دورنگار</span>
-                                        </span>
-                                    <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">پیامک  ( sms )</span>
-                                        </span>
+                                    {% endfor %}
+
 
                                 </td>
                             </tr>
@@ -332,24 +336,24 @@
                                 <th class="bg-gray  p-5">بهای واحد</th>
                             </tr>
                             <tr>
-                                <td class="text-center">1</td>
+                                <td class="text-center">۱</td>
                                 <td class="text-center">
                                     {{ contract.serviceString }}
                                 </td>
                                 <td class="text-center">
                                     {{ contract.shareString }}
                                  </td>
-                                <td class="text-center">1</td>
+                                <td class="text-center">۱</td>
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
                                 <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
                             </tr>
                             {% for service in contract.serviceItems %}
                                 {% if service.name!='سایت' and  service.name!='ایمیل'%}
                             <tr>
-                                <td class="text-center">2</td>
+                                <td class="text-center">۲</td>
                                  <td class="text-center">{{ service.name }}</td>
                                 <td class="text-center">{{ contract.shareString }}</td>
-                                <td class="text-center">1</td>
+                                <td class="text-center">۱</td>
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
                                 <td class="text-center">
                                     {% if contract.contractTime=='6month' %}
@@ -410,7 +414,7 @@
                     </td>
                 </tr>
             </table>
-            <table class="signature" style="margin-top:30px;">
+            <table class="signature" style="margin-top:30px;margin-bottom:50px">
                 <tr>
                     <td style="font-weight: bold;font-size: 20px">مشخصات پرداخت وجه اشتراک : </td>
                 </tr>
@@ -421,9 +425,10 @@
                          </td>
                     <td style="text-align: center;font-weight: bold;font-size: 20px"> مهر و امضاء فروشنده خدمات </td>
                 </tr>
-                <tr>
+                <tr style="margin-bottom: 40px">
                     <td style="font-weight: bold;font-size: 20px">و يا شماره كارت ۶۱۰۴۳۳۷۹۵۳۹۰۰۵۵۰ به نام امين اسفندياري</td>
                 </tr>
+
             </table>
         </td>
     </tr>
