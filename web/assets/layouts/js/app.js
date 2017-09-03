@@ -1,13 +1,12 @@
 jQuery(document).ready(function() {
 
-
     $('#contractTimeFrom').persianDatepicker({
         altFormat: "YYYY MM DD ",
-        formatDate: 'YYYY-MM-DD',
+        formatDate: 'YYYY-MM-DD'
     });
     $('#contractTimeTo').persianDatepicker({
         altFormat: "YYYY MM DD ",
-        formatDate: 'YYYY-MM-DD',
+        formatDate: 'YYYY-MM-DD'
     });
 
     if($('input[id*="appbundle_contract_haveExtraContractPrice"]').prop('checked')) {

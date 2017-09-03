@@ -31,6 +31,7 @@ class ContractController extends  BaseController
      */
     public function createContract(Request $request)
     {
+    // $this->dumpWithHeaders($request->request->all());
         $objectEntity=new Contract();
         $form = $this->createForm(ContractType::class, $objectEntity, [ "method" => 'POST']);
         $form->handleRequest($request);
@@ -62,6 +63,8 @@ class ContractController extends  BaseController
      */
     public function ManageContract($id,Request $request)
     {
+     //   $date = \jDateTime::toGregorian('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
+     //  $this->dumpWithHeaders($request->request->all());
         $em = $this->getDoctrine()->getManager();
         $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $method=$request->getMethod();
@@ -79,10 +82,11 @@ class ContractController extends  BaseController
             $em->flush();
         }
 
-        $form = $this->createForm(ContractType::class, $findObject, [ "method" => $method]);
+        $form = $this->createForm(ContractType::class, $findObject, [ "method" => 'PATCH']);
         $form->handleRequest($request);
         $em = $this->getDoctrine()->getManager();
         if ($request->getMethod() == $method) {
+
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();

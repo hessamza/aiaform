@@ -96,9 +96,7 @@ class ConvertExtension extends \Twig_Extension
     }
     public function jDatePDF($date)
     {
-
         $date = \jDateTime::convertFormatToFormat('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
-
         return $date;
     }
     public function alphabeticOrderFilter($array)

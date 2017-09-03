@@ -249,13 +249,15 @@
                                             <span class="label">{{ sha.name }}</span>
                                         </span>
                                     {% endfor %}
-
-                                    <span style="font-weight: bold;margin-left:10px;margin-right:50px">نوع خدمات :  </span>
+                                    <span style="padding-right:150px;color: white">sdfdfdsf</span>
+                                    <span style="font-weight: bold;margin-left:10px;padding-right:150px;text-align: left">      نوع خدمات :  </span>
                                     {% for service in contract.serviceItems  %}
+                                        {% if  service.name =='سایت' or  service.name =='ایمیل'%}
                                         <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
                                             <span class="label">{{ service.name }}</span>
                                         </span>
+                                    {% endif %}
                                     {% endfor %}
                                 </td>
 
@@ -269,16 +271,30 @@
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
+                                    {% set m=0 %}
                                     {% for service in contract.serviceItems  %}
-                                        <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">{{ service.name }}</span>
-                                        </span>
+                                        {% if  service.name !='سایت' and  service.name !='ایمیل'%}
+                                            <span class="label-checkbox ">
+                                                <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                                <span class="label">
+                                                    {% if  service.name =='دورنگار تهران' or  service.name =='دورنکار شهرستان' and m==1%}
+                                                      {% set m=1 %}
+                                                                دورنگار
+                                                    {% else %}
+                                                    {{ service.name }}
+                                                {% endif %}</span>
+                                            </span>
+                                        {% endif %}
                                     {% endfor %}
                                     {% for serv in anotherService  %}
                                         <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">{{ serv.name }}</span>
+
+                                            <span class="label"> {% if  serv.name =='دورنگار تهران' or  serv.name =='دورنگار شهرستان' %}
+
+                                                {% else %}
+                                                    <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                                    {{ serv.name }}
+                                                {% endif %}</span>
                                         </span>
                                     {% endfor %}
 
