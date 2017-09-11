@@ -37,7 +37,20 @@ class ReportController extends  BaseController
     {
 //echo realpath(__DIR__.'/../../../app/Resources/views/report/font/');die;
 
+
         $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
+        $anotherAdv=$advItem;
+        $contractAdvItems=$contract->getAdvItems()->getValues();
+
+        foreach ($anotherAdv as $key4 => $new_val4)
+        {
+            foreach ($contractAdvItems as $contractAdvItem) {
+                if ( $contractAdvItem->getName() == $new_val4->getName()) // has changed?
+                    unset($anotherAdv[$key4]);
+            }
+         }
+
         $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
         $anotherShare=$shareItem;
         $contractShareItems=$contract->getShareItems()->getValues();
@@ -54,15 +67,16 @@ class ReportController extends  BaseController
         $contractSerivecItems=$contract->getServiceItems()->getValues();
         foreach ($anotherService as $key2 => $new_val2)
         {
-            if (isset( $contractSerivecItems[$key2])) // belongs to old array?
-            {
-                if ( $contractSerivecItems[$key2]->getName() == $new_val2->getName()) // has changed?
+            foreach ($contractSerivecItems as $item) {
+                if ( $item->getName() == $new_val2->getName()) // has changed?
                     unset($anotherService[$key2]);
             }
+
         }
 
         $html=$this->renderView("report/preFactor.html.twig",[
             'contract'=>$contract,
+            'anotherAdv'=>$anotherAdv,
             'anothershare'=>$anotherShare,
             'anotherService'=>$anotherService
         ]);

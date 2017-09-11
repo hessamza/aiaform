@@ -21,6 +21,7 @@ class Contract
     {
         $this->serviceItems = new ArrayCollection();
         $this->shareItems = new ArrayCollection();
+        $this->advItems = new ArrayCollection();
         $this->posts = new ArrayCollection();
     }
 
@@ -157,6 +158,20 @@ class Contract
     private $serviceItems;
 
 
+    /**
+     * @var ArrayCollection $advItems
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\AdvItems", inversedBy="contracts")
+     * @ORM\JoinTable(
+     *     name="contract_adv",
+     *     joinColumns={
+     *      @ORM\JoinColumn(name="contract_id", referencedColumnName="id",onDelete="CASCADE")
+     *  },
+     *  inverseJoinColumns={
+     *      @ORM\JoinColumn(name="adv_id", referencedColumnName="id",onDelete="CASCADE")
+     *  }
+     * )
+     */
+    private $advItems;
 
     /**
      * @var ArrayCollection $shareItems
@@ -598,9 +613,46 @@ class Contract
         $serviceItem->removeContract($this);
     }
 
+    /**
+     * @return ArrayCollection
+     */
+    public function getAdvItems()
+    {
+        return $this->advItems;
+    }
+
+    /**
+     * @param ArrayCollection $advItems
+     */
+    public function setAdvItems($advItems)
+    {
+        $this->advItems = $advItems;
+    }
 
 
 
+    /**
+     * @param AdvItems $advItem
+     */
+    public function addAdvItem(AdvItems $advItem)
+    {
+        if ($this->advItems->contains($advItem)) {
+            return;
+        }
+        $this->advItems->add($advItem);
+        $advItem->addContract($this);
+    }
+    /**
+     * @param AdvItems $advItem
+     */
+    public function removeAdvItem(AdvItems $advItem)
+    {
+        if (!$this->advItems->contains($advItem)) {
+            return;
+        }
+        $this->advItems->removeElement($advItem);
+        $advItem->removeContract($this);
+    }
 
     /**
      * @return ArrayCollection

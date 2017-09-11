@@ -114,6 +114,12 @@ class ContractType extends AbstractType
 //            ->add('sharingMethods', EntityType::class, [
 //                'class' => 'AppBundle\Entity\Sharing','choice_label' => 'text',
 //            ])
+            ->add('advItems', EntityType::class, array(
+                'class' => 'AppBundle\Entity\AdvItems',
+                'choice_label' => 'name',
+                'multiple' => true,
+                'expanded' => true
+            ))
             ->add('shareItems', EntityType::class, array(
                 'class' => 'AppBundle\Entity\ShareItems',
                 'choice_label' => 'name',

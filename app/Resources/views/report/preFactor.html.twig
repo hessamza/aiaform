@@ -237,27 +237,31 @@
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">نوع آگهی :  </span>
-                                    {% for share in contract.shareItems  %}
+                                    {% for advItem in contract.getAdvItems()  %}
                                                 <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ advItem.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                    {% for adv in anotherAdv  %}
+                                                <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ adv.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                    <span style="padding-right:150px;color: white">sdfdfdsf</span>
+                                    <span style="font-weight: bold;margin-left:10px;padding-right:150px;text-align: left">      نوع خدمات :  </span>
+                                    {% for share in contract.getShareItems()  %}
+                                        <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
                                             <span class="label">{{ share.name }}</span>
                                         </span>
                                     {% endfor %}
                                     {% for sha in anothershare  %}
-                                                <span class="label-checkbox ">
+                                        <span class="label-checkbox ">
                                             <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                             <span class="label">{{ sha.name }}</span>
                                         </span>
-                                    {% endfor %}
-                                    <span style="padding-right:150px;color: white">sdfdfdsf</span>
-                                    <span style="font-weight: bold;margin-left:10px;padding-right:150px;text-align: left">      نوع خدمات :  </span>
-                                    {% for service in contract.serviceItems  %}
-                                        {% if  service.name =='سایت' or  service.name =='ایمیل'%}
-                                        <span class="label-checkbox ">
-                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
-                                            <span class="label">{{ service.name }}</span>
-                                        </span>
-                                    {% endif %}
                                     {% endfor %}
                                 </td>
 
@@ -273,18 +277,16 @@
                                     <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
                                     {% set m=0 %}
                                     {% for service in contract.serviceItems  %}
-                                        {% if  service.name !='سایت' and  service.name !='ایمیل'%}
                                             <span class="label-checkbox ">
                                                 <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
-                                                <span class="label">{{ service.id }}
-                                                    {% if  (service.id ==3 or  service.name ==7) and m==0%}
+                                                <span class="label">
+                                                    {% if  (service.id ==3 or  service.id ==7) and m==0%}
                                                       {% set m=1 %}
                                                                 دورنگار
-                                                    {% elseif((service.id !=3 or  service.name !=7))%}
+                                                    {% elseif((service.id !=3 and  service.id !=7))%}
                                                     {{ service.name }}
                                                 {% endif %}</span>
                                             </span>
-                                        {% endif %}
                                     {% endfor %}
                                     {% set z=0 %}
                                     {% for serv in anotherService  %}

@@ -9,6 +9,7 @@
 namespace AppBundle\Controller;
 
 
+use AppBundle\Entity\AdvItems;
 use AppBundle\Entity\Contract;
 use AppBundle\Entity\ServiceItems;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
@@ -69,6 +70,11 @@ class ContractController extends  BaseController
         $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $method=$request->getMethod();
         if($method=="PATCH") {
+            /** @var AdvItems $value */
+            foreach ($findObject->getAdvItems()->getValues() as $value) {
+                $findObject->removeAdvItem($value);
+                $em->persist($findObject);
+            }
             /** @var ServiceItems $value */
             foreach ($findObject->getServiceItems()->getValues() as $value) {
                 $findObject->removeServiceItem($value);
