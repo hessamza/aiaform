@@ -276,22 +276,25 @@
                                         {% if  service.name !='سایت' and  service.name !='ایمیل'%}
                                             <span class="label-checkbox ">
                                                 <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
-                                                <span class="label">
-                                                    {% if  service.name =='دورنگار تهران' or  service.name =='دورنکار شهرستان' and m==1%}
+                                                <span class="label">{{ service.id }}
+                                                    {% if  (service.id ==3 or  service.name ==7) and m==0%}
                                                       {% set m=1 %}
                                                                 دورنگار
-                                                    {% else %}
+                                                    {% elseif((service.id !=3 or  service.name !=7))%}
                                                     {{ service.name }}
                                                 {% endif %}</span>
                                             </span>
                                         {% endif %}
                                     {% endfor %}
+                                    {% set z=0 %}
                                     {% for serv in anotherService  %}
                                         <span class="label-checkbox ">
 
-                                            <span class="label"> {% if  serv.name =='دورنگار تهران' or  serv.name =='دورنگار شهرستان' %}
-
-                                                {% else %}
+                                            <span class="label"> {% if  (serv.id ==3) or  (serv.id ==7) and z==0%}
+                                                    {% set z=1 %}
+                                                    <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                                    دورنگار
+                                                {% elseif((serv.id !=3) and  (serv.id !=7)) %}
                                                     <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                                     {{ serv.name }}
                                                 {% endif %}</span>
