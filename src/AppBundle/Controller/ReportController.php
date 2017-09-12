@@ -73,7 +73,7 @@ class ReportController extends  BaseController
             }
 
         }
-
+//$this->dumpWithHeaders($anotherService);
         $html=$this->renderView("report/preFactor.html.twig",[
             'contract'=>$contract,
             'anotherAdv'=>$anotherAdv,

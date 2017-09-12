@@ -208,6 +208,7 @@
                         <table style="margin-top:10px;">
                             <tr>
                                 <td>شماره موبایل فروشنده:۰۹۰۲۳۲۳۳۹۶۱</td>
+                                <td>شماره تلفن : ۴۲۰۵۷ (۲۱ ۹۸+) </td>
                                 <td>ایمیل : sales@ariatender.com </td>
                             </tr>
                         </table>
@@ -292,7 +293,7 @@
                                     {% for serv in anotherService  %}
                                         <span class="label-checkbox ">
 
-                                            <span class="label"> {% if  (serv.id ==3) or  (serv.id ==7) and z==0%}
+                                            <span class="label"> {% if  (serv.id ==3) or  (serv.id ==7) and z==0 and m!=1%}
                                                     {% set z=1 %}
                                                     <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
                                                     دورنگار
@@ -368,11 +369,20 @@
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
                                 <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
                             </tr>
+                            {% set numberIndex=1 %}
                             {% for service in contract.serviceItems %}
+                                {% set numberIndex=loop.index+1 %}
                                 {% if service.name!='سایت' and  service.name!='ایمیل'%}
                             <tr>
-                                <td class="text-center">۲</td>
-                                 <td class="text-center">{{ service.name }}</td>
+                                <td class="text-center">{{ numberIndex|numberFormat }}</td>
+                                 <td class="text-center">
+                                     {% if  (service.id ==3 or  service.id ==7)%}
+                                         دورنگار
+                                     {% else %}
+                                         {{ service.name }}
+                                     {% endif %}
+                                     </td>
+
                                 <td class="text-center">{{ contract.shareString }}</td>
                                 <td class="text-center">۱</td>
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
