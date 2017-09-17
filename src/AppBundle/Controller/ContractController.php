@@ -12,6 +12,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\AdvItems;
 use AppBundle\Entity\Contract;
 use AppBundle\Entity\ServiceItems;
+use DateTime;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AppBundle\Form\ContractType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -39,6 +40,22 @@ class ContractController extends  BaseController
         if ($request->getMethod() == 'POST') {
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
+
+                $date = $firm->getContractStartDate()->format('Y-m-d');
+                $start=explode('-',$date);
+                $dateGeo = \jDateTime::toGregorian($start[0],$start[1],$start[2]);
+                $time = $dateGeo[0].'-'.$dateGeo[1].'-'.$dateGeo[2];
+                $newformat = new DateTime($time);
+                $firm->setContractStartDate($newformat);
+                $dateEnd = $firm->getContractEndDate()->format('Y-m-d');
+                $end=explode('-',$dateEnd);
+                $dateEndGeo = \jDateTime::toGregorian($end[0],$end[1],$end[2]);
+                $timeEnd = $dateEndGeo[0].'-'.$dateEndGeo[1].'-'.$dateEndGeo[2];
+                $newFormatEnd = new DateTime($timeEnd);
+                $firm->setContractEndDate($newFormatEnd);
+
+
+
                 $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser()->getId());
                 $form->getData()->setOwner($user);
                 $em = $this->getDoctrine()->getManager();
@@ -65,7 +82,7 @@ class ContractController extends  BaseController
     public function ManageContract($id,Request $request)
     {
      //   $date = \jDateTime::toGregorian('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
-     //  $this->dumpWithHeaders($request->request->all());
+      //$this->dumpWithHeaders($request->request->all());
         $em = $this->getDoctrine()->getManager();
         $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $method=$request->getMethod();
@@ -96,12 +113,37 @@ class ContractController extends  BaseController
 
             if ($form->isSubmitted() && $form->isValid()) {
                 $firm = $form->getData();
-
+                $date = $firm->getContractStartDate()->format('Y-m-d');
+                $start=explode('-',$date);
+                $dateGeo = \jDateTime::toGregorian($start[0],$start[1],$start[2]);
+                $time = $dateGeo[0].'-'.$dateGeo[1].'-'.$dateGeo[2];
+                $newformat = new DateTime($time);
+                $firm->setContractStartDate($newformat);
+                $dateEnd = $firm->getContractEndDate()->format('Y-m-d');
+                $end=explode('-',$dateEnd);
+                $dateEndGeo = \jDateTime::toGregorian($end[0],$end[1],$end[2]);
+                $timeEnd = $dateEndGeo[0].'-'.$dateEndGeo[1].'-'.$dateEndGeo[2];
+                $newFormatEnd = new DateTime($timeEnd);
+               $firm->setContractEndDate($newFormatEnd);
                 $em->persist($firm);
                 $em->flush();
                 return $this->redirect('/contracts');
             }
         }
+        $firm = $form->getData();
+        $date = $firm->getContractStartDate()->format('Y-m-d');
+        $start=explode('-',$date);
+        $dateGeo = \jDateTime::toJalali($start[0],$start[1],$start[2]);
+        $time = $dateGeo[0].'-'.$dateGeo[1].'-'.$dateGeo[2];
+        $newformat = new DateTime($time);
+        $firm->setContractStartDate($newformat);
+        $dateEnd = $firm->getContractEndDate()->format('Y-m-d');
+        $end=explode('-',$dateEnd);
+        $dateEndGeo = \jDateTime::toJalali($end[0],$end[1],$end[2]);
+        $timeEnd = $dateEndGeo[0].'-'.$dateEndGeo[1].'-'.$dateEndGeo[2];
+        $newFormatEnd = new DateTime($timeEnd);
+        $firm->setContractEndDate($newFormatEnd);
+        $form->setData($firm);
         return $this->render(':page:contract.html.twig', [
             'form' => $form->createView(),
             'formIsNotValid' => $form->isSubmitted() && !$form->isValid()

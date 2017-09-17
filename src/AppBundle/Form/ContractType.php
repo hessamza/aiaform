@@ -55,7 +55,6 @@ class ContractType extends AbstractType
                 'contractStartDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
-                'attr'=>array('style'=>'display:none;'),
                 'required' => false,
                     'invalid_message'=>'تاریخ وارد شده درست نیست'
             ])
@@ -63,7 +62,6 @@ class ContractType extends AbstractType
                 'contractEndDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
-                'attr'=>array('style'=>'display:none;'),
                 'required' => false,
                     'invalid_message'=>'تاریخ وارد شده درست نیست'
             ])

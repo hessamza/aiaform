@@ -1,13 +1,13 @@
 jQuery(document).ready(function() {
 
-    $('#contractTimeFrom').persianDatepicker({
-        altFormat: "YYYY MM DD ",
-        formatDate: 'YYYY-MM-DD'
-    });
-    $('#contractTimeTo').persianDatepicker({
-        altFormat: "YYYY MM DD ",
-        formatDate: 'YYYY-MM-DD'
-    });
+    // $('#contractTimeFrom').persianDatepicker({
+    //     altFormat: "YYYY MM DD ",
+    //     formatDate: 'YYYY-MM-DD'
+    // });
+    // $('#contractTimeTo').persianDatepicker({
+    //     altFormat: "YYYY MM DD ",
+    //     formatDate: 'YYYY-MM-DD'
+    // });
 
     if($('input[id*="appbundle_contract_haveExtraContractPrice"]').prop('checked')) {
         $('.extraPriceShow').show();
@@ -247,63 +247,63 @@ jQuery(document).ready(function() {
         });
     }
 
-    if($('#appbundle_contract_contractStartDate').val()){
-        var dateStart= $('#appbundle_contract_contractStartDate').val();
-        var arrDate=dateStart.split('-');
-        var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
-        m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
-        /**
-         * Default
-         * */
-        $('#contractDateStartextra').persianDatepicker({
-            altFormat: "YYYY MM DD ",
-            formatDate: 'DD-MM-YYYY',
-            selectedBefore: !0,
-            selectedDate:m.toString(),
-            onSelect: function () {
-                $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
-            }
-        });
-
-    }
-    else{
-        $('#contractDateStartextra').persianDatepicker({
-            altFormat: "YYYY MM DD ",
-            formatDate: 'DD-MM-YYYY',
-            onSelect: function () {
-                $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
-            }
-        });
-    }
-
-    if($('#appbundle_contract_contractEndDate').val()){
-        var dateStart= $('#appbundle_contract_contractEndDate').val();
-        var arrDate=dateStart.split('-');
-        var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
-        m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
-        /**
-         * Default
-         * */
-        $('#contractDateEndextra').persianDatepicker({
-            altFormat: "YYYY MM DD ",
-            formatDate: 'DD-MM-YYYY',
-            selectedBefore: !0,
-            selectedDate:m.toString(),
-            onSelect: function () {
-                $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
-            }
-        });
-
-    }
-    else{
-        $('#contractDateEndextra').persianDatepicker({
-            altFormat: "YYYY MM DD ",
-            formatDate: 'DD-MM-YYYY',
-            onSelect: function () {
-                $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
-            }
-        });
-    }
+    // if($('#appbundle_contract_contractStartDate').val()){
+    //     var dateStart= $('#appbundle_contract_contractStartDate').val();
+    //     var arrDate=dateStart.split('-');
+    //     var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
+    //     m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+    //     /**
+    //      * Default
+    //      * */
+    //     $('#contractDateStartextra').persianDatepicker({
+    //         altFormat: "YYYY MM DD ",
+    //         formatDate: 'DD-MM-YYYY',
+    //         selectedBefore: !0,
+    //         selectedDate:m.toString(),
+    //         onSelect: function () {
+    //             $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
+    //         }
+    //     });
+    //
+    // }
+    // else{
+    //     $('#contractDateStartextra').persianDatepicker({
+    //         altFormat: "YYYY MM DD ",
+    //         formatDate: 'DD-MM-YYYY',
+    //         onSelect: function () {
+    //             $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
+    //         }
+    //     });
+    // }
+    //
+    // if($('#appbundle_contract_contractEndDate').val()){
+    //     var dateStart= $('#appbundle_contract_contractEndDate').val();
+    //     var arrDate=dateStart.split('-');
+    //     var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
+    //     m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+    //     /**
+    //      * Default
+    //      * */
+    //     $('#contractDateEndextra').persianDatepicker({
+    //         altFormat: "YYYY MM DD ",
+    //         formatDate: 'DD-MM-YYYY',
+    //         selectedBefore: !0,
+    //         selectedDate:m.toString(),
+    //         onSelect: function () {
+    //             $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
+    //         }
+    //     });
+    //
+    // }
+    // else{
+    //     $('#contractDateEndextra').persianDatepicker({
+    //         altFormat: "YYYY MM DD ",
+    //         formatDate: 'DD-MM-YYYY',
+    //         onSelect: function () {
+    //             $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
+    //         }
+    //     });
+    // }
 
 $('#appbundle_contract_contractPrice').change(function () {
     if($('#appbundle_contract_basePrice').val()!=''){
