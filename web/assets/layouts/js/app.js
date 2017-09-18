@@ -1,13 +1,13 @@
 jQuery(document).ready(function() {
 
-    // $('#contractTimeFrom').persianDatepicker({
-    //     altFormat: "YYYY MM DD ",
-    //     formatDate: 'YYYY-MM-DD'
-    // });
-    // $('#contractTimeTo').persianDatepicker({
-    //     altFormat: "YYYY MM DD ",
-    //     formatDate: 'YYYY-MM-DD'
-    // });
+    $('#contractTimeFrom').persianDatepicker({
+        altFormat: "YYYY MM DD ",
+        formatDate: 'YYYY-MM-DD'
+    });
+    $('#contractTimeTo').persianDatepicker({
+        altFormat: "YYYY MM DD ",
+        formatDate: 'YYYY-MM-DD'
+    });
 
     if($('input[id*="appbundle_contract_haveExtraContractPrice"]').prop('checked')) {
         $('.extraPriceShow').show();
@@ -246,64 +246,79 @@ jQuery(document).ready(function() {
             }
         });
     }
+    $("#contractDateEndextra").on("change",function (){
+        var dateStart= $("#contractDateEndextra").val();
+        var arrDate=dateStart.split('-');
+        var jdate3 =JalaliDate.jalaliToGregorian(arrDate[2],arrDate[1],arrDate[0])
+        m=jdate3[2]+'-'+jdate3[1]+'-'+jdate3[0];
+        $("#appbundle_contract_contractEndDate").val(m);
 
-    // if($('#appbundle_contract_contractStartDate').val()){
-    //     var dateStart= $('#appbundle_contract_contractStartDate').val();
-    //     var arrDate=dateStart.split('-');
-    //     var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
-    //     m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
-    //     /**
-    //      * Default
-    //      * */
-    //     $('#contractDateStartextra').persianDatepicker({
-    //         altFormat: "YYYY MM DD ",
-    //         formatDate: 'DD-MM-YYYY',
-    //         selectedBefore: !0,
-    //         selectedDate:m.toString(),
-    //         onSelect: function () {
-    //             $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
-    //         }
-    //     });
-    //
-    // }
-    // else{
-    //     $('#contractDateStartextra').persianDatepicker({
-    //         altFormat: "YYYY MM DD ",
-    //         formatDate: 'DD-MM-YYYY',
-    //         onSelect: function () {
-    //             $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
-    //         }
-    //     });
-    // }
-    //
-    // if($('#appbundle_contract_contractEndDate').val()){
-    //     var dateStart= $('#appbundle_contract_contractEndDate').val();
-    //     var arrDate=dateStart.split('-');
-    //     var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
-    //     m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
-    //     /**
-    //      * Default
-    //      * */
-    //     $('#contractDateEndextra').persianDatepicker({
-    //         altFormat: "YYYY MM DD ",
-    //         formatDate: 'DD-MM-YYYY',
-    //         selectedBefore: !0,
-    //         selectedDate:m.toString(),
-    //         onSelect: function () {
-    //             $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
-    //         }
-    //     });
-    //
-    // }
-    // else{
-    //     $('#contractDateEndextra').persianDatepicker({
-    //         altFormat: "YYYY MM DD ",
-    //         formatDate: 'DD-MM-YYYY',
-    //         onSelect: function () {
-    //             $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
-    //         }
-    //     });
-    // }
+    })
+    $("#contractDateStartextra").on("change",function (){
+        var dateStart= $("#contractDateStartextra").val();
+        var arrDate=dateStart.split('-');
+        var jdate3 =JalaliDate.jalaliToGregorian(arrDate[2],arrDate[1],arrDate[0])
+        m=jdate3[2]+'-'+jdate3[1]+'-'+jdate3[0];
+        $("#appbundle_contract_contractStartDate").val(m);
+
+    })
+    if($('#appbundle_contract_contractStartDate').val()){
+        var dateStart= $('#appbundle_contract_contractStartDate').val();
+        var arrDate=dateStart.split('-');
+        var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
+        m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+        /**
+         * Default
+         * */
+        $('#contractDateStartextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            selectedBefore: !0,
+            selectedDate:m.toString(),
+            onSelect: function () {
+                $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
+            }
+        });
+
+    }
+    else{
+        $('#contractDateStartextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            onSelect: function () {
+                $("#appbundle_contract_contractStartDate").val($("#contractDateStartextra").attr("data-gdate"))
+            }
+        });
+    }
+
+    if($('#appbundle_contract_contractEndDate').val()){
+        var dateStart= $('#appbundle_contract_contractEndDate').val();
+        var arrDate=dateStart.split('-');
+        var jdate3 =JalaliDate.gregorianToJalali(arrDate[2],arrDate[1],arrDate[0])
+        m=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+        /**
+         * Default
+         * */
+        $('#contractDateEndextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            selectedBefore: !0,
+            selectedDate:m.toString(),
+            onSelect: function () {
+                $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
+            }
+        });
+
+    }
+    else{
+        $('#contractDateEndextra').persianDatepicker({
+            altFormat: "YYYY MM DD ",
+            formatDate: 'DD-MM-YYYY',
+            onSelect: function () {
+                $("#appbundle_contract_contractEndDate").val($("#contractDateEndextra").attr("data-gdate"))
+            }
+        });
+    }
 
 $('#appbundle_contract_contractPrice').change(function () {
     if($('#appbundle_contract_basePrice').val()!=''){
@@ -520,15 +535,15 @@ function changeFunction(){
             }
             else if(!advItem1 && advItem2 && advItem3){
                 shareString=' استعلام , مزایده, ';
-                price='420000';
+                price='4200000';
             }
             else if(!advItem1 && advItem2 && !advItem3){
                 shareString='مزایده,';
-                price='380000';
+                price='3800000';
             }
             else if(!advItem1 && !advItem2 && advItem3){
                 shareString=' استعلام, ';
-                price='120000';
+                price='1200000';
             }
             servicePrice=price;
         }
@@ -536,29 +551,29 @@ function changeFunction(){
             serviceString='سایت , ایمیل,';
             if(advItem1 && advItem2 && advItem3) {
                 shareString='مناقصه , استعلام , مزایده,';
-                price='590000';
+                price='5900000';
             }
             else if(advItem1 && !advItem2 && advItem3){
                 shareString='مناقصه , استعلام, ';
-                price='530000';
+                price='5300000';
             }
             else if(!advItem1 && advItem2 && advItem3){
                 shareString=' استعلام , مزایده,';
-                price='490000';
+                price='4900000';
             }
             else if(!advItem1 && advItem2 && !advItem3){
                 shareString='مزایده,';
-                price='4۵0000';
+                price='4۵00000';
             }
             else if(!advItem1 && !advItem2 && advItem3){
                 shareString=' استعلام, ';
-                price='16000';
+                price='160000';
             }
             servicePrice=price;
         }
         else if(!shareItem1 && !shareItem2 && !serviceItem3 && serviceItem4 && !serviceItem6||serviceItem7){
             serviceString='فقط سرویس تلگرام,';
-            price='160000';
+            price='1600000';
         }
         if(serviceItem4 && ( serviceItem3 || serviceItem5 || serviceItem6||serviceItem7)){
             price=parseInt(price)+80000;
@@ -579,23 +594,23 @@ function changeFunction(){
             serviceString='سایت, ';
             if(advItem1 && advItem2 && advItem3) {
                 shareString='مناقصه , استعلام , مزایده, ';
-                price='690000';
+                price='6900000';
             }
             else if(advItem1 && !advItem2 && advItem3){
                 shareString='مناقصه , استعلام, ';
-                price='590000';
+                price='5900000';
             }
             else if(!advItem1 && advItem2 && advItem3){
                 shareString=' استعلام , مزایده, ';
-                price='540000';
+                price='5400000';
             }
             else if(!advItem1 && advItem2 && !advItem3){
                 shareString='مزایده, ';
-                price='490000';
+                price='4900000';
             }
             else if(!advItem1 && !advItem2 && advItem3){
                 shareString=' استعلام, ';
-                price='210000';
+                price='2100000';
             }
             servicePrice=price;
         }
@@ -603,29 +618,29 @@ function changeFunction(){
             serviceString='سایت , ایمیل, ';
             if(advItem1 && advItem2 && advItem3) {
                 shareString='مناقصه , استعلام , مزایده, ';
-                price='790000';
+                price='7900000';
             }
             else if(advItem1 && !advItem2 && advItem3){
                 shareString='مناقصه , استعلام, ';
-                price='690000';
+                price='6900000';
             }
             else if(!advItem1 && advItem2 && advItem3){
                 shareString=' استعلام , مزایده, ';
-                price='640000';
+                price='6400000';
             }
             else if(!advItem1 && advItem2 && !advItem3){
                 shareString='مزایده, ';
-                price='590000';
+                price='5900000';
             }
             else if(!advItem1 && !advItem2 && advItem3){
                 shareString=' استعلام, ';
-                price='290000';
+                price='2900000';
             }
             servicePrice=price;
         }
         else if(!shareItem1 && !shareItem2 && !serviceItem3 && serviceItem4 && !serviceItem6||serviceItem7){
             serviceString='فقط سرویس تلگرام,';
-            price='230000';
+            price='2300000';
         }
         if(serviceItem4 && ( serviceItem3 || serviceItem5 || serviceItem6 || serviceItem7)){
             price=parseInt(price)+120000;

@@ -55,6 +55,7 @@ class ContractType extends AbstractType
                 'contractStartDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
+                'attr'=>array('style'=>'display:none;'),
                 'required' => false,
                     'invalid_message'=>'تاریخ وارد شده درست نیست'
             ])
@@ -62,6 +63,7 @@ class ContractType extends AbstractType
                 'contractEndDate', DateType::class, [
                 'widget'   => 'single_text',
                 'format'   => 'dd-MM-yyyy',
+                'attr'=>array('style'=>'display:none;'),
                 'required' => false,
                     'invalid_message'=>'تاریخ وارد شده درست نیست'
             ])
@@ -112,12 +114,6 @@ class ContractType extends AbstractType
 //            ->add('sharingMethods', EntityType::class, [
 //                'class' => 'AppBundle\Entity\Sharing','choice_label' => 'text',
 //            ])
-            ->add('advItems', EntityType::class, array(
-                'class' => 'AppBundle\Entity\AdvItems',
-                'choice_label' => 'name',
-                'multiple' => true,
-                'expanded' => true
-            ))
             ->add('shareItems', EntityType::class, array(
                 'class' => 'AppBundle\Entity\ShareItems',
                 'choice_label' => 'name',
