@@ -23,7 +23,7 @@ class ItemsController extends  BaseController
 {
 
     /**
-     * @Security("is_granted(['ROLE_SECRETARY'])")
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
      * @Route("/items",path="item_list")
      * @Method({"GET"})
      * @return Response
@@ -33,7 +33,7 @@ class ItemsController extends  BaseController
     }
 
     /**
-     * @Security("is_granted(['ROLE_SECRETARY'])")
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
      * @Route("/items/list",name="get_item_list")
      * @Method("GET")
      * @param Request $request
@@ -73,6 +73,48 @@ class ItemsController extends  BaseController
         return $response;
     }
 
+
+    /**
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
+     * @Method("POST")
+     * @Route("/listItem/{id}")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     */
+    public function ManageItems($id,Request $request)
+    {
+        //   $date = \jDateTime::toGregorian('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
+        // $this->dumpWithHeaders($request->request->all());
+        $em = $this->getDoctrine()->getManager();
+        $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $findObject->setItemDescriptionSec($request->request->get('itemDescriptionSec'));
+        $em->persist($findObject);
+        $em->flush();
+        $response = $this->createApiResponse(['success'], 200, ['Default']);
+        return $response;
+    }
+
+    /**
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
+     * @Method("POST")
+     * @Route("/listItem/send/{id}")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     */
+    public function ManageSendItems($id,Request $request)
+    {
+        //   $date = \jDateTime::toGregorian('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
+        // $this->dumpWithHeaders($request->request->all());
+        $em = $this->getDoctrine()->getManager();
+        $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $findObject->setItemSend($request->request->get('itemSend'));
+        $em->persist($findObject);
+        $em->flush();
+        $response = $this->createApiResponse(['success'], 200, ['Default']);
+        return $response;
+    }
 
 
 }

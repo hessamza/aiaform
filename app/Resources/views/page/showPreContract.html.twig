@@ -27,14 +27,13 @@
                                 <div class="portlet-title">
                                     <div class="caption">
                                         <i class="icon-settings font-dark"></i>
-                                        <span class="caption-subject font-dark sbold uppercase">فهرست مرسولات</span>
-                                        <button id="test">
-                                            get input values
-                                        </button>
+                                        <span class="caption-subject font-dark sbold uppercase">فهرست قرار دادها</span>
                                     </div>
                                 </div>
-
-                            <form class="searchItemForm" role="form" >
+                                <div id="dialog" title="پیش فاکتور">
+                                    <p id="getPdf"></p>
+                                </div>
+                            <form class="searchForm" role="form" >
                                 <div class="col-md-3 form-group">
                                     <label for="search">وضعیت فاکتور</label>
                                     <input type="text" name="companyName"  class="form-control" />
@@ -60,7 +59,7 @@
                             <div class="portlet light portlet-fit portlet-datatable ">
                                 <div class="portlet-body">
                                     <div class="table-container">
-                                        <table cellpadding="0" cellspacing="0" border="0" class="dataTable itemData" id="exampleItems"></table>
+                                        <table cellpadding="0" cellspacing="0" border="0" class="dataTable contractPreData" id="preExample"></table>
                                     </div>
                                 </div>
                             </div>
@@ -75,4 +74,36 @@
         <!-- END CONTENT BODY -->
     </div>
     <!-- END CONTENT -->
+        <script>
+            function callpreFactore(id) {
+                $.ajax({
+                    url: "/api/preFactor/"+id,
+                    type: "GET",
+                    data: {},
+                    success: function (response) {
+                        $('#getPdf').html('<a href="'+response+'" target="_blank">لطفا برای دیدن پیش فاکتور روی لینک زیر کلیک کنید</a>');
+                        $( "#dialog" ).dialog();
+                        return false;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+            function callSignpreFactore(id) {
+                $.ajax({
+                    url: "/api/preFactor/sign/"+id,
+                    type: "GET",
+                    data: {},
+                    success: function (response) {
+                        $('#getPdf').html('<a href="'+response+'" target="_blank">لطفا برای دیدن پیش فاکتور با امضا روی لینک زیر کلیک کنید</a>');
+                        $( "#dialog" ).dialog();
+                        return false;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+            </script>
 {% endblock %}

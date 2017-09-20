@@ -296,6 +296,29 @@ class Contract
      */
     private $itemDescription;
 
+
+    /**
+     * @ORM\Column(type="text",nullable=true)
+     * @Serializer\Groups({"items","Default"})
+     */
+    private $itemDescriptionSec;
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     * @Serializer\Groups({"items","Default"})
+     */
+    private $itemSend;
+
+
+    /**
+     * @ORM\Column(type="boolean")
+     * @Serializer\Groups({"items","Default"})
+     */
+    private $accept;
+
+
+
     /**
      * @ORM\Column(type="text",nullable=true)
      */
@@ -1055,6 +1078,56 @@ class Contract
     {
         $this->servicePrice = $servicePrice;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getItemDescriptionSec()
+    {
+        return $this->itemDescriptionSec;
+    }
+
+    /**
+     * @param mixed $itemDescriptionSec
+     */
+    public function setItemDescriptionSec($itemDescriptionSec)
+    {
+        $this->itemDescriptionSec = $itemDescriptionSec;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getItemSend()
+    {
+        return $this->itemSend;
+    }
+
+    /**
+     * @param mixed $itemSend
+     */
+    public function setItemSend($itemSend)
+    {
+        $this->itemSend = $itemSend;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAccept()
+    {
+        return $this->accept;
+    }
+
+    /**
+     * @param mixed $accept
+     */
+    public function setAccept($accept)
+    {
+        $this->accept = $accept;
+    }
+
+
 
 
 }

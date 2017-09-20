@@ -23,7 +23,7 @@ class ContractController extends  BaseController
 {
 
     /**
-     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser','ROLE_SECRETARY'])")
      * @Method({"GET","POST"})
      * @Route("/contract")
      * @param Request $request
@@ -103,7 +103,7 @@ class ContractController extends  BaseController
 
     }
     /**
-     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser','ROLE_SECRETARY'])")
      * @Route("/delete/contract/{id}")
      * @Method("GET")
      * @param $id
@@ -171,5 +171,77 @@ class ContractController extends  BaseController
     }
 
 
+    /**
+     * @Route("/contracts/items/pre",name="contract_list_pre")
+     * @Method("GET")
+     * @param Request $request
+     * @return Response
+     */
+    public function getPreContractsList(Request $request)
+    {
+
+        $extraFields = ['contractTimeTo','contractTimeFrom'];
+        $searchEntity = $this->getClassMetaDataProperties('AppBundle:Contract', $request->query->all(), $extraFields);
+        $search = $searchEntity;
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] !='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] !='' ){
+            $search['contractDate']=[
+                'from'=>$search['contractTimeFrom'],
+                'to'=>$search['contractTimeTo']
+            ];
+        }
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] !='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] =='' ){
+            $search['contractDate']=[
+                'from'=>$search['contractTimeFrom']
+            ];
+        }
+        if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] =='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] !='' ){
+            $search['contractDate']=[
+                'to'=>$search['contractTimeTo']
+            ];
+        }
+        unset($search['contractTimeTo']);
+        unset($search['contractTimeFrom']);
+        $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
+
+        $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findPreContracts($search,$user->getId());
+        $response = $this->createApiResponse($result, 200, ['Default']);
+        if (!$response) {
+            throw $this->createNotFoundException(sprintf('Page Not Found'));
+        }
+        return $response;
+    }
+
+    /**
+     * @Route("/preContracts",path="contract_list")
+     * @Method({"GET"})
+     * @return Response
+     */
+    public function searchPreContracts(){
+        return $this->render('page/showPreContract.html.twig');
+    }
+
+
+
+
+    /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser'])")
+     * @Method("POST")
+     * @Route("contract/pre/accept/{id}")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     */
+    public function ManageAccept($id,Request $request)
+    {
+        //   $date = \jDateTime::toGregorian('Y/m/d', 'Y-m-d H:i:s', $date->format('Y-m-d H:i:s'));
+        // $this->dumpWithHeaders($request->request->all());
+        $em = $this->getDoctrine()->getManager();
+        $findObject = $this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $findObject->setAccept(true);
+        $em->persist($findObject);
+        $em->flush();
+        $response = $this->createApiResponse(['success'], 200, ['Default']);
+        return $response;
+    }
 
 }

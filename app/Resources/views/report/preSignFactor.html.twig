@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>سامانه اطلاع رسانی</title>
+    <style>
+        body{
+            font-family: 'yekan';
+            padding:70px;
+        }
+        .main-table{
+            width:100%;
+            border:2px solid #000;
+        }
+        table{
+            width: 100%;
+            direction: rtl;
+        }
+        .text-right{
+            text-align: right;
+        }
+        .text-left{
+            text-align: left;
+        }
+        .text-center{
+            text-align: center;
+        }
+        .logo-title{
+            display: block;
+            margin-left:80px;
+        }
+        .pdf-title span{
+            font-size: 30px;
+        }
+        .main-table >tbody>tr>td{
+            border:1px solid #000;
+            padding:20px 10px;
+        }
+        .c-img{
+            width:237px;
+            height:auto;
+        }
+        .c-img2{
+            width:437px;
+            height:auto;
+        }
+        .c-imgsign{
+            width:337px;
+            height:auto;
+        }
+        .tickCalss{
+            width:15px;
+            height:auto;
+            margin-top: 10px;
+        }
+        .header-table {
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+            width: 90%;
+            margin:0 auto;
+        }
+        .table1{
+            margin-top:10px;
+            width:90%;
+            margin: 0 auto;
+        }
+        .table1-header{
+            padding-bottom:20px;
+        }
+        .table1-header span{
+            display: block;
+        }
+        .table1-header span:first-child{
+            font-size: 20px;
+        }
+        .table1-header span:last-child{
+            font-size: 30px;
+            font-weight: bold;
+        }
+        .c-table{
+            border:1px solid #000;
+            font-size: 18px;
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom:5px;
+        }
+        .c-table td{
+            padding: 0px 10px;
+        }
+        .td-border{
+            font-size: 20px;
+            font-weight: bold;
+            border-bottom: 1px solid #000;
+            border-left: 1px solid #000;
+        }
+        .bg-gray{
+            background: #ccc;
+        }
+        .table3 th{
+            border-bottom: 1px solid #000;
+            font-size: 23px;
+        }
+        .label-checkbox{
+            vertical-align: middle;
+            margin-top:5px;
+            display: inline-block;
+            margin-left:15px;
+        }
+        .checkbox-box{
+            display: inline-block;
+            width: 12px;
+            height:12px;
+            border: 1px solid #000;
+            position: relative;
+
+        }
+        .checkbox-checked:before{
+            content: '✔';
+            position: absolute;
+            top: -2px;
+            left:2px;
+            font-size: 17px;
+            line-height: 1;
+            color: #000;
+        }
+        .full-with{
+            margin-top:30px;
+        }
+        .table-bordered td, .table-bordered th {
+            border: 1px solid #000;
+        }
+        .table-bordered{
+            border-collapse: collapse;
+        }
+        .p-5{
+            padding:0px 5px;
+        }
+        .no-border{
+            border:none !important;
+        }
+        .cost{
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+    </style>
+</head>
+<body>
+<table class="main-table">
+    <tbody>
+    <tr >
+        <td>
+            <table class="header-table">
+                <tr>
+
+                    <td width="60%" class="text-right pdf-title" >
+                        <img class="c-img2" src="{{web_dir~'/assets/img/aria.jpg' }}" alt="logo">
+                    </td>
+                    <td width="40%" class="text-left">
+                        <img class="c-img" src="{{web_dir~'/assets/img/logo1.jpg' }}" alt="logo">
+                    </td>
+
+                </tr>
+            </table>
+            <table class="table1">
+                <tr>
+                    <td class="text-center table1-header" colspan="3" style="font-size: 25px">
+                        <span style="font-size: 20px">به نام خدا</span><br>
+                        <span><strong>پیش فاکتور فروش خدمات اطلاع رسانی</strong></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">کارشناس مربوطه : خانم {{ contract.owner.username }}</td>
+                    <td class="text-center">تاریخ تنظیم : {{ contract.createdAt|jDatePdf }} </td>
+                    <td class="text-center">شماره : ۵۶۵۶۴۵۶۴۵۶</td>
+                </tr>
+            </table>
+            <table class="table2 c-table"  cellspacing="0">
+                <tr>
+                    <td class="td-border text-center bg-gray" width="15%" lang="fa">خریدار</td>
+                    <td>نام حقوقی : {{ contract.companyName }}</td>
+                    <td>نام حقیقی :{{ contract.contractMan }} </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table style="margin-top:10px;">
+                            <tr>
+                                <td>تلفن / موبایل :{{ contract.customerPhone|changeToPersian }} </td>
+                                <td>نام کاربری :{{ contract.userName }} </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table style="margin-top:30px;padding-bottom: 10px">
+                            <tr>
+                                <td>آدرس :{{ contract.customerAddress }} </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table class="table3 c-table"  cellspacing="0">
+                <tr>
+                    <td class="td-border text-center bg-gray" width="15%">فروشنده</td>
+                    <td>نام حقوقی : سامانه اطلاع رسانی آریاتندر </td>
+                    <td>نام حقیقی : آقای امین اسفندیاری </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table style="margin-top:10px;">
+                            <tr>
+                                <td>شماره موبایل فروشنده:۰۹۰۲۳۲۳۳۹۶۱</td>
+                                <td>شماره تلفن : ۴۲۰۵۷ (۲۱ ۹۸+) </td>
+                                <td>ایمیل : sales@ariatender.com </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <table style="margin-top:30px;padding-bottom: 10px">
+                            <tr>
+                                <td style="font-size: 17px">آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table class="table3 c-table"  cellspacing="0">
+                <thead>
+                <tr>
+                    <th class="bg-gray">
+                        مشخصات اشتراک
+                    </th>
+                </tr>
+                </thead>
+                <tr >
+                    <td>
+                        <table style="margin-top: 10px;">
+                            <tr>
+                                <td >
+                                    <span style="font-weight: bold;margin-left:10px;">نوع آگهی :  </span>
+                                    {% for advItem in contract.getAdvItems()  %}
+                                                <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ advItem.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                    {% for adv in anotherAdv  %}
+                                                <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ adv.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                    <span style="padding-right:150px;color: white">sdfdfdsf</span>
+                                    <span style="font-weight: bold;margin-left:10px;padding-right:150px;text-align: left">      نوع خدمات :  </span>
+                                    {% for share in contract.getShareItems()  %}
+                                        <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ share.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                    {% for sha in anothershare  %}
+                                        <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                            <span class="label">{{ sha.name }}</span>
+                                        </span>
+                                    {% endfor %}
+                                </td>
+
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table style="margin-top: 10px;margin-bottom: 10px">
+                            <tr>
+                                <td >
+                                    <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
+                                    {% set m=0 %}
+                                    {% for service in contract.serviceItems  %}
+                                            <span class="label-checkbox ">
+                                                <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                                <span class="label">
+                                                    {% if  (service.id ==3 or  service.id ==7) and m==0%}
+                                                      {% set m=1 %}
+                                                                دورنگار
+                                                    {% elseif((service.id !=3 and  service.id !=7))%}
+                                                    {{ service.name }}
+                                                {% endif %}</span>
+                                            </span>
+                                    {% endfor %}
+                                    {% set z=0 %}
+                                    {% for serv in anotherService  %}
+                                        <span class="label-checkbox ">
+
+                                            <span class="label"> {% if  (serv.id ==3) or  (serv.id ==7) and z==0 and m!=1%}
+                                                    {% set z=1 %}
+                                                    <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                                    دورنگار
+                                                {% elseif((serv.id !=3) and  (serv.id !=7)) %}
+                                                    <img src="{{ web_dir~'/assets/img/square.png' }}" alt="" class="tickCalss" >
+                                                    {{ serv.name }}
+                                                {% endif %}</span>
+                                        </span>
+                                    {% endfor %}
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک: </span>
+                                    <span>
+                                            {{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
+                                        </span>
+                                    <span style="font-weight: bold;margin-left:10px;margin-right:50px">محدوده اطلاع رسانی : </span>
+                                    {% if contract.separate %}
+                                        <span class="label-checkbox ">
+                                            <img src="{{ web_dir~'/assets/img/tick.png' }}" alt="" class="tickCalss" >
+                                            {% if contract.separate=='global' %}
+                                                <span class="label">سراسری</span>
+                                        {% elseif contract.separate=='local' %}
+                                                <span class="label">استانی</span>
+                                            {% elseif contract.separate=='professional' %}
+                                                <span class="label">تخصصی</span>
+                                            {% elseif contract.separate=='local-professional' %}
+                                                <span class="label">استانی تخصصی</span>
+                                            {% else %}
+                                            {% endif %}
+                                           </span>
+                                    {% endif %}
+                                    <br>
+                                    <br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
+            <table class="full-with">
+                <tr>
+                    <td>
+                            <span style="font-weight: bold;font-size: 25px">
+                                صورتحساب پرداخت :
+                            </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table class="table-bordered" cellpadding="0">
+                            <tr>
+                                <th class="bg-gray  p-5">ردیف</th>
+                                <th class="bg-gray  p-5">شرح / ابزار</th>
+                                <th class="bg-gray  p-5">موضوع</th>
+                                <th class="bg-gray  p-5">تعداد</th>
+                                <th class="bg-gray  p-5">مدت زمان</th>
+                                <th class="bg-gray  p-5">بهای واحد</th>
+                            </tr>
+                            <tr>
+                                <td class="text-center">۱</td>
+                                <td class="text-center">
+                                    {{ contract.serviceString }}
+                                </td>
+                                <td class="text-center">
+                                    {{ contract.shareString }}
+                                 </td>
+                                <td class="text-center">۱</td>
+                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
+                            </tr>
+                            {% set numberIndex=1 %}
+                            {% for service in contract.serviceItems %}
+                                {% set numberIndex=loop.index+1 %}
+                                {% if service.name!='سایت' and  service.name!='ایمیل'%}
+                            <tr>
+                                <td class="text-center">{{ numberIndex|numberFormat }}</td>
+                                 <td class="text-center">
+                                     {% if  (service.id ==3 or  service.id ==7)%}
+                                         دورنگار
+                                     {% else %}
+                                         {{ service.name }}
+                                     {% endif %}
+                                     </td>
+
+                                <td class="text-center">{{ contract.shareString }}</td>
+                                <td class="text-center">۱</td>
+                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center">
+                                    {% if contract.contractTime=='6month' %}
+                                        {% if service.name=='تلگرام' %}
+                                            ۱۲۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار تهران' %}
+                                            ۱۵۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار شهرستان' %}
+                                            ۲۷۰/۰۰۰ تومان
+                                        {% elseif service.name=='پیامک' %}
+                                            ۵۰/۰۰۰ تومان
+                                        {% elseif service.name=='اپلیکیشن' %}
+                                            ۰ تومان
+                                        {% endif %}
+                                    {% elseif contract.contractTime=='12month' %}
+                                        {% if service.name=='تلگرام' %}
+                                            ۱۲۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار تهران' %}
+                                            ۳۰۰/۰۰۰ تومان
+                                        {% elseif service.name=='دورنگار شهرستان' %}
+                                            ۵۴۰/۰۰۰ تومان
+                                        {% elseif service.name=='پیامک' %}
+                                            ۱۰۰/۰۰۰ تومان
+                                        {% elseif service.name=='اپلیکیشن' %}
+                                            ۰ تومان
+                                        {% endif %}
+                                    {% endif %}
+                                </td>
+
+                            </tr>
+                                {% endif %}
+                            {% endfor %}
+                            <tr>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
+                                <td class="text-center" colspan="2" style="font-size: 15px"><strong>جمع مبلغ</strong></td>
+                                <td class="text-center"><strong>{{ contract.basePrice|numberFormat }} تومان</strong></td>
+                            </tr>
+                            <tr>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
+                                <td class="text-center " colspan="2">تخفیف</td>
+                                <td class="text-center" style="font-size: 20px">{{ contract.discount|numberFormat }} تومان</td>
+                            </tr>
+                            <tr>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <td class="text-center no-border"></td>
+                                <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
+                                <td class="text-center cost" colspan="2" style="font-size: 20px">مبلغ قابل پرداخت</td>
+                                <td class="text-center cost">{{ contract.contractPrice|numberFormat }} تومان</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table class="signature" style="margin-top:30px;margin-bottom:50px">
+                <tr>
+                    <td style="font-weight: bold;font-size: 20px">مشخصات پرداخت وجه اشتراک : </td>
+                </tr>
+                <tr>
+                    <td width="60%" class="text-right pdf-title" style="font-weight: bold;font-size: 20px;" >
+                        <span>                        جاری بانک ملت به شماره حساب۱۴۶۵۷۱۶۱/۴۴
+</span>
+                    </td>
+                    <td width="40%" class="text-right">
+                        <img class="c-imgsign" src="{{web_dir~'/assets/img/sign2.jpg' }}" alt="logo">
+                    </td>
+
+                </tr>
+                <tr style="margin-bottom: 40px">
+                    <td style="font-weight: bold;font-size: 20px">و يا شماره كارت ۶۱۰۴۳۳۷۹۵۳۹۰۰۵۵۰ به نام امين اسفندياري</td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

@@ -91,12 +91,92 @@ jQuery(document).ready(function() {
                 render: function ( data, type, row ) {
                     var mg ='';
                     mg=data.id;
-                    return '<a href="#" onclick="callpreFactore('+data.id+')">پیش فاکتور</a>';
+                    return '<a href="#" onclick="callSignFactore('+data.id+')">فاكتور با امضاء</a>';
+                }
+            },
+            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<a href="#" onclick="callFactore('+data.id+')"> فاکتور بدون امضا</a>';
+                }
+            },            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<button class="dsbuttonAccept" style="margin-right: 10px">ضمانت نامه</button> ';
+
                 }
             },
         ]
     });
-    TableItems = $('#exampleItems').dataTable({
+
+    perTable = $('#preExample').DataTable({
+        "data": [],
+        "columns": [{
+            "title": "id",'data': 'id'
+        }, {
+            "title": "نام شرکت",'data': 'company_name'
+        } , {
+            "title": "نام کاربری",'data': 'user_name',width:100
+        }, {
+            "title": "تاریخ",'data': null,
+            render: function ( data, type, row ) {
+                var m='unknow';
+                if(data.contract_date !=null){
+                    var dataCoul=data.contract_date;
+                    var am=dataCoul.split('T')
+                    var n=am[0];
+                    var arrDate=n.split('-');
+                    var jdate3 =JalaliDate.gregorianToJalali(arrDate[0],arrDate[1],arrDate[2])
+                    m=jdate3[0]+'-'+jdate3[1]+'-'+jdate3[2]
+                }
+                return m;
+            }
+        },
+            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    return '<a href="contract/'+data.id+'" class="editor_edit">Edit</a>';
+                }
+            },
+            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<a href="#" onclick="callSignpreFactore('+data.id+')">پيش فاكتور با امضاء</a>';
+                }
+            },
+            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<a href="#" onclick="callpreFactore('+data.id+')">پیش فاکتور بدون امضا</a>';
+                }
+            },            {
+                data: null,
+                className: "center",
+                render: function ( data, type, row ) {
+                    var mg ='';
+                    mg=data.id;
+                    return '<button class="buttonAccept" style="margin-right: 10px">تایید قرار داد</button> ';
+
+                }
+            },
+        ]
+    });
+
+
+    TableItems = $('#exampleItems').DataTable({
         "data": [],
         "columns": [{
             "title": "id",'data': 'id'
@@ -144,19 +224,61 @@ jQuery(document).ready(function() {
             }
         }, {
             "title": "وضعبت ارسال",'data': null,
+            width:80,
             render: function ( data, type, row ) {
-               return 'نا مشخص';
-            }
+                if(data.item_send){
+                    return '<input class="nameSend"  type="checkbox" checked  ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
+                }else{
+                    return '<input class="nameSend"  type="checkbox" ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
+                }
+           }
         },
             {
+                "title": "ادیت توضیحات",
                 data: null,
+                width:200,
                 className: "center",
                 render: function ( data, type, row ) {
-                    return '<a href="contract/'+data.id+'" class="editor_edit">Edit</a>';
+                    return '<input type="text"  class="nameInput"  style="width: 145px" value="'+data.item_description_sec+'" size="10"/><button class="buttonItemSend" style="margin-right: 10px">ارسال</button> ';
                 }
-            }
+            },
         ]
     });
+    $('#preExample tbody').on( 'click', '.buttonAccept', function () {
+        var dataItem =perTable.row( $(this).parents('tr') ).data();
+        console.log(dataItem);
+        $.post("contract/pre/accept/"+dataItem['id'],
+            {
+                itemDescriptionSec: dataItem['id'],
+            },
+            function(data, status){
+                location.reload();
+            });
+    } );
+    $('#exampleItems tbody').on( 'click', '.buttonItemSend', function () {
+        var data =$(this).closest('tr').find('.nameInput').val();
+        var dataItem =TableItems.row( $(this).parents('tr') ).data();
+        $.post("listItem/"+dataItem['id'],
+            {
+                itemDescriptionSec: data,
+            },
+            function(data, status){
+                location.reload();
+            });
+    } );
+
+    $('#exampleItems tbody').on( 'click', '.buttonItemDes', function () {
+        var data =$(this).closest('tr').find('.nameSend').is(':checked');
+        var dataItem =TableItems.row( $(this).parents('tr') ).data();
+        $.post("listItem/send/"+dataItem['id'],
+            {
+                itemSend: 1,
+            },
+            function(data, status){
+                //location.reload();
+            });
+    } );
+
 
     if ($('.contractData').length > 0) {
         $.ajax({
@@ -178,6 +300,34 @@ jQuery(document).ready(function() {
                 });
 
                 var table = $('#example').DataTable();
+                table.clear().draw();
+                table.rows.add(items).draw();
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+    }
+    if ($('.contractPreData').length > 0) {
+        $.ajax({
+            url: "/contracts/items/pre",
+            type: "GET",
+            data: {},
+            success: function (response) {
+                $('.companiesBuyItems').html('');
+                var items = response;
+                var html = '';
+                $.each(items, function (key, value) {
+                    html += '<tr>'
+                        + '<td> Tridentسیس </td>'
+                        + '<td> Internet Explorer 4.0 </td>'
+                        + '<td> Win 95+ </td>'
+                        + '<td> 4 </td>'
+                        + '<td> X </td>'
+                        + '</tr>';
+                });
+
+                var table = $('#preExample').DataTable();
                 table.clear().draw();
                 table.rows.add(items).draw();
             },
