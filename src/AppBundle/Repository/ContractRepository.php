@@ -102,8 +102,8 @@ class ContractRepository extends EntityRepository {
             ->leftJoin('contract.serviceItems','serviceItems')
             ->leftJoin('contract.shareItems','shareItems')
             ->leftJoin('contract.posts','posts')
-            ->where('contract.accept = :acceptItem')
-            ->setParameter('acceptItem',0)
+            ->where('contract.accept != :acceptItem')
+            ->setParameter('acceptItem',1)
             ->orderBy('contract.createdAt','DESC')
         ;
         if($userId!=1 ){
