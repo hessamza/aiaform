@@ -170,6 +170,7 @@ class ContractController extends  BaseController
 
         $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search,$user->getId());
         $response = $this->createApiResponse($result, 200, ['Default']);
+        //$this->dumpWithHeaders($response);
         if (!$response) {
             throw $this->createNotFoundException(sprintf('Page Not Found'));
         }

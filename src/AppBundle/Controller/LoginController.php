@@ -57,6 +57,9 @@ class LoginController extends BaseController
 
             $result = $this->handleLoginForm($request, $response);
             if ($result == false) {
+                $value = 'something from somewhere';
+
+                setcookie("TestCookie", $value);
                 return $this->redirect('/');
             }
         }
@@ -160,7 +163,9 @@ class LoginController extends BaseController
             $session->set('token', $token);
             $session->save();
         }
+        $value = $user->getRole()->getName();
 
+        setcookie("RoleCookie", $value);
         return false;
     }
 

@@ -23,7 +23,7 @@ class ItemsController extends  BaseController
 {
 
     /**
-     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Route("/items",path="item_list")
      * @Method({"GET"})
      * @return Response
@@ -33,7 +33,7 @@ class ItemsController extends  BaseController
     }
 
     /**
-     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN'])")
+     * @Security("is_granted(['ROLE_SECRETARY','ROLE_ADMIN','ROLE_FrontendUser'])")
      * @Route("/items/list",name="get_item_list")
      * @Method("GET")
      * @param Request $request
@@ -64,8 +64,8 @@ class ItemsController extends  BaseController
         unset($search['contractTimeTo']);
         unset($search['contractTimeFrom']);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
-//        $this->dumpWithHeaders($search);
         $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findItemContracts($search,$user->getId());
+      //  $this->dumpWithHeaders($result);
         $response = $this->createApiResponse($result, 200, ['items']);
         if (!$response) {
             throw $this->createNotFoundException(sprintf('Page Not Found'));

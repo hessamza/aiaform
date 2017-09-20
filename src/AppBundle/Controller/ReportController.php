@@ -302,4 +302,194 @@ class ReportController extends  BaseController
         return $this->createApiResponse($report->getPath() . '/' . $report->getName());
 
     }
+
+
+    /**
+     * @Route("/api/Factor/sign/{id}")
+     * @Method("GET")
+     * @return string
+     */
+    public function returnPDFResponseFromHTMLBase($id)
+    {
+//echo realpath(__DIR__.'/../../../app/Resources/views/report/font/');die;
+
+
+        $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
+        $anotherAdv=$advItem;
+        $contractAdvItems=$contract->getAdvItems()->getValues();
+
+        foreach ($anotherAdv as $key4 => $new_val4)
+        {
+            foreach ($contractAdvItems as $contractAdvItem) {
+                if ( $contractAdvItem->getName() == $new_val4->getName()) // has changed?
+                    unset($anotherAdv[$key4]);
+            }
+        }
+
+        $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
+        $anotherShare=$shareItem;
+        $contractShareItems=$contract->getShareItems()->getValues();
+        foreach ($anotherShare as $key => $new_val)
+        {
+            if (isset( $contractShareItems[$key])) // belongs to old array?
+            {
+                if ( $contractShareItems[$key]->getName() == $new_val->getName()) // has changed?
+                    unset($anotherShare[$key]);
+            }
+        }
+        $serviceItem=$this->getDoctrine()->getRepository("AppBundle:ServiceItems")->findAll();
+        $anotherService=$serviceItem;
+        $contractSerivecItems=$contract->getServiceItems()->getValues();
+        foreach ($anotherService as $key2 => $new_val2)
+        {
+            foreach ($contractSerivecItems as $item) {
+                if ( $item->getName() == $new_val2->getName()) // has changed?
+                    unset($anotherService[$key2]);
+            }
+
+        }
+//$this->dumpWithHeaders($anotherService);
+        $html=$this->renderView("report/SignFactor.html.twig",[
+            'contract'=>$contract,
+            'anotherAdv'=>$anotherAdv,
+            'anothershare'=>$anotherShare,
+            'anotherService'=>$anotherService
+        ]);
+        $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
+        $html=iconv("utf-8","UTF-8//IGNORE",$html);
+        $MPDF = new \mPDF('utf-8');
+//        $custom_fontdata = array(
+//            'centurygothic' => array(
+//                'R' => "../../../../app/Resources/views/report/font/CenturyGothic.ttf",
+//                'B' => "../../../../app/Resources/views/report/font/CenturyGothic-Bold.ttf",
+//                'I' => "../../../../app/Resources/views/report/font/CenturyGothic-Italic.ttf",
+//                'BI' => "../../../../app/Resources/views/report/font/CenturyGothic-BoldItalic.ttf"
+//                // use 'R' to support CSS font-weight: normal
+//                // use 'B', 'I', 'BI' and etc. to support CSS font-weight: bold, font-style: italic, and both...
+//            )
+//        );
+        $folderName = md5($this->generateRandomString() . '_' . $this->getUser()->getId() . '_preFactor' );
+
+        !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/candidate") : null;
+        !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") : null;
+        //$this->add_custom_fonts_to_mpdf($MPDF);
+//        $this->add_custom_font_to_mpdf($MPDF, $custom_fontdata);
+        //        $MPDF->shrink_tables_to_fit=0;
+        $MPDF->WriteHTML($html);
+        $this->get('kernel')->getRootDir();
+        $MPDF->debug = true;
+        $MPDF->SetDirectionality('rtl');
+        $MPDF->useSubstitutions = true;
+        $MPDF->autoScriptToLang = true;
+        $MPDF->autoLangToFont = true;
+        $MPDF->allow_charset_conversion = false;
+        $MPDF->Output($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName/" . 'preFactor.pdf', 'F');
+        $em = $this->getDoctrine()->getManager();
+        $report = new FileManager();
+        $report->setOwner($this->getUser());
+        $report->setPath("/uploads/report/$folderName");
+        $report->setStatus(1);
+        $report->setName('preFactor.pdf');
+        $user->setReport($report);
+        $em->persist($user);
+        $em->persist($report);
+        $em->flush();
+        return $this->createApiResponse($report->getPath() . '/' . $report->getName());
+    }
+
+
+    /**
+     * @Route("/api/Factor/{id}")
+     * @Method("GET")
+     * @return string
+     */
+    public function returnPDFResponseFromHTMLBaseSign($id)
+    {
+//echo realpath(__DIR__.'/../../../app/Resources/views/report/font/');die;
+
+
+        $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
+        $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
+        $anotherAdv=$advItem;
+        $contractAdvItems=$contract->getAdvItems()->getValues();
+
+        foreach ($anotherAdv as $key4 => $new_val4)
+        {
+            foreach ($contractAdvItems as $contractAdvItem) {
+                if ( $contractAdvItem->getName() == $new_val4->getName()) // has changed?
+                    unset($anotherAdv[$key4]);
+            }
+        }
+
+        $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
+        $anotherShare=$shareItem;
+        $contractShareItems=$contract->getShareItems()->getValues();
+        foreach ($anotherShare as $key => $new_val)
+        {
+            if (isset( $contractShareItems[$key])) // belongs to old array?
+            {
+                if ( $contractShareItems[$key]->getName() == $new_val->getName()) // has changed?
+                    unset($anotherShare[$key]);
+            }
+        }
+        $serviceItem=$this->getDoctrine()->getRepository("AppBundle:ServiceItems")->findAll();
+        $anotherService=$serviceItem;
+        $contractSerivecItems=$contract->getServiceItems()->getValues();
+        foreach ($anotherService as $key2 => $new_val2)
+        {
+            foreach ($contractSerivecItems as $item) {
+                if ( $item->getName() == $new_val2->getName()) // has changed?
+                    unset($anotherService[$key2]);
+            }
+
+        }
+//$this->dumpWithHeaders($anotherService);
+        $html=$this->renderView("report/Factor.html.twig",[
+            'contract'=>$contract,
+            'anotherAdv'=>$anotherAdv,
+            'anothershare'=>$anotherShare,
+            'anotherService'=>$anotherService
+        ]);
+        $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
+        $html=iconv("utf-8","UTF-8//IGNORE",$html);
+        $MPDF = new \mPDF('utf-8');
+//        $custom_fontdata = array(
+//            'centurygothic' => array(
+//                'R' => "../../../../app/Resources/views/report/font/CenturyGothic.ttf",
+//                'B' => "../../../../app/Resources/views/report/font/CenturyGothic-Bold.ttf",
+//                'I' => "../../../../app/Resources/views/report/font/CenturyGothic-Italic.ttf",
+//                'BI' => "../../../../app/Resources/views/report/font/CenturyGothic-BoldItalic.ttf"
+//                // use 'R' to support CSS font-weight: normal
+//                // use 'B', 'I', 'BI' and etc. to support CSS font-weight: bold, font-style: italic, and both...
+//            )
+//        );
+        $folderName = md5($this->generateRandomString() . '_' . $this->getUser()->getId() . '_preFactor' );
+
+        !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/candidate") : null;
+        !is_dir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") ? mkdir($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName") : null;
+        //$this->add_custom_fonts_to_mpdf($MPDF);
+//        $this->add_custom_font_to_mpdf($MPDF, $custom_fontdata);
+        //        $MPDF->shrink_tables_to_fit=0;
+        $MPDF->WriteHTML($html);
+        $this->get('kernel')->getRootDir();
+        $MPDF->debug = true;
+        $MPDF->SetDirectionality('rtl');
+        $MPDF->useSubstitutions = true;
+        $MPDF->autoScriptToLang = true;
+        $MPDF->autoLangToFont = true;
+        $MPDF->allow_charset_conversion = false;
+        $MPDF->Output($this->get('kernel')->getRootDir() . "/../web/uploads/report/$folderName/" . 'preFactor.pdf', 'F');
+        $em = $this->getDoctrine()->getManager();
+        $report = new FileManager();
+        $report->setOwner($this->getUser());
+        $report->setPath("/uploads/report/$folderName");
+        $report->setStatus(1);
+        $report->setName('preFactor.pdf');
+        $user->setReport($report);
+        $em->persist($user);
+        $em->persist($report);
+        $em->flush();
+        return $this->createApiResponse($report->getPath() . '/' . $report->getName());
+    }
 }

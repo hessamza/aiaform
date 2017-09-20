@@ -25,14 +25,19 @@ class Role
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
+     * @Serializer\Groups({"items"})
      */
     private $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\User",mappedBy="role")
+     */
+    private $role;
 
     /**
      * @Serializer\Expose
      * @ORM\Column(type="string")
-     *
+     * @Serializer\Groups({"items"})
      */
 
     public $name;

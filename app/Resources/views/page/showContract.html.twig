@@ -30,7 +30,7 @@
                                         <span class="caption-subject font-dark sbold uppercase">فهرست قرار دادها</span>
                                     </div>
                                 </div>
-                                <div id="dialog" title="پیش فاکتور">
+                                <div id="dialog" title=" فاکتور">
                                     <p id="getPdf"></p>
                                 </div>
                             <form class="searchForm" role="form" >
@@ -77,11 +77,26 @@
         <script>
             function callFactore(id) {
                 $.ajax({
-                    url: "/api/preFactor/"+id,
+                    url: "/api/Factor/"+id,
                     type: "GET",
                     data: {},
                     success: function (response) {
-                        $('#getPdf').html('<a href="'+response+'" target="_blank">لطفا برای دیدن پیش فاکتور روی لینک زیر کلیک کنید</a>');
+                        $('#getPdf').html('<a href="'+response+'" target="_blank">لطفا برای دیدن فاکتور روی لینک زیر کلیک کنید</a>');
+                        $( "#dialog" ).dialog();
+                        return false;
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {
+                        console.log(textStatus, errorThrown);
+                    }
+                });
+            }
+            function callSignFactore(id) {
+                $.ajax({
+                    url: "/api/Factor/sign/"+id,
+                    type: "GET",
+                    data: {},
+                    success: function (response) {
+                        $('#getPdf').html('<a href="'+response+'" target="_blank">لطفا برای دیدن فاکتور با امضا روی لینک زیر کلیک کنید</a>');
                         $( "#dialog" ).dialog();
                         return false;
                     },

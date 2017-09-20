@@ -49,7 +49,8 @@ class User implements UserInterface
     private $rememberMe = false;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Role")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Role",inversedBy="user")
+     * @Serializer\Groups({"items"})
      */
     private $role;
 

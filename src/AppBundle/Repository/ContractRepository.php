@@ -20,7 +20,6 @@ class ContractRepository extends EntityRepository {
         ->leftJoin('contract.posts','posts')
             ->where('contract.accept != :acceptItem')
             ->setParameter('acceptItem',0)
-        ->orderBy('contract.createdAt','DESC')
         ;
         if($userId!=1 ){
             $query->andWhere("contract.owner =:ownerId")
@@ -63,7 +62,7 @@ class ContractRepository extends EntityRepository {
             ->leftJoin('contract.shareItems','shareItems')
             ->Join('contract.posts','posts')
         ;
-        if($userId!=1 && $userId!=26){
+        if($userId!=1 && $userId!=3){
             $query->andWhere("contract.owner =:ownerId")
                 ->setParameter("ownerId", $userId);
         }

@@ -57,6 +57,7 @@ jQuery(document).ready(function() {
 
     Table = $('#example').dataTable({
         "data": [],
+        aaSorting: [[0, 'desc']],
         "columns": [{
             "title": "id",'data': 'id'
         }, {
@@ -66,6 +67,7 @@ jQuery(document).ready(function() {
         }, {
             "title": "تاریخ",'data': null,
             render: function ( data, type, row ) {
+                console.log(data)
                 var m='unknow';
                 if(data.contract_date !=null){
                     var dataCoul=data.contract_date;
@@ -117,6 +119,7 @@ jQuery(document).ready(function() {
 
     perTable = $('#preExample').DataTable({
         "data": [],
+        aaSorting: [[0, 'desc']],
         "columns": [{
             "title": "id",'data': 'id'
         }, {
@@ -178,6 +181,7 @@ jQuery(document).ready(function() {
 
     TableItems = $('#exampleItems').DataTable({
         "data": [],
+        aaSorting: [[0, 'desc']],
         "columns": [{
             "title": "id",'data': 'id'
         }, {
@@ -226,11 +230,22 @@ jQuery(document).ready(function() {
             "title": "وضعبت ارسال",'data': null,
             width:80,
             render: function ( data, type, row ) {
-                if(data.item_send){
-                    return '<input class="nameSend"  type="checkbox" checked  ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
-                }else{
-                    return '<input class="nameSend"  type="checkbox" ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
+                var cookieValue = $.cookie("RoleCookie");
+                if(cookieValue==='ROLE_SECRETARY') {
+                    if(data.item_send){
+                        return '<input class="nameSend"  type="checkbox" checked  ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
+                    }else{
+                        return '<input class="nameSend"  type="checkbox" ><button class="buttonItemDes" style="margin-right: 10px">ارسال</button> ';
+                    }
                 }
+                else{
+                    if(data.item_send){
+                        return '<input class="nameSend" disabled type="checkbox" checked  > ';
+                    }else{
+                        return '<input class="nameSend" disabled type="checkbox"  >';
+                    }
+                }
+
            }
         },
             {
@@ -239,7 +254,14 @@ jQuery(document).ready(function() {
                 width:200,
                 className: "center",
                 render: function ( data, type, row ) {
-                    return '<input type="text"  class="nameInput"  style="width: 145px" value="'+data.item_description_sec+'" size="10"/><button class="buttonItemSend" style="margin-right: 10px">ارسال</button> ';
+                    var cookieValue = $.cookie("RoleCookie");
+                    if(cookieValue==='ROLE_SECRETARY') {
+                        return '<input type="text"  class="nameInput"  style="width: 145px" value="' + data.item_description_sec + '" size="10"/><button class="buttonItemSend" style="margin-right: 10px">ارسال</button> ';
+                    }
+                    else{
+                        var ss= data.item_description_sec
+                       return  '<label>'+ss+'</label>'
+                    }
                 }
             },
         ]
@@ -288,6 +310,7 @@ jQuery(document).ready(function() {
             success: function (response) {
                 $('.companiesBuyItems').html('');
                 var items = response;
+                console.log(items)
                 var html = '';
                 $.each(items, function (key, value) {
                     html += '<tr>'
@@ -300,6 +323,7 @@ jQuery(document).ready(function() {
                 });
 
                 var table = $('#example').DataTable();
+                console.log(items);
                 table.clear().draw();
                 table.rows.add(items).draw();
             },
