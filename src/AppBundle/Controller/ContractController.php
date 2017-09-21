@@ -32,7 +32,7 @@ class ContractController extends  BaseController
      */
     public function createContract(Request $request)
     {
-    // $this->dumpWithHeaders($request->request->all());
+     //$this->dumpWithHeaders($request->request->all());
         $objectEntity=new Contract();
         $form = $this->createForm(ContractType::class, $objectEntity, [ "method" => 'POST']);
         $form->handleRequest($request);
