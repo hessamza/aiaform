@@ -584,7 +584,7 @@ $('.excelForm').submit(function (e) {
     $.ajax({
         url: "/api/excel",
         type: "POST",
-        data: {companyName: name, contractTimeFrom: jcontractTimeFrom,contractTimeTo:jcontractTimeTo},
+        data: {expert: name, contractTimeFrom: jcontractTimeFrom,contractTimeTo:jcontractTimeTo},
         success: function (response) {
             $('#getExcel').html('<a href="'+response+'" target="_blank">لطفا برای دیدن آمار روی لینک زیر کلیک کنید</a>');
             $( "#dialog" ).dialog();

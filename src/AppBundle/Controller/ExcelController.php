@@ -58,6 +58,7 @@ class ExcelController extends  BaseController
         $phpExcelObject = $this->get('phpexcel')->createPHPExcelObject();
 
         $search = $request->request->all();
+        //$this->dumpWithHeaders($search);
         if((isset($search['contractTimeFrom']) && $search['contractTimeFrom'] !='')&& isset($search['contractTimeTo']) && $search['contractTimeTo'] !='' ){
             $search['createdAt']=[
                 'from'=>$search['contractTimeFrom'],
@@ -77,7 +78,9 @@ class ExcelController extends  BaseController
         unset($search['contractTimeFrom']);
         unset($search['contractTimeTo']);
 //        $this->dumpWithHeaders($search);
-        $contracts=$this->getDoctrine()->getRepository("AppBundle:Contract")->findExcelContracts($search,2);
+        $contracts=$this->getDoctrine()->getRepository("AppBundle:Contract")
+                                       ->findExcelContracts($search,1);
+       // $this->dumpWithHeaders($contracts);
         $phpExcelObject->getProperties()->setCreator("liuggio")
             ->setLastModifiedBy("Giulio De Donato")
             ->setTitle("Office 2005 XLSX Test Document")
@@ -96,38 +99,131 @@ class ExcelController extends  BaseController
             ->setCellValue('F2', 'نوع قرارداد')
             ->setCellValue('G2', 'تاریخ اختصاص')
             ->setCellValue('H2', 'تاریخ قرارداد');
-            for($j=3;$j<count($contracts);$j++){
-                $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
-                $anotherShare=$shareItem;
-                $contractShareItems=$contracts[$j]->getShareItems()->getValues();
-                foreach ($anotherShare as $key => $new_val)
-                {
-                    if (isset( $contractShareItems[$key])) // belongs to old array?
+        if(count($contracts)>1) {
+
+            for ($j = 0; $j < count($contracts); $j++) {
+                $shareItem          = $this->getDoctrine()->getRepository(
+                    "AppBundle:ShareItems"
+                )->findAll();
+                $anotherShare       = $shareItem;
+                $contractShareItems = $contracts[$j]->getShareItems()
+                                                    ->getValues();
+                foreach ($anotherShare as $key => $new_val) {
+                    if (isset($contractShareItems[$key])) // belongs to old array?
                     {
-                        if ( $contractShareItems[$key]->getName() == $new_val->getName()) // has changed?
+                        if ($contractShareItems[$key]->getName(
+                            ) == $new_val->getName()) // has changed?
+                        {
                             unset($anotherShare[$key]);
+                        }
                     }
                 }
-                $share='';
+                $share = '';
                 foreach ($contracts[$j]->getShareItems() as $shareContract) {
-                    $share.='  '.$shareContract->getName();
+                    $share .= '  '.$shareContract->getName();
                 }
-                $another='';
-                foreach ($anotherShare as $another) {
-                    $another.='  '.$shareContract->getName();
+                $another = '';
+                foreach ($anotherShare as $anotherIt) {
+                    $another .= '  '.$anotherIt->getName();
                 }
-//                $this->dumpWithHeaders($share);
+                //                $this->dumpWithHeaders($share);
                 $phpExcelObject->setActiveSheetIndex(0)
-                ->setCellValue('A'.$j,$contracts[$j]->getCompanyName() )
-                ->setCellValue('B'.$j,$contracts[$j]->getuserName() )
-                ->setCellValue('C'.$j,$share.$another )
-                ->setCellValue('D'.$j,$contracts[$j]->getcontractPrice() )
-                ->setCellValue('E'.$j,$contracts[$j]->getDiscount() )
-                ->setCellValue('F'.$j,$contracts[$j]->getContractType() )
-                ->setCellValue('G'.$j,$contracts[$j]->getCreatedAt() )
-                ->setCellValue('G'.$j,$contracts[$j]->getcontractDate() );
+                               ->setCellValue(
+                                   'A'.($j+3),
+                                   $contracts[$j]->getCompanyName()
+                               )
+                               ->setCellValue(
+                                   'B'.($j+3),
+                                   $contracts[$j]->getuserName()
+                               )
+                               ->setCellValue('C'.($j+3), $share.$another)
+                               ->setCellValue(
+                                   'D'.($j+3),
+                                   $contracts[$j]->getcontractPrice()
+                               )
+                               ->setCellValue(
+                                   'E'.($j+3),
+                                   $contracts[$j]->getDiscount()
+                               )
+                               ->setCellValue(
+                                   'F'.($j+3),
+                                   $contracts[$j]->getContractType()
+                               )
+                               ->setCellValue(
+                                   'G'.($j+3),
+                                   $contracts[$j]->getCreatedAt()
+                               )
+                               ->setCellValue(
+                                   'H'.($j+3),
+                                   $contracts[$j]->getcontractDate()
+                               );
+            }
+        }else if(count($contracts)==1){
+            $shareItem          = $this->getDoctrine()->getRepository(
+                "AppBundle:ShareItems"
+            )->findAll();
+            $anotherShare       = $shareItem;
+            $contractShareItems = $contracts->getShareItems()
+                                                ->getValues();
+         //   $this->dumpWithHeaders($contracts->getShareString());
+            $shareBase='';
+            if($contractShareItems){
+                foreach ($anotherShare as $key => $new_val) {
+                    if (isset($contractShareItems[$key])) // belongs to old array?
+                    {
+                        if ($contractShareItems[$key]->getName(
+                            ) == $new_val->getName()) // has changed?
+                        {
+                            unset($anotherShare[$key]);
+                        }
+                    }
+                }
+                $share = '';
+                foreach ($contracts->getShareItems() as $shareContract) {
+                    $share .= '  '.$shareContract->getName();
+                }
+                $another = '';
+                foreach ($anotherShare as $anotherItem) {
+                    $another .= '  '.$anotherItem->getName();
+                }
+                $shareBase=$share.'  '.$share;
+            }
+            else{
+                $shareBase=$contracts->getShareString();
             }
 
+                 //           $this->dumpWithHeaders($contracts);
+            $phpExcelObject->setActiveSheetIndex(0)
+                           ->setCellValue(
+                               'A'.(3),
+                               $contracts->getCompanyName()
+                           )
+                           ->setCellValue(
+                               'B'.(3),
+                               $contracts->getuserName()
+                           )
+                           ->setCellValue('C'.(3), $shareBase)
+                           ->setCellValue(
+                               'D'.(3),
+                               $contracts->getcontractPrice()
+                           )
+                           ->setCellValue(
+                               'E'.(3),
+                               $contracts->getDiscount()
+                           )
+                           ->setCellValue(
+                               'F'.(3),
+                               $contracts->getContractType()
+                           )
+                           ->setCellValue(
+                               'G'.(3),
+                               $contracts->getCreatedAt()
+                           )
+                           ->setCellValue(
+                               'H'.(3),
+                               $contracts->getcontractDate()
+                           );
+        }
         $phpExcelObject->getActiveSheet()->setRightToLeft(true);
         $phpExcelObject->getActiveSheet()->getColumnDimension('A')->setWidth("44");
         $phpExcelObject->getActiveSheet()->getColumnDimension('B')->setWidth("35");

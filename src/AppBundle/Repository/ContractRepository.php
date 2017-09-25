@@ -37,11 +37,15 @@ class ContractRepository extends EntityRepository {
                     }
                 } else {
                     switch ($key){
+                        case 'expert':
+                            $query->where('owner.username LIKE :ownerName')
+                                ->setParameter("ownerName",'%'.$value.'%');
+                            break;
                         default:
                             $selectAlias="contract.$key";
+                            $query->andWhere("$selectAlias LIKE :contract{$key}")
+                                  ->setParameter("contract{$key}", '%' . $value . '%');
                     }
-                    $query->andWhere("$selectAlias LIKE :contract{$key}")
-                        ->setParameter("contract{$key}", '%' . $value . '%');
                 }
             }
         }
