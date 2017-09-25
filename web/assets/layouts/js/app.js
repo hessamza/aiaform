@@ -1,5 +1,8 @@
 jQuery(document).ready(function() {
 
+
+
+
     $('#contractTimeFrom').persianDatepicker({
         altFormat: "YYYY MM DD ",
         formatDate: 'YYYY-MM-DD'
@@ -550,6 +553,48 @@ $('.contractType').change(function () {
 });
 
 
+
+$('.excelForm').submit(function (e) {
+    e.preventDefault();
+    var name = $("input[name='expert']", '.excelForm').val();
+    var contractTimeFrom = $("input[name='contractTimeFrom']", '.excelForm').val();
+    var contractTimeTo = $("input[name='contractTimeTo']", '.excelForm').val();
+
+
+    if(contractTimeFrom){
+        var arrDateFrom=contractTimeFrom.split('-');
+        var jdate3 =JalaliDate.jalaliToGregorian(arrDateFrom[0],arrDateFrom[1],arrDateFrom[2])
+
+        jcontractTimeFrom=jdate3[0]+'/'+jdate3[1]+'/'+jdate3[2]
+    }else{
+        jcontractTimeFrom='';
+    }
+
+    if(contractTimeTo){
+        var arrDateTo=contractTimeTo.split('-');
+        var jdate3To =JalaliDate.jalaliToGregorian(arrDateTo[0],arrDateTo[1],arrDateTo[2])
+        jcontractTimeTo=jdate3To[0]+'/'+jdate3To[1]+'/'+jdate3To[2]
+    }else{
+        jcontractTimeTo='';
+    }
+
+
+
+    // var values = $(this).serialize();
+    $.ajax({
+        url: "/api/excel",
+        type: "POST",
+        data: {companyName: name, contractTimeFrom: jcontractTimeFrom,contractTimeTo:jcontractTimeTo},
+        success: function (response) {
+            $('#getExcel').html('<a href="'+response+'" target="_blank">لطفا برای دیدن آمار روی لینک زیر کلیک کنید</a>');
+            $( "#dialog" ).dialog();
+        },
+        error: function (jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+        }
+    });
+
+});
 $('.searchForm').submit(function (e) {
     e.preventDefault();
     var name = $("input[name='companyName']", '.searchForm').val();

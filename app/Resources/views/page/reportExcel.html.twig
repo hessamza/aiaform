@@ -1,0 +1,79 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <!-- BEGIN PAGE HEAD-->
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+    <!-- END PAGE HEAD-->
+    <!-- BEGIN PAGE CONTENT BODY -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="page-content-inner">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">ثبت قرارداد</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form col-md-10 ">
+                                <div id="dialog" title="پیش فاکتور">
+                                    <p id="getExcel"></p>
+                                </div>
+                                <form action="" class="form-horizontal excelForm">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-1 control-label">نام کارشناس:</label>
+                                            <div class="col-md-3">
+                                                <input type="text" name="expert" class="form-control input-inline input-medium">
+                                            </div>
+                                            <label class="col-md-2 control-label">از تاریخ:</label>
+                                            <div class="col-md-2">
+                                                <input id="contractTimeFrom" type="text" class="form-control" name="contractTimeFrom" />
+                                            </div>
+                                            <label class="col-md-2 control-label">تا تاریخ:</label>
+                                            <div class="col-md-2">
+                                                <input id="contractTimeTo" type="text" class="form-control" name="contractTimeTo" />
+                                            </div>
+                                        </div>
+
+                                        <div class="form-actions">
+                                            <div class="row">
+                                                <div class="col-md-offset-3 col-md-9">
+                                                    <button type="submit" class="btn green">Submit</button>
+                                                    <button type="button" class="btn default">Cancel</button>
+                                                    {#<button type="button" class="btn default" id="preFactore" >prefactor</button>#}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+                        <!-- END SAMPLE FORM PORTLET-->
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+        </div>
+    </div>
+    <!-- END PAGE CONTENT BODY -->
+    <!-- END CONTENT BODY -->
+</div>
+<!-- END CONTENT -->
+{% endblock %}

@@ -11,6 +11,44 @@ use Doctrine\ORM\Query\AST\Functions\ConcatFunction;
 
 class ContractRepository extends EntityRepository {
 
+
+    public function findExcelContracts($search,$userId)
+    {
+        $query = $this->createQueryBuilder('contract')
+            ->leftJoin('contract.owner','owner')
+            ->leftJoin('contract.serviceItems','serviceItems')
+            ->leftJoin('contract.shareItems','shareItems')
+            ->leftJoin('contract.posts','posts');
+        ;
+        foreach ($search as $key => $value) {
+            if($key!='sortBy' && $key!='sortType' && $key !='page' && $key!='count'){
+                if (is_array($value)) {
+                    if (isset($value['from']) && isset($value['to'])) {
+                        $query->andHaving("contract.createdAt BETWEEN :from AND :to")
+                            ->setParameter('from', $value['from'])
+                            ->setParameter('to', $value['to']);
+                    } elseif (isset($value['from'])) {
+
+                        $query->andHaving("contract.createdAt >= :from")
+                            ->setParameter("from", $value['from']);
+                    } elseif (isset($value['to'])) {
+                        $query->andHaving("contract.createdAt <= :to")
+                            ->setParameter("to", $value['to']);
+                    }
+                } else {
+                    switch ($key){
+                        default:
+                            $selectAlias="contract.$key";
+                    }
+                    $query->andWhere("$selectAlias LIKE :contract{$key}")
+                        ->setParameter("contract{$key}", '%' . $value . '%');
+                }
+            }
+        }
+        return $query->getQuery()->execute();
+    }
+
+
     public function findContracts($search,$userId)
     {
         $query = $this->createQueryBuilder('contract')

@@ -51,6 +51,8 @@
       <path value="$PROJECT_DIR$/vendor/sallar/jdatetime" />
       <path value="$PROJECT_DIR$/vendor/whiteoctober/tcpdf-bundle" />
       <path value="$PROJECT_DIR$/vendor/tecnickcom/tcpdf" />
+      <path value="$PROJECT_DIR$/vendor/liuggio/ExcelBundle" />
+      <path value="$PROJECT_DIR$/vendor/phpoffice/phpexcel" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="5.5.0" />

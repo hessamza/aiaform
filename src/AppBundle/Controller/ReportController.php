@@ -28,6 +28,10 @@ if (!defined('_MPDF_TTFONTPATH')) {
 }
 class ReportController extends  BaseController
 {
+
+
+
+
     /**
      * @Route("/api/preFactor/{id}")
      * @Method("GET")
