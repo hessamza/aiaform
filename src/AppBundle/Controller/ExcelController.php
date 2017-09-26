@@ -93,12 +93,16 @@ class ExcelController extends  BaseController
             ->setCellValue('D1', 'گزارش واحد فروش')
             ->setCellValue('A2', 'نام شرکت ')
             ->setCellValue('B2', 'نام کاربری')
-            ->setCellValue('C2', 'نوع خدمات')
-            ->setCellValue('D2', 'مبلغ قرارداد')
-            ->setCellValue('E2', 'مبلغ تخفيف')
-            ->setCellValue('F2', 'نوع قرارداد')
-            ->setCellValue('G2', 'تاریخ اختصاص')
-            ->setCellValue('H2', 'تاریخ قرارداد');
+            ->setCellValue('C2', 'مدت زمان اشتراک')
+            ->setCellValue('D2', 'نوع آگهی')
+            ->setCellValue('E2', 'نوع خدمات')
+            ->setCellValue('F2', 'سایر ابزارهای اطلاع رسانی')
+            ->setCellValue('G2', 'محدوده اطلاع رسانی')
+            ->setCellValue('H2', 'مبلغ قرارداد')
+            ->setCellValue('I2', 'مبلغ تخفيف')
+            ->setCellValue('J2', 'نوع قرارداد')
+            ->setCellValue('K2', 'تاریخ اختصاص')
+            ->setCellValue('L2', 'تاریخ قرارداد');
         if(count($contracts)>1) {
 
             for ($j = 0; $j < count($contracts); $j++) {
@@ -126,6 +130,78 @@ class ExcelController extends  BaseController
                 foreach ($anotherShare as $anotherIt) {
                     $another .= '  '.$anotherIt->getName();
                 }
+
+/*                advi Item*/
+
+                $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
+                $anotherAdv=$advItem;
+                $contractAdvItems=$contracts[$j]->getAdvItems()->getValues();
+
+                foreach ($anotherAdv as $key4 => $new_val4)
+                {
+                    foreach ($contractAdvItems as $contractAdvItem) {
+                        if ( $contractAdvItem->getName() == $new_val4->getName()) // has changed?
+                            unset($anotherAdv[$key4]);
+                    }
+                }
+                $adv='';
+                foreach ($contracts[$j]->getAdvItems() as $advContract) {
+                    $adv .= '  '.$advContract->getName();
+                }
+                $anotheradvItem = '';
+                foreach ($anotherAdv as $anotherad) {
+                    $anotheradvItem .= '  '.$anotherad->getName();
+                }
+
+/*                    end adv Item           */
+
+
+/*service Item*/
+
+
+                $serviceItem=$this->getDoctrine()->getRepository("AppBundle:ServiceItems")->findAll();
+                $anotherService=$serviceItem;
+                $contractSerivecItems=$contracts[$j]->getServiceItems()->getValues();
+                foreach ($anotherService as $key2 => $new_val2)
+                {
+                    foreach ($contractSerivecItems as $item) {
+                        if ( $item->getName() == $new_val2->getName()) // has changed?
+                            unset($anotherService[$key2]);
+                    }
+
+                }
+
+                $service='';
+                foreach ($contracts[$j]->getServiceItems() as $serviceItem) {
+                    $service .= '  '.$serviceItem->getName();
+                }
+                $anotherSerivceItem = '';
+                foreach ($anotherService as $anotherSer) {
+                    $anotherSerivceItem .= '  '.$anotherSer->getName();
+                }
+
+
+/*end service Item*/
+                $seprate='';
+                if($contracts[$j]->getSeparate()){
+                    switch ($contracts[$j]->getSeparate()){
+                        case 'global':
+                            $seprate='سراسری';
+                            break;
+                        case 'local':
+                            $seprate='استانی';
+                            break;
+                        case 'professional':
+                            $seprate='تخصصی';
+                            break;
+                        case 'local-professional':
+                            $seprate='استانی تخصصی';
+                            break;
+                    }
+                }
+
+                $contractTime=($contracts[$j]->getContractTime()=='6Month')?'۶ ماه':'۱۲ ماه';
+
                 //                $this->dumpWithHeaders($share);
                 $phpExcelObject->setActiveSheetIndex(0)
                                ->setCellValue(
@@ -136,25 +212,29 @@ class ExcelController extends  BaseController
                                    'B'.($j+3),
                                    $contracts[$j]->getuserName()
                                )
-                               ->setCellValue('C'.($j+3), $share.$another)
+                               ->setCellValue('C'.($j+3), $contractTime)
+                               ->setCellValue('D'.($j+3), $adv.$anotheradvItem)
+                               ->setCellValue('E'.($j+3), $share.$another)
+                               ->setCellValue('F'.($j+3), $service.$anotherSerivceItem)
+                               ->setCellValue('G'.($j+3), $seprate)
                                ->setCellValue(
-                                   'D'.($j+3),
+                                   'H'.($j+3),
                                    $contracts[$j]->getcontractPrice()
                                )
                                ->setCellValue(
-                                   'E'.($j+3),
+                                   'I'.($j+3),
                                    $contracts[$j]->getDiscount()
                                )
                                ->setCellValue(
-                                   'F'.($j+3),
+                                   'J'.($j+3),
                                    $contracts[$j]->getContractType()
                                )
                                ->setCellValue(
-                                   'G'.($j+3),
+                                   'K'.($j+3),
                                    $contracts[$j]->getCreatedAt()
                                )
                                ->setCellValue(
-                                   'H'.($j+3),
+                                   'L'.($j+3),
                                    $contracts[$j]->getcontractDate()
                                );
             }
@@ -233,7 +313,7 @@ class ExcelController extends  BaseController
         $phpExcelObject->getActiveSheet()->getColumnDimension('F')->setWidth("35");
         $phpExcelObject->getActiveSheet()->getColumnDimension('G')->setWidth("35");
         $phpExcelObject->getActiveSheet()->getColumnDimension('H')->setWidth("35");
-        $phpExcelObject->getActiveSheet()->getStyle('B1:H1')->applyFromArray(
+        $phpExcelObject->getActiveSheet()->getStyle('B1:L1')->applyFromArray(
             array(
                 'fill' => array(
                     'type' => PHPExcel_Style_Fill::FILL_SOLID,
@@ -249,7 +329,7 @@ class ExcelController extends  BaseController
                 )
             )
         );
-        $phpExcelObject->getActiveSheet()->getStyle('A2:H2')->applyFromArray(
+        $phpExcelObject->getActiveSheet()->getStyle('A2:L2')->applyFromArray(
             array(
                 'alignment' => array(
                     'horizontal' => PHPExcel_Style_Alignment::HORIZONTAL_CENTER,
