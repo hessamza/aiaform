@@ -80,6 +80,9 @@ app.request.attributes.get('_route_params')) %}
                                     {% if is_granted('ROLE_ADMIN') %}
                                         <span class="username username-hide-mobile"><a href="/admin/register">ثبت کاربر</a></span>
                                     {% endif %}
+                                    {% if is_granted("ROLE_FrontendUser") %}
+                                        <span class="username username-hide-mobile"><a href="/profile/{{ app.user.id }}">پروفایل</a></span>
+                                    {% endif %}
                                 </li>
                                 <!-- END USER LOGIN DROPDOWN -->
                             </ul>

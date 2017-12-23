@@ -43,6 +43,14 @@ class User implements UserInterface
      */
     private $gender = false;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mobile", type="string", length=15,nullable=true)
+     * @Assert\Length(max="15",groups={"manageContactPerson"})
+     * @Assert\NotBlank(message="not blank",groups={"ManageUser"})
+     */
+    private $mobile;
 
     /**
      * @var string
@@ -416,6 +424,22 @@ class User implements UserInterface
     public function setGender($gender)
     {
         $this->gender = $gender;
+    }
+
+    /**
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
+    }
+
+    /**
+     * @param string $mobile
+     */
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
     }
 
 

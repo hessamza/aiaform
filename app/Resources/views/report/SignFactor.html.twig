@@ -143,6 +143,12 @@
             font-size: 25px;
         }
 
+
+        .h-table1{
+            font-size: 22px;
+        }
+
+
     </style>
 </head>
 <body>
@@ -169,13 +175,13 @@
                         <span><strong>فاکتور فروش خدمات اطلاع رسانی</strong></span>
                     </td>
                 </tr>
-                <tr>
-                    <td class="text-center">کارشناس مربوطه : {{ (contract.owner.gender=='1'?'آقای':'خانم') }} {{ contract.owner.username }}</td>
-                    <td class="text-center">تاریخ تنظیم : {{ date('now')|jDatePdf }} </td>
-                    <td class="text-center">شماره : {{ contract.number }}</td>
+                <tr >
+                    <td class="text-center h-table1" >کارشناس مربوطه : {{ (contract.owner.gender=='1'?'آقای':'خانم') }} {{ contract.owner.username }}</td>
+                    <td class="text-center h-table1">تاریخ تنظیم : {{ date('now')|jDatePdf }} </td>
+                    <td class="text-center h-table1">شماره : {{ contract.number }}</td>
                 </tr>
             </table>
-            <table class="table2 c-table"  cellspacing="0">
+            <table class="table2 c-table h-table1"  cellspacing="0">
                 <tr>
                     <td class="td-border text-center bg-gray" width="15%" lang="fa">خریدار</td>
                     <td>نام حقوقی : {{ contract.companyName }}</td>
@@ -201,7 +207,7 @@
                     </td>
                 </tr>
             </table>
-            <table class="table3 c-table"  cellspacing="0">
+            <table class="table3 c-table h-table1"  cellspacing="0">
                 <tr>
                     <td class="td-border text-center bg-gray" width="15%">فروشنده</td>
                     <td>نام حقوقی : سامانه اطلاع رسانی آریاتندر </td>
@@ -222,7 +228,7 @@
                     <td colspan="3">
                         <table style="margin-top:30px;padding-bottom: 10px">
                             <tr>
-                                <td style="font-size: 17px">آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
+                                <td style="font-size: 22px">آدرس : تهران ، خیابان بهشتی ، خیابان قائم مقام فراهانی ، جنب بیمارستان تهران کلینیک ، کوچه آزادگان ، پلاک ۲۴ ، طبقه ۴</td>
                             </tr>
                         </table>
                     </td>
@@ -238,7 +244,7 @@
                 </thead>
                 <tr >
                     <td>
-                        <table style="margin-top: 10px;">
+                        <table style="margin-top: 10px;" class="h-table1">
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">نوع آگهی :  </span>
@@ -276,7 +282,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table style="margin-top: 10px;margin-bottom: 10px">
+                        <table style="margin-top: 10px;margin-bottom: 10px" class="h-table1">
                             <tr>
                                 <td >
                                     <span style="font-weight: bold;margin-left:10px;">سایر ابزارهای اطلاع رسانی :  </span>
@@ -353,35 +359,34 @@
                 </tr>
                 <tr>
                     <td>
-                        <table class="table-bordered" cellpadding="0" style="font-size: 20px">
+                        <table class="table-bordered h-table1" cellpadding="0" style="font-size: 20px">
                             <tr>
-                                <th class="bg-gray  p-5">ردیف</th>
-                                <th class="bg-gray  p-5">شرح / ابزار</th>
-                                <th class="bg-gray  p-5">موضوع</th>
-                                <th class="bg-gray  p-5">تعداد</th>
-                                <th class="bg-gray  p-5">مدت زمان</th>
-                                <th class="bg-gray  p-5">بهای واحد</th>
+                                <th class="bg-gray  p-5 h-table1">ردیف</th>
+                                <th class="bg-gray  p-5 h-table1">شرح / ابزار</th>
+                                <th class="bg-gray  p-5 h-table1">موضوع</th>
+                                <th class="bg-gray  p-5 h-table1">تعداد</th>
+                                <th class="bg-gray  p-5 h-table1">مدت زمان</th>
+                                <th class="bg-gray  p-5 h-table1">بهای واحد</th>
                             </tr>
                             <tr>
-                                <td class="text-center">۱</td>
-                                <td class="text-center">
+                                <td class="text-center h-table1">۱</td>
+                                <td class="text-center h-table1">
                                     {{ contract.serviceString }}
                                 </td>
-                                <td class="text-center">
+                                <td class="text- h-table1">
                                     {{ contract.shareString }}
                                  </td>
-                                <td class="text-center">۱</td>
-                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
-                                {% set servicePriceItem=contract.servicePrice+1 %}
-                                <td class="text-center" >{{ serviceItemPrice|numberFormat }}تومان</td>
+                                <td class="text-center h-table1">۱</td>
+                                <td class="text-center h-table1">{{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center h-table1" >{{ serviceItemPrice|numberFormat }}تومان</td>
                             </tr>
                             {% set numberIndex=1 %}
                             {% for service in contract.serviceItems %}
                                 {% set numberIndex=loop.index+1 %}
                                 {% if service.name!='سایت' and  service.name!='ایمیل'%}
                             <tr>
-                                <td class="text-center">{{ numberIndex|numberFormat }}</td>
-                                 <td class="text-center">
+                                <td class="text-center h-table1">{{ numberIndex|numberFormat }}</td>
+                                 <td class="text-center h-table1">
                                      {% if  (service.id ==3 or  service.id ==7)%}
                                          دورنگار
                                      {% else %}
@@ -389,10 +394,10 @@
                                      {% endif %}
                                      </td>
 
-                                <td class="text-center">{{ contract.shareString }}</td>
-                                <td class="text-center">۱</td>
-                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
-                                <td class="text-center">
+                                <td class="text-center h-table1">{{ contract.shareString }}</td>
+                                <td class="text-center h-table1">۱</td>
+                                <td class="text-center h-table1">{{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center h-table1">
                                     {% if contract.contractTime=='6month' %}
                                         {% if service.name=='تلگرام' %}
                                             ۱۲۰/۰۰۰ تومان
@@ -428,24 +433,24 @@
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
-                                <td class="text-center" colspan="2" style="font-size: 15px"><strong>جمع مبلغ</strong></td>
-                                <td class="text-center"><strong>{{ contract.basePrice|numberFormat }} تومان</strong></td>
+                                <td class="text-center" colspan="2" style="font-size: 22px"><strong>جمع مبلغ</strong></td>
+                                <td class="text-center h-table1"><strong>{{ contract.basePrice|numberFormat }} تومان</strong></td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
-                                <td class="text-center " colspan="2">تخفیف</td>
-                                <td class="text-center" style="font-size: 20px">{{ contract.discount|numberFormat }} تومان</td>
+                                <td class="text-center h-table1" colspan="2">تخفیف</td>
+                                <td class="text-center" style="font-size: 22px">{{ contract.discount|numberFormat }} تومان</td>
                             </tr>
                             <tr>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <td class="text-center no-border"></td>
                                 <!--inja ye td kamtar dare va td paeeini colspan 2 havaset bashe-->
-                                <td class="text-center cost" colspan="2" style="font-size: 20px">مبلغ قابل پرداخت</td>
-                                <td class="text-center cost">{{ contract.contractPrice|numberFormat }} تومان</td>
+                                <td class="text-center cost" colspan="2" style="font-size: 22px">مبلغ قابل پرداخت</td>
+                                <td class="text-center cost h-table1">{{ contract.contractPrice|numberFormat }} تومان</td>
                             </tr>
                         </table>
                     </td>

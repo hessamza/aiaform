@@ -147,7 +147,7 @@ class ReportController extends  BaseController
                     unset($anotherAdv[$key4]);
             }
         }
-
+        $serviceItemPrice=$contract->getServicePrice();
         $shareItem=$this->getDoctrine()->getRepository("AppBundle:ShareItems")->findAll();
         $anotherShare=$shareItem;
         $contractShareItems=$contract->getShareItems()->getValues();
@@ -175,6 +175,7 @@ class ReportController extends  BaseController
             'contract'=>$contract,
             'anotherAdv'=>$anotherAdv,
             'anothershare'=>$anotherShare,
+            'serviceItemPrice'=>$serviceItemPrice,
             'anotherService'=>$anotherService
         ]);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
@@ -321,18 +322,7 @@ class ReportController extends  BaseController
         $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
         $anotherAdv=$advItem;
-        $serviceItemPrice=0;
-        switch ($contract->getSeparate()){
-            case 'professional':
-                $serviceItemPrice=$contract->getSeparate()-
-                                  ($contract->getSeparate()/.2);
-                break;
-            case 'local':
-                $serviceItemPrice=$contract->getSeparate()-
-                                  ($contract->getSeparate()/.3);
-                break;
-        }
-
+        $serviceItemPrice=$contract->getServicePrice();
         $contractAdvItems=$contract->getAdvItems()->getValues();
 
         foreach ($anotherAdv as $key4 => $new_val4)

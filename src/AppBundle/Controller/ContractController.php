@@ -12,6 +12,7 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\AdvItems;
 use AppBundle\Entity\Contract;
 use AppBundle\Entity\ServiceItems;
+use AppBundle\Form\ProfileUser;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use AppBundle\Form\ContractType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -23,6 +24,44 @@ use Symfony\Component\Validator\Constraints\Date;
 
 class ContractController extends  BaseController
 {
+
+    /**
+     * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser','ROLE_SECRETARY'])")
+     * @Method({"GET","PATCH"})
+     * @Route("/profile/{id}")
+     * @param $id
+     * @param Request $request
+     * @return Response
+     */
+    public function setProfile($id,Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $findObject = $this->getDoctrine()->getRepository("AppBundle:User")->find($id);
+        $method=$request->getMethod();
+
+        $form = $this->createForm(ProfileUser::class, $findObject, [ "method" => 'PATCH']);
+        $form->handleRequest($request);
+        $em = $this->getDoctrine()->getManager();
+        if ($request->getMethod() == $method) {
+
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $firm = $form->getData();
+                $em->persist($firm);
+                $em->flush();
+                return $this->redirect('/contracts');
+            }
+        }
+        return $this->render(':page:profile.html.twig', [
+            'form' => $form->createView(),
+            'formIsNotValid' => $form->isSubmitted() && !$form->isValid()
+        ]);
+
+    }
+
+
+
+
 
     /**
      * @Security("is_granted(['ROLE_ADMIN','ROLE_FrontendUser','ROLE_SECRETARY'])")

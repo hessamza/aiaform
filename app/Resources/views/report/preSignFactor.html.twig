@@ -169,7 +169,7 @@
                         <span><strong>پیش فاکتور فروش خدمات اطلاع رسانی</strong></span>
                     </td>
                 </tr>
-                <tr>
+                <tr style="font-size: 40px">
                     <td class="text-center">کارشناس مربوطه : {{ (contract.owner.gender=='1'?'آقای':'خانم') }} {{ contract.owner.username }}</td>
                     <td class="text-center">تاریخ تنظیم : {{ date('now')|jDatePdf }} </td>
                     <td class="text-center">شماره : {{ contract.number }}</td>
@@ -315,7 +315,7 @@
                                 <td>
                                     <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک: </span>
                                     <span>
-                                            {{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
+                                            {{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
                                         </span>
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">محدوده اطلاع رسانی : </span>
                                     {% if contract.separate %}
@@ -370,8 +370,8 @@
                                     {{ contract.shareString }}
                                  </td>
                                 <td class="text-center">۱</td>
-                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
-                                <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
+                                <td class="text-center">{{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center" >{{ serviceItemPrice|numberFormat }}تومان</td>
                             </tr>
                             {% set numberIndex=1 %}
                             {% for service in contract.serviceItems %}
@@ -389,7 +389,7 @@
 
                                 <td class="text-center">{{ contract.shareString }}</td>
                                 <td class="text-center">۱</td>
-                                <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
+                                <td class="text-center">{{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }}</td>
                                 <td class="text-center">
                                     {% if contract.contractTime=='6month' %}
                                         {% if service.name=='تلگرام' %}

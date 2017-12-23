@@ -723,7 +723,7 @@ function changeFunction(){
     var shareString='';
     var serviceString='';
     var price=0
-    var servicePrice=0
+    var servicePrice=0;
     var selectTime = $("select[name='appbundle_contract[contractTime]'] option:selected").val();
     var separate = $("select[name='appbundle_contract[separate]'] option:selected").val();
 
@@ -881,14 +881,17 @@ function changeFunction(){
     if(separate==='2'){
         serviceString=serviceString+'استانی,';
         price=Math.round(parseInt(price)-(parseInt(price)*3)/10);
+        servicePrice=Math.round(parseInt(servicePrice)-(parseInt(servicePrice)*3)/10);
     }
     else if(separate==='3'){
         serviceString=serviceString+'تخصصی,';
         price=Math.round(parseInt(price)-(parseInt(price)*2)/10);
+        servicePrice=Math.round(parseInt(servicePrice)-(parseInt(servicePrice)*2)/10);
     }
     else if(separate==='4'){
         serviceString=serviceString+'استانی تخصصی,';
         price=Math.round(parseInt(price)-(parseInt(price)*4)/10);
+        servicePrice=Math.round(parseInt(servicePrice)-(parseInt(servicePrice)*4)/10);
     }
     else if(separate==='1'){
         serviceString=serviceString+'سراسری,';
