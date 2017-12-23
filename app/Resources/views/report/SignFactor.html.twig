@@ -170,9 +170,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-center">کارشناس مربوطه : خانم {{ contract.owner.username }}</td>
-                    <td class="text-center">تاریخ تنظیم : {{ contract.createdAt|jDatePdf }} </td>
-                    <td class="text-center">شماره : ۵۶۵۶۴۵۶۴۵۶</td>
+                    <td class="text-center">کارشناس مربوطه : {{ (contract.owner.gender=='1'?'آقای':'خانم') }} {{ contract.owner.username }}</td>
+                    <td class="text-center">تاریخ تنظیم : {{ date('now')|jDatePdf }} </td>
+                    <td class="text-center">شماره : {{ contract.number }}</td>
                 </tr>
             </table>
             <table class="table2 c-table"  cellspacing="0">
@@ -211,7 +211,7 @@
                     <td colspan="3">
                         <table style="margin-top:10px;">
                             <tr>
-                                <td>شماره موبایل فروشنده:۰۹۰۲۳۲۳۳۹۶۱</td>
+                                <td>شماره موبایل فروشنده:{{ contract.owner.phone }}</td>
                                 <td>شماره تلفن : ۴۲۰۵۷ (۲۱ ۹۸+) </td>
                                 <td>ایمیل : sales@ariatender.com </td>
                             </tr>
@@ -315,7 +315,8 @@
                                 <td>
                                     <span style="font-weight: bold;margin-left:10px;">مدت زمان اشتراک: </span>
                                     <span>
-                                            {{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }} الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
+                                            {{contract.contractTime=='6month'?'۶ ماه':'۱۲ ماه' }} از {{(contract.contractStartDate) ?contract.contractStartDate|jDatePdf:'' }}
+                                        الی{{ (contract.contractEndDate)?contract.contractEndDate|jDatePdf :''}}
                                         </span>
                                     <span style="font-weight: bold;margin-left:10px;margin-right:50px">محدوده اطلاع رسانی : </span>
                                     {% if contract.separate %}
@@ -352,7 +353,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <table class="table-bordered" cellpadding="0">
+                        <table class="table-bordered" cellpadding="0" style="font-size: 20px">
                             <tr>
                                 <th class="bg-gray  p-5">ردیف</th>
                                 <th class="bg-gray  p-5">شرح / ابزار</th>
@@ -371,7 +372,8 @@
                                  </td>
                                 <td class="text-center">۱</td>
                                 <td class="text-center">{{contract.contractTime=='6Month'?'۶ ماه':'۱۲ ماه' }}</td>
-                                <td class="text-center">{{ contract.servicePrice|numberFormat }}تومان</td>
+                                {% set servicePriceItem=contract.servicePrice+1 %}
+                                <td class="text-center" >{{ serviceItemPrice|numberFormat }}تومان</td>
                             </tr>
                             {% set numberIndex=1 %}
                             {% for service in contract.serviceItems %}

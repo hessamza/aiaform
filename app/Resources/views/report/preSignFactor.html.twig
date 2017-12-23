@@ -5,7 +5,7 @@
     <title>سامانه اطلاع رسانی</title>
     <style>
         body{
-            font-family: 'yekan';
+            font-family: 'bnazanin';
             padding:70px;
         }
         .main-table{
@@ -170,9 +170,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-center">کارشناس مربوطه : خانم {{ contract.owner.username }}</td>
-                    <td class="text-center">تاریخ تنظیم : {{ contract.createdAt|jDatePdf }} </td>
-                    <td class="text-center">شماره : ۵۶۵۶۴۵۶۴۵۶</td>
+                    <td class="text-center">کارشناس مربوطه : {{ (contract.owner.gender=='1'?'آقای':'خانم') }} {{ contract.owner.username }}</td>
+                    <td class="text-center">تاریخ تنظیم : {{ date('now')|jDatePdf }} </td>
+                    <td class="text-center">شماره : {{ contract.number }}</td>
                 </tr>
             </table>
             <table class="table2 c-table"  cellspacing="0">
@@ -211,7 +211,7 @@
                     <td colspan="3">
                         <table style="margin-top:10px;">
                             <tr>
-                                <td>شماره موبایل فروشنده:۰۹۰۲۳۲۳۳۹۶۱</td>
+                                <td>شماره موبایل فروشنده:{{ contract.owner.phone }}</td>
                                 <td>شماره تلفن : ۴۲۰۵۷ (۲۱ ۹۸+) </td>
                                 <td>ایمیل : sales@ariatender.com </td>
                             </tr>

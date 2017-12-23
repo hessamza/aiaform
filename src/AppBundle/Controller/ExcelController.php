@@ -419,7 +419,7 @@ class ExcelController extends  BaseController
                     $arrcontract[2]);
                 $dateContract=$arrdateContract[0].'-'.$arrdateContract[1].'-'
                               .$arrdateContract[2];
-            }else{
+            }else{  
                 $dateContract='';
             }
 

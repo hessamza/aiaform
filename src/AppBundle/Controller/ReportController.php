@@ -321,6 +321,18 @@ class ReportController extends  BaseController
         $contract=$this->getDoctrine()->getRepository("AppBundle:Contract")->find($id);
         $advItem=$this->getDoctrine()->getRepository("AppBundle:AdvItems")->findAll();
         $anotherAdv=$advItem;
+        $serviceItemPrice=0;
+        switch ($contract->getSeparate()){
+            case 'professional':
+                $serviceItemPrice=$contract->getSeparate()-
+                                  ($contract->getSeparate()/.2);
+                break;
+            case 'local':
+                $serviceItemPrice=$contract->getSeparate()-
+                                  ($contract->getSeparate()/.3);
+                break;
+        }
+
         $contractAdvItems=$contract->getAdvItems()->getValues();
 
         foreach ($anotherAdv as $key4 => $new_val4)
@@ -358,6 +370,7 @@ class ReportController extends  BaseController
             'contract'=>$contract,
             'anotherAdv'=>$anotherAdv,
             'anothershare'=>$anotherShare,
+            'serviceItemPrice'=>$serviceItemPrice,
             'anotherService'=>$anotherService
         ]);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());

@@ -19,6 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Validator\Constraints\Date;
 
 class ContractController extends  BaseController
 {
@@ -41,10 +42,18 @@ class ContractController extends  BaseController
                 $firm = $form->getData();
                 $user = $this->getDoctrine()->getRepository('AppBundle:User')->find($this->getUser()->getId());
                 $form->getData()->setOwner($user);
+                $date=date("Y-m-d");
+                $dateNow=explode('-',$date);
+                $arrdateContract = \jDateTime::toJalali($dateNow[0],
+                    $dateNow[1],
+                    $dateNow[2]);
+                $form->getData()->setNumber($arrdateContract[0]
+                                            .$this->generateRandomString
+                    (4));
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($firm);
                 $em->flush();
-                return $this->redirect('/contracts');
+               // return $this->redirect('/contracts');
             }
         }
         return $this->render(':page:contract.html.twig', [
@@ -167,7 +176,6 @@ class ContractController extends  BaseController
         unset($search['contractTimeTo']);
         unset($search['contractTimeFrom']);
         $user=$this->getDoctrine()->getRepository("AppBundle:User")->find($this->getUser());
-
         $result = $this->getDoctrine()->getRepository('AppBundle:Contract')->findContracts($search,$user->getId());
         $response = $this->createApiResponse($result, 200, ['Default']);
         //$this->dumpWithHeaders($response);
@@ -249,6 +257,17 @@ class ContractController extends  BaseController
         $em->flush();
         $response = $this->createApiResponse(['success'], 200, ['Default']);
         return $response;
+    }
+
+
+    function generateRandomString($length = 4) {
+        $characters = '0123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
 }

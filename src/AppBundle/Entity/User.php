@@ -36,6 +36,23 @@ class User implements UserInterface
      * @Assert\Valid()
      */
     private $contracts;
+    /**
+     * @var bool $gender
+     * @ORM\Column(type="boolean", name="gender", options={"default" = false})
+     * @Assert\NotNull(message="not blank",groups={"ManageUser"})
+     */
+    private $gender = false;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="phone", type="string", length=15,nullable=true)
+     * @Assert\Length(max="15",groups={"manageContactPerson"})
+     * @Assert\NotBlank(message="not blank",groups={"ManageUser"})
+     */
+    private $phone;
+
 
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\FileManager")
@@ -368,10 +385,38 @@ class User implements UserInterface
     }
 
 
+    /**
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param string $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
+    }
 
 
+    /**
+     * @return bool
+     */
+    public function isGender()
+    {
+        return $this->gender;
+    }
 
-
+    /**
+     * @param bool $gender
+     */
+    public function setGender($gender)
+    {
+        $this->gender = $gender;
+    }
 
 
 

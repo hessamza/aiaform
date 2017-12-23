@@ -94,50 +94,63 @@ class Contract
     private $userName;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('recharge','register','phone','telegram','direct','exhibition','adv')")
+     * @var string
+     *
+     * @ORM\Column(name="number", type="string", length=255)
+     * @Serializer\Groups({"items","Default"})
+     */
+    private $number;
+
+    /**
+     * @ORM\Column(type="string", columnDefinition="enum('recharge',
+      'register','phone','telegram','direct','exhibition','adv')",
+      nullable=true)
      * @Assert\Choice({"recharge","register","phone","telegram","direct","exhibition","adv"}, message="The contact type should be one of listed values.")
      * @Serializer\Groups({"items","Default"})
      */
     private $contractType;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('6month','12month')")
+     * @ORM\Column(type="string", columnDefinition="enum('6month','12month')", nullable=true)
      * @Assert\Choice({"6month","12month"}, message="The Time type should be one of listed values.")
      * @Serializer\Groups({"items","Default"})
      */
     private $contractTime;
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
+     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')",
+          nullable=true)
      * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
      */
      private $recharge;
 
      /**
-     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
+     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')", nullable=true)
      * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
      */
      private $register;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')")
+     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago')", nullable=true)
      * @Assert\Choice({"lastMonth","ago"}, message="The value2 should be one of listed values.")
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago','advTelegram')")
+     * @ORM\Column(type="string", columnDefinition="enum('lastMonth','ago',
+     'advTelegram')", nullable=true)
      * @Assert\Choice({"lastMonth","ago","advTelegram"}, message="The value2 should be one of listed values.")
      */
     private $telegram;
 
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('oil96')")
+     * @ORM\Column(type="string", columnDefinition="enum('oil96')"),
+     nullable=true
      * @Assert\Choice({"oil96"}, message="The value2 should be one of listed values.")
      */
     private $exhibition;
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('site','email','telegram','sms')")
+     * @ORM\Column(type="string", columnDefinition="enum('site','email','telegram','sms')",nullable=true)
      * @Assert\Choice({"site","email","telegram","sms"}, message="The value2 should be one of listed values.")
      */
     private $adv;
@@ -205,7 +218,8 @@ class Contract
     private $posts;
 
     /**
-     * @ORM\Column(type="string", columnDefinition="enum('global','local','professional','local-professional')")
+     * @ORM\Column(type="string", columnDefinition="enum('global','local',
+     * 'professional','local-professional')",nullable=true)
      * @Assert\Choice({"global","local","professional","local-professional"}, message="The value2 should be one of listed values.")
      */
     private $separate;
@@ -305,14 +319,14 @@ class Contract
 
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean",nullable=true)
      * @Serializer\Groups({"items","Default"})
      */
     private $itemSend;
 
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="boolean",nullable=true)
      * @Serializer\Groups({"items","Default"})
      */
     private $accept;
@@ -1128,7 +1142,21 @@ class Contract
     }
 
 
+    /**
+     * @return mixed
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
 
+    /**
+     * @param mixed $number
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
 
 }
 
