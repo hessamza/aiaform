@@ -1,0 +1,306 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block body %}
+<!-- BEGIN CONTENT -->
+<div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+    <!-- BEGIN PAGE HEAD-->
+    <div class="page-head">
+        <div class="container">
+            <!-- BEGIN PAGE TITLE -->
+            <div class="page-title">
+
+            </div>
+            <!-- END PAGE TITLE -->
+        </div>
+    </div>
+    <!-- END PAGE HEAD-->
+    <!-- BEGIN PAGE CONTENT BODY -->
+    <div class="page-content">
+        <div class="container">
+            <!-- BEGIN PAGE CONTENT INNER -->
+            <div class="page-content-inner">
+                <div class="row">
+                    <div class="col-md-12 ">
+                        <!-- BEGIN SAMPLE FORM PORTLET-->
+                        <div class="portlet light ">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">ثبت قرارداد</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form col-md-10 ">
+                                {{form_start(form,{'attr':{'class':'form-horizontal'}}) }}
+                                {{  form_widget(form.serviceString,{'attr':{'class':'form-control input-inline input-medium serviceString'}})}}
+                                {{  form_widget(form.shareString,{'attr':{'class':'form-control input-inline input-medium shareString'}})}}
+                                {{  form_widget(form.servicePrice,{'attr':{'class':'form-control input-inline input-medium servicePrice'}})}}
+                                {% if successFullMeassage  is defined%}
+                                    <div class="message-box sucess">
+                                        <div class="message">{{ successFullMeassage }}</div><i class="icon"></i>
+                                    </div>
+                                {% endif %}
+                                {% if formIsNotValid %}
+                                    <div class="message-box alert">
+                                        <div class="message">
+                                            مشکل زیر رخ داده است:
+                                            {{ form_errors(form.companyName) }}
+                                            {{ form_errors(form.userName) }}
+                                            {{ form_errors(form.contractMan) }}
+                                            {{ form_errors(form.contractType) }}
+                                            {{ form_errors(form.register) }}
+                                            {{ form_errors(form.phone) }}
+                                            {{ form_errors(form.telegram) }}
+                                            {{ form_errors(form.serviceItems) }}
+                                            {{ form_errors(form.contractDate) }}
+                                            {{ form_errors(form.contractStartDate) }}
+                                            {{ form_errors(form.contractEndDate) }}
+                                            {{ form_errors(form.contractTime) }}
+                                            {{ form_errors(form.shareItems) }}
+                                            {{ form_errors(form.separate) }}
+                                            {{ form_errors(form.contractPrice) }}
+                                            {{ form_errors(form.discount) }}
+                                            {{ form_errors(form.basePrice) }}
+                                            {{ form_errors(form.customerPhone)}}
+                                            {{ form_errors(form.customerAddress)}}
+                                            {{ form_errors(form.extraContractPrice)}}
+                                            {{ form_errors(form.extraDescription)}}
+                                            {{ form_errors(form.items)}}
+                                            {{ form_errors(form.posts)}}
+                                            {{ form_errors(form.itemDescription)}}
+                                            {{ form_errors(form.description)}}
+
+
+
+
+
+
+                                        </div><i class="icon"></i>
+                                    </div>
+                                {% endif %}
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">نام شرکت:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.companyName,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">نام کاربری:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.userName,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">طرف قرارداد:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.contractMan,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تلفن/موبایل:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.customerPhone,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">آدرس:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.customerAddress,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-12">
+                                            <label class="col-md-3 control-label">نوع قرارداد:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.contractType,{'attr':{'class':'form-control contractType'}})}}
+                                            </div>
+                                            <label class="col-md-1 control-label">تاریخ:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.contractDate,{'attr':{'class':'form-control'}})}}
+                                                <input id="contractDateextra" type="text" class="form-control" name="contractTime" />
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractIRecharge">
+                                            <label class="col-md-3 control-label">تمدید:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.recharge,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractIRegister">
+                                            <label class="col-md-3 control-label">رجیستری:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.register,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractIPhone">
+                                            <label class="col-md-3 control-label">تلفنی:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.phone,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractITelegram">
+                                            <label class="col-md-3 control-label">تلگرام:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.telegram,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractIExhibition" >
+                                            <label class="col-md-3 control-label">نمایشگاهی:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.exhibition,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group contractIAdv" >
+                                            <label class="col-md-3 control-label">تبلیغات:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.adv,{'attr':{'class':'form-control '}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مدت قرارداد:</label>
+                                            <div class="col-md-9">
+
+                                                {{  form_widget(form.contractTime,{'attr':{'class':'form-control input-inline input-medium','type':'hiden'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تاریخ شروع قرارداد:</label>
+                                            <div class="col-md-4">
+                                                <input id="contractDateStartextra" type="text" class="form-control" name="contractStartTime"/>
+                                                {{  form_widget(form.contractStartDate,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تاریخ پایان قرارداد:</label>
+                                            <div class="col-md-4">
+                                                <input id="contractDateEndextra" type="text" class="form-control" name="contractEndTime"/>
+                                                {{  form_widget(form.contractEndDate,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">تفکیک:</label>
+                                            <div class="col-md-4">
+                                                {{  form_widget(form.separate,{'attr':{'class':'form-control'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">نوع آگهی:</label>
+                                            <div class="col-md-9">
+                                                <div class="mt-checkbox-inline">
+                                                    {{  form_widget(form.advItems,{'attr':{'class':''}})}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">نوع اشتراک:</label>
+                                            <div class="col-md-9">
+                                                <div class="mt-checkbox-inline">
+                                                       {{  form_widget(form.shareItems,{'attr':{'class':''}})}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">نوع سرویس:</label>
+                                            <div class="col-md-9">
+                                                <div class="mt-checkbox-inline">
+                                                       {{  form_widget(form.serviceItems,{'attr':{'class':''}})}}
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مبلغ قرارداد:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.contractPrice,{'attr':{'class':'form-control input-inline input-medium'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مبلغ تخفیف:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.discount,{'attr':{'class':'form-control input-inline input-medium','readonly':'readonly'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مبلغ پایه:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.basePrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">سایر خدمات:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.haveExtraContractPrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="extraPriceShow" style="display: none">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">مبلغ سایر خدمات:</label>
+                                                <div class="col-md-9">
+                                                    {{  form_widget(form.extraContractPrice,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">توضیحات سایر خدمات:</label>
+                                                <div class="col-md-9">
+                                                    {{  form_widget(form.extraDescription,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">مرسولات:</label>
+                                            <div class="col-md-9">
+                                                {{  form_widget(form.items,{'attr':{'class':'form-control input-inline input-medium','type':'text'}})}}
+                                            </div>
+                                        </div>
+                                        <div class="extraItemShow" style="display: none">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">نوع مرسولات:</label>
+                                                <div class="col-md-9">
+                                                    <div class="mt-checkbox-inline">
+                                                        {{ form_widget(form.posts,{'attr':{'class':''}}) }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <label class="col-md-3 control-label">توضیحات مرسولات:</label>
+                                                <div class="col-md-9">
+                                                    {{ form_widget(form.itemDescription,{'attr':{'class':'form-control '}}) }}
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group ">
+                                            <label class="col-md-3 control-label">توضیحات :</label>
+                                            <div class="col-md-9">
+                                                {{ form_widget(form.description,{'attr':{'class':'form-control '}}) }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="submit" class="btn green">Submit</button>
+                                                <button type="button" class="btn default">Cancel</button>
+                                                    {#<button type="button" class="btn default" id="preFactore" >prefactor</button>#}
+                                            </div>
+                                        </div>
+                                    </div>
+                                 {{ form_end(form) }}
+                            </div>
+                        </div>
+                        <!-- END SAMPLE FORM PORTLET-->
+                    </div>
+                </div>
+            </div>
+            <!-- END PAGE CONTENT INNER -->
+        </div>
+    </div>
+    <!-- END PAGE CONTENT BODY -->
+    <!-- END CONTENT BODY -->
+</div>
+<!-- END CONTENT -->
+{% endblock %}
