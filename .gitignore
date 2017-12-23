@@ -1,4 +1,4 @@
-/idea
+/idea/
 /idea/*
 /app/config/parameters.yml
 /build/
@@ -17,4 +17,4 @@
 /vendor/
 /web/bundles/
 /web/uploads/
-./idea
+./idea/
